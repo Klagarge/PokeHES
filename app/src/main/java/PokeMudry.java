@@ -6,9 +6,11 @@ public class PokeMudry extends PortableApplication{
     public final int PLAYERS = 1;
     public static final int TIME = 10; // number of minutes for kill all enemy
 
+    /*
     public static void main(String[] args) {
         
     }
+    */
 
     @Override
     public void onInit() {
