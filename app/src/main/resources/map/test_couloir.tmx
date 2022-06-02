@@ -6479,19 +6479,19 @@
   <tile id="801">
    <properties>
     <property name="speed" type="float" value="1"/>
-    <property name="walkable" type="bool" value="false"/>
+    <property name="walkable" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="802">
    <properties>
     <property name="speed" type="float" value="1"/>
-    <property name="walkable" type="bool" value="false"/>
+    <property name="walkable" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="803">
    <properties>
     <property name="speed" type="float" value="1"/>
-    <property name="walkable" type="bool" value="false"/>
+    <property name="walkable" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="804">
@@ -6683,19 +6683,19 @@
   <tile id="835">
    <properties>
     <property name="speed" type="float" value="1"/>
-    <property name="walkable" type="bool" value="false"/>
+    <property name="walkable" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="836">
    <properties>
     <property name="speed" type="float" value="1"/>
-    <property name="walkable" type="bool" value="false"/>
+    <property name="walkable" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="837">
    <properties>
     <property name="speed" type="float" value="1"/>
-    <property name="walkable" type="bool" value="false"/>
+    <property name="walkable" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="838">
@@ -6887,19 +6887,19 @@
   <tile id="869">
    <properties>
     <property name="speed" type="float" value="1"/>
-    <property name="walkable" type="bool" value="false"/>
+    <property name="walkable" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="870">
    <properties>
     <property name="speed" type="float" value="1"/>
-    <property name="walkable" type="bool" value="false"/>
+    <property name="walkable" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="871">
    <properties>
     <property name="speed" type="float" value="1"/>
-    <property name="walkable" type="bool" value="false"/>
+    <property name="walkable" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="872">
@@ -8967,7 +8967,7 @@
    </properties>
   </tile>
  </tileset>
- <layer id="6" name="background" width="20" height="10">
+ <layer id="6" name="background" width="20" height="10" locked="1">
   <data encoding="csv">
 21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,
 21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,
@@ -8981,7 +8981,7 @@
 21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21
 </data>
  </layer>
- <layer id="2" name="floor" width="20" height="10">
+ <layer id="2" name="floor" width="20" height="10" locked="1">
   <data encoding="csv">
 956,956,956,956,956,956,956,956,956,956,956,956,956,956,956,956,956,956,956,956,
 956,956,956,956,956,956,956,956,956,956,956,956,956,956,956,956,956,956,956,956,
@@ -8995,7 +8995,7 @@
 921,921,921,921,921,921,921,921,921,921,921,921,921,921,921,921,921,921,921,921
 </data>
  </layer>
- <objectgroup id="7" name="door">
+ <objectgroup id="7" name="door" locked="1">
   <object id="4" name="test" gid="17" x="96" y="96" width="32" height="32">
    <properties>
     <property name="nextX" type="int" value="2"/>
@@ -9021,7 +9021,7 @@
    </properties>
   </object>
  </objectgroup>
- <layer id="1" name="wall" width="20" height="10">
+ <layer id="1" name="wall" width="20" height="10" locked="1">
   <data encoding="csv">
 21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,
 40,40,40,8,9,40,40,40,40,40,40,40,40,40,40,8,9,40,40,40,
