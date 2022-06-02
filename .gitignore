@@ -10,3 +10,8 @@ bin/
 bin/**
 **/bin
 **/bin/
+\app\bin\**
+bin\
+bin\**
+**\bin
+**\bin\
