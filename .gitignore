@@ -5,7 +5,4 @@
 build
 
 # Ignore bin
-.\app\bin
-./app/bin
-\app\bin
-/app/bin
+bin/
