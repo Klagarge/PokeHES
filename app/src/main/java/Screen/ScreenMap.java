@@ -7,6 +7,7 @@ import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.MapObjects;
 import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.maps.tiled.*;
+import com.badlogic.gdx.maps.tiled.TiledMapTileLayer.Cell;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.math.Vector2;
 import java.util.Map;
@@ -71,7 +72,7 @@ public class ScreenMap {
         tileWidth = (int) tl.getTileWidth();
         height = tl.getHeight();
         tileHeight = (int) tl.getTileHeight();
-        System.out.println(width + " x " + height + " - " + tileWidth + " x " + tileHeight);
+        //System.out.println(width + " x " + height + " - " + tileWidth + " x " + tileHeight);
 		try {
 			doors = tMap.get(map).getLayers().get("door").getObjects();
 		} catch (Exception e) {	}
@@ -101,11 +102,16 @@ public class ScreenMap {
             int x = (int) (position.x / width) + offsetX;
             int y = (int) (position.y / height) + offsetY;
             System.out.println("tl: " + tl);
-            TiledMapTile cell = tl.getCell(x, y).getTile();
             try {
-
+				System.out.println("begin");
+				System.out.println( tl.getName());
+				Cell cell = tl.getCell(x, y);
                 System.out.println("cell: "+ cell);
-                tiles.add(cell);
+				if (tl.getCell(x, y) == null) continue;
+				System.out.println("not null");
+				TiledMapTile t = cell.getTile();
+				System.out.println("t: " + t);
+                tiles.add(t);
             } catch (Exception e) { System.out.println("shit");}
         }
 
