@@ -38,9 +38,9 @@ public class testHER extends PortableApplication{
 		switch (keycode) {
 		case Input.Keys.Z:
 			if (sm.zoom == 1.0) {
-				sm.zoom = 2.0f;
-			} else if (sm.zoom == 2.0) {
-				sm.zoom = 4;
+				sm.zoom = 0.5f;
+			} else if (sm.zoom == 0.5) {
+				sm.zoom = 0.25f;
 			} else {
 				sm.zoom = 1;
 			}

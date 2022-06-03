@@ -8996,26 +8996,30 @@
 </data>
  </layer>
  <objectgroup id="7" name="door" locked="1">
-  <object id="4" name="test" gid="17" x="96" y="96" width="32" height="32">
+  <object id="4" gid="17" x="96" y="96" width="32" height="32">
    <properties>
+    <property name="nextMap" value="test"/>
     <property name="nextX" type="int" value="2"/>
     <property name="nextY" type="int" value="9"/>
    </properties>
   </object>
-  <object id="5" name="test" gid="17" x="480" y="96" width="32" height="32">
+  <object id="5" gid="17" x="480" y="96" width="32" height="32">
    <properties>
+    <property name="nextMap" value="test"/>
     <property name="nextX" type="int" value="6"/>
     <property name="nextY" type="int" value="9"/>
    </properties>
   </object>
-  <object id="6" name="test" gid="2147483665" x="512" y="96" width="32" height="32">
+  <object id="6" gid="2147483665" x="512" y="96" width="32" height="32">
    <properties>
+    <property name="nextMap" value="test"/>
     <property name="nextX" type="int" value="6"/>
     <property name="nextY" type="int" value="9"/>
    </properties>
   </object>
-  <object id="7" name="test" gid="2147483665" x="128" y="96" width="32" height="32">
+  <object id="7" gid="2147483665" x="128" y="96" width="32" height="32">
    <properties>
+    <property name="nextMap" value="test"/>
     <property name="nextX" type="int" value="2"/>
     <property name="nextY" type="int" value="9"/>
    </properties>

@@ -26,12 +26,13 @@ public class ScreenMap {
 	private MapObjects doors;
 	Map<String,TiledMap> tMap = new TreeMap<String,TiledMap>();
 	Map<String,TiledMapRenderer> tMapRenderer = new TreeMap<String,TiledMapRenderer>();
-	private String map = "test_couloir";
+	private String map = "desert";
 	public float zoom;
     private int width;
     private int tileWidth;
     private int height;
     private int tileHeight;
+
 
     // position
 	Vector2 pannel = new Vector2(30, 30);
@@ -59,14 +60,17 @@ public class ScreenMap {
 		// create map
 		createMap("test");
 		createMap("test_couloir");
+		createMap("desert");
 	}
 
     public void graphicRender(GdxGraphics g) {
 		g.clear();
 
-        for (int i = 0; i < 100; i++) {
+        tiledLayer.clear();
+		for (int i = 0; i < 50; i++) {
             try { tiledLayer.add((TiledMapTileLayer) tMap.get(map).getLayers().get(i)); } catch (Exception e) { }
         }
+		//System.out.println(tiledLayer.size() + " layers imported");
         TiledMapTileLayer tl = tiledLayer.get(0);
         width = tl.getWidth();
         tileWidth = (int) tl.getTileWidth();
@@ -75,11 +79,11 @@ public class ScreenMap {
         //System.out.println(width + " x " + height + " - " + tileWidth + " x " + tileHeight);
 		try {
 			doors = tMap.get(map).getLayers().get("door").getObjects();
-		} catch (Exception e) {	}
+		} catch (Exception e) {	doors = null; }
 
         // Hero activity
 		manageHero();
-        // System.out.println(hero.getPosition().x + " - " + hero.getPosition().y);
+        System.out.println("Hero: " + (int)hero.getPosition().x/tileWidth + " x " + (int)hero.getPosition().y/tileHeight);
 		
 		// Camera follows the hero
 		g.zoom(zoom);
@@ -99,20 +103,13 @@ public class ScreenMap {
     private Vector<TiledMapTile> getTile(Vector2 position, int offsetX, int offsetY) {
         Vector<TiledMapTile> tiles = new Vector<>();
         for (TiledMapTileLayer tl : tiledLayer) {
-            int x = (int) (position.x / width) + offsetX;
-            int y = (int) (position.y / height) + offsetY;
-            System.out.println("tl: " + tl);
+            int x = (int) (position.x / tileWidth) + offsetX;
+            int y = (int) (position.y / tileHeight) + offsetY;
             try {
-				System.out.println("begin");
-				System.out.println( tl.getName());
 				Cell cell = tl.getCell(x, y);
-                System.out.println("cell: "+ cell);
-				if (tl.getCell(x, y) == null) continue;
-				System.out.println("not null");
-				TiledMapTile t = cell.getTile();
-				System.out.println("t: " + t);
-                tiles.add(t);
-            } catch (Exception e) { System.out.println("shit");}
+				if (cell == null) continue;
+                tiles.add(cell.getTile());
+            } catch (Exception e) { }
         }
 
         return tiles;
@@ -121,15 +118,10 @@ public class ScreenMap {
     private boolean isWalkable(Vector<TiledMapTile> tile) {
 		if (tile == null) return false;
         boolean walkable = false;
-        System.out.println("tile: " + tile);
-
         for (TiledMapTile tiledMapTile : tile) {
-            System.out.println("tiledMapTile: " + tiledMapTile);
             Object test = tiledMapTile.getProperties().get("walkable");
             walkable = Boolean.parseBoolean(test.toString()) ? true:walkable;
         }
-
-        //System.out.println(" walkable: " + walkable);
         return walkable;
 	}
 
@@ -143,20 +135,16 @@ public class ScreenMap {
         return speed;
 	}
 
-    private String getName(TiledMap tile) {
-		Object test = tile.getProperties().get("name");
-		return test.toString();
-	}
-
     private boolean isDoor(Vector2 position) {
+		if (doors == null) return false;
         boolean onDoor = false;
         Integer x = null;
         Integer y = null;
         int ox = 0;
         int oy = 0;
         try {
-            x = (int) (position.x / 32); //tiledLayer.getTileWidth()
-            y = (int) (position.y / 32); //tiledLayer.getTileHeight()
+            x = (int) (position.x / tileWidth);
+            y = (int) (position.y / tileHeight);
         } catch (Exception e) { }
 
         for (MapObject object : doors){
@@ -165,17 +153,15 @@ public class ScreenMap {
             try { ox = (int) ((float) mapProperties.get("x")); } catch (Exception e) { }
             try { oy = (int) ((float) mapProperties.get("y")); } catch (Exception e) { }
 
-            oy-=288;
-            oy/=-1;
+            ox /= tileWidth;
+            oy /= tileHeight;
 
-            ox /= 32;
-            oy /= 32;
-
-            String id = null;
-            try { id = mapProperties.get("id").toString(); } catch (Exception e) { }
-            //if(x != null && y != null) System.out.println(id + ": " + x + " x " + y + " - " + ox + " x " + oy);
-
-            if (x != null || y != null) onDoor = (x == ox && y == oy) ? true:onDoor;
+			if ((x != null || y != null) && (x == ox && y == oy)) {
+				onDoor = true;
+				try { Door.nextMap = mapProperties.get("nextMap").toString(); } catch (Exception e) { System.out.println("shit 1"); }
+				try { Door.nextX = Integer.parseInt(mapProperties.get("nextX").toString()); } catch (Exception e) {  System.out.println("shit 2");  }
+				try { Door.nextY = Integer.parseInt(mapProperties.get("nextY").toString()); } catch (Exception e) {  System.out.println("shit 3"); }
+			}
         }
         
         return onDoor;
@@ -216,23 +202,33 @@ public class ScreenMap {
 
 			
 			if(isDoor(hero.getPosition())){
-				/*
-				switch(getName(tMap.get(map))){
-					case "test":
-						if(hero.getPosition().x == 32 &&  hero.getPosition().y == 288){
-							hero.setPosition(576, 256);
-							map = "desert";
-						}
-						break;
-					default:
-		
-						break;
-				}
-				*/
-                
-				System.out.println("it's a door");
+				String nMap = null;
+				Integer x = null;
+				Integer y = null;
+				try {
+					nMap = Door.nextMap;
+					x = Door.nextX;
+					y = Door.nextY;
+				} catch (Exception e) { }
+				Door.reset();
+				if (nMap == null || x == null || y == null) return;
+				map = nMap;
+				hero.setPosition(x*tileWidth, y*tileHeight);
+				System.out.println("Go to: " + map + " in " + x + " x " + y);
 			}
 		}
 	}
 
+	static class Door {
+		static String nextMap;
+		static Integer nextX;
+		static Integer nextY;
+
+		static void reset(){
+			nextMap = null;
+			nextX = null;
+			nextY = null;
+		}
+	}
+		
 }
