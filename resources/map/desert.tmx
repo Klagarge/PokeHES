@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.8" tiledversion="1.8.5" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="32" tileheight="32" infinite="0" nextlayerid="4" nextobjectid="14">
+ <editorsettings>
+  <export target="../../vscode/tests_gdx2d_gradle/app/src/main/java/test_map/data/desert.tmx" format="tmx"/>
+ </editorsettings>
+ <properties>
+  <property name="name" value="desert"/>
+ </properties>
+ <tileset firstgid="1" name="Desert" tilewidth="32" tileheight="32" spacing="1" margin="1" tilecount="48" columns="8">
+  <image source="assets/desert.png" width="265" height="199"/>
+  <tile id="0">
+   <properties>
+    <property name="door" value="false"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1.5"/>
+    <property name="walkable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="door" value="false"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1.5"/>
+    <property name="walkable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="door" value="false"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1.5"/>
+    <property name="walkable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="door" value="false"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1.5"/>
+    <property name="walkable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="4">
+   <properties>
+    <property name="door" value="false"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1.5"/>
+    <property name="walkable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="5">
+   <properties>
+    <property name="door" value="false"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1"/>
+    <property name="walkable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="6">
+   <properties>
+    <property name="door" value="false"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1"/>
+    <property name="walkable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="7">
+   <properties>
+    <property name="door" value="false"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1"/>
+    <property name="walkable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="8">
+   <properties>
+    <property name="door" value="false"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1.5"/>
+    <property name="walkable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="9">
+   <properties>
+    <property name="door" value="false"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="2"/>
+    <property name="walkable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="10">
+   <properties>
+    <property name="door" value="false"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1.5"/>
+    <property name="walkable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="11">
+   <properties>
+    <property name="door" value="false"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1.5"/>
+    <property name="walkable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="12">
+   <properties>
+    <property name="door" value="false"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1.5"/>
+    <property name="walkable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="13">
+   <properties>
+    <property name="door" value="false"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1"/>
+    <property name="walkable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="14">
+   <properties>
+    <property name="door" value="false"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1.5"/>
+    <property name="walkable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="15">
+   <properties>
+    <property name="door" value="false"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1"/>
+    <property name="walkable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="16">
+   <properties>
+    <property name="door" value="false"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1.5"/>
+    <property name="walkable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="17">
+   <properties>
+    <property name="door" value="false"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1.5"/>
+    <property name="walkable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="18">
+   <properties>
+    <property name="door" value="false"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1.5"/>
+    <property name="walkable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="19">
+   <properties>
+    <property name="door" value="false"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1.5"/>
+    <property name="walkable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="20">
+   <properties>
+    <property name="door" value="false"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1.5"/>
+    <property name="walkable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="21">
+   <properties>
+    <property name="door" value="false"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1"/>
+    <property name="walkable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="22">
+   <properties>
+    <property name="door" value="false"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1"/>
+    <property name="walkable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="23">
+   <properties>
+    <property name="door" value="false"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1"/>
+    <property name="walkable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="24">
+   <properties>
+    <property name="door" value="false"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1.5"/>
+    <property name="walkable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="25">
+   <properties>
+    <property name="door" value="false"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1.5"/>
+    <property name="walkable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="26">
+   <properties>
+    <property name="door" value="false"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1.5"/>
+    <property name="walkable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="27">
+   <properties>
+    <property name="door" value="false"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1.5"/>
+    <property name="walkable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="28">
+   <properties>
+    <property name="door" value="false"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1.5"/>
+    <property name="walkable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="29">
+   <properties>
+    <property name="door" value="false"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1"/>
+    <property name="walkable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="30" probability="0.5">
+   <properties>
+    <property name="door" value="true"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1"/>
+    <property name="walkable" value="true"/>
+   </properties>
+   <objectgroup draworder="index">
+    <object id="0" x="1" y="1" width="29" height="30"/>
+   </objectgroup>
+  </tile>
+  <tile id="31" probability="0.5">
+   <properties>
+    <property name="door" value="true"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1"/>
+    <property name="walkable" value="true"/>
+   </properties>
+   <objectgroup draworder="index">
+    <object id="0" x="4" y="2" width="25" height="28">
+     <ellipse/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="32">
+   <properties>
+    <property name="door" value="false"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1.5"/>
+    <property name="walkable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="33">
+   <properties>
+    <property name="door" value="false"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="2"/>
+    <property name="walkable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="34">
+   <properties>
+    <property name="door" value="false"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1.5"/>
+    <property name="walkable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="35">
+   <properties>
+    <property name="door" value="false"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1.5"/>
+    <property name="walkable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="36">
+   <properties>
+    <property name="door" value="false"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1.5"/>
+    <property name="walkable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="37" probability="0.5">
+   <properties>
+    <property name="door" value="true"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1"/>
+    <property name="walkable" value="false"/>
+   </properties>
+   <objectgroup draworder="index">
+    <object id="0" x="0" y="-1" width="31" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="38" probability="0.5">
+   <properties>
+    <property name="door" value="true"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1"/>
+    <property name="walkable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="39" probability="0.5">
+   <properties>
+    <property name="door" value="true"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1"/>
+    <property name="walkable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="40">
+   <properties>
+    <property name="door" value="false"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1.5"/>
+    <property name="walkable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="41">
+   <properties>
+    <property name="door" value="false"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1.5"/>
+    <property name="walkable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="42">
+   <properties>
+    <property name="door" value="false"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1.5"/>
+    <property name="walkable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="43">
+   <properties>
+    <property name="door" value="false"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1.5"/>
+    <property name="walkable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="44">
+   <properties>
+    <property name="door" value="false"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1.5"/>
+    <property name="walkable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="45" probability="0">
+   <properties>
+    <property name="door" value="true"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1"/>
+    <property name="walkable" value="false"/>
+   </properties>
+  </tile>
+  <tile id="46" probability="0.5">
+   <properties>
+    <property name="door" value="true"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1"/>
+    <property name="walkable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="47" probability="0.5">
+   <properties>
+    <property name="door" value="true"/>
+    <property name="nextMap" value=""/>
+    <property name="speed" value="1"/>
+    <property name="walkable" value="true"/>
+   </properties>
+  </tile>
+  <wangsets>
+   <wangset name="Terrains" type="corner" tile="-1">
+    <wangcolor name="Desert" color="#ff0000" tile="29" probability="1"/>
+    <wangcolor name="Brick" color="#00ff00" tile="9" probability="1"/>
+    <wangcolor name="Cobblestone" color="#0000ff" tile="33" probability="1"/>
+    <wangcolor name="Dirt" color="#ff7700" tile="14" probability="1"/>
+    <wangtile tileid="0" wangid="0,1,0,2,0,1,0,1"/>
+    <wangtile tileid="1" wangid="0,1,0,2,0,2,0,1"/>
+    <wangtile tileid="2" wangid="0,1,0,1,0,2,0,1"/>
+    <wangtile tileid="3" wangid="0,4,0,1,0,4,0,4"/>
+    <wangtile tileid="4" wangid="0,4,0,4,0,1,0,4"/>
+    <wangtile tileid="5" wangid="0,1,0,4,0,1,0,1"/>
+    <wangtile tileid="6" wangid="0,1,0,4,0,4,0,1"/>
+    <wangtile tileid="7" wangid="0,1,0,1,0,4,0,1"/>
+    <wangtile tileid="8" wangid="0,2,0,2,0,1,0,1"/>
+    <wangtile tileid="9" wangid="0,2,0,2,0,2,0,2"/>
+    <wangtile tileid="10" wangid="0,1,0,1,0,2,0,2"/>
+    <wangtile tileid="11" wangid="0,1,0,4,0,4,0,4"/>
+    <wangtile tileid="12" wangid="0,4,0,4,0,4,0,1"/>
+    <wangtile tileid="13" wangid="0,4,0,4,0,1,0,1"/>
+    <wangtile tileid="14" wangid="0,4,0,4,0,4,0,4"/>
+    <wangtile tileid="15" wangid="0,1,0,1,0,4,0,4"/>
+    <wangtile tileid="16" wangid="0,2,0,1,0,1,0,1"/>
+    <wangtile tileid="17" wangid="0,2,0,1,0,1,0,2"/>
+    <wangtile tileid="18" wangid="0,1,0,1,0,1,0,2"/>
+    <wangtile tileid="19" wangid="0,2,0,1,0,2,0,2"/>
+    <wangtile tileid="20" wangid="0,2,0,2,0,1,0,2"/>
+    <wangtile tileid="21" wangid="0,4,0,1,0,1,0,1"/>
+    <wangtile tileid="22" wangid="0,4,0,1,0,1,0,4"/>
+    <wangtile tileid="23" wangid="0,1,0,1,0,1,0,4"/>
+    <wangtile tileid="24" wangid="0,1,0,3,0,1,0,1"/>
+    <wangtile tileid="25" wangid="0,1,0,3,0,3,0,1"/>
+    <wangtile tileid="26" wangid="0,1,0,1,0,3,0,1"/>
+    <wangtile tileid="27" wangid="0,1,0,2,0,2,0,2"/>
+    <wangtile tileid="28" wangid="0,2,0,2,0,2,0,1"/>
+    <wangtile tileid="29" wangid="0,1,0,1,0,1,0,1"/>
+    <wangtile tileid="30" wangid="0,1,0,1,0,1,0,1"/>
+    <wangtile tileid="31" wangid="0,1,0,1,0,1,0,1"/>
+    <wangtile tileid="32" wangid="0,3,0,3,0,1,0,1"/>
+    <wangtile tileid="33" wangid="0,3,0,3,0,3,0,3"/>
+    <wangtile tileid="34" wangid="0,1,0,1,0,3,0,3"/>
+    <wangtile tileid="35" wangid="0,3,0,1,0,3,0,3"/>
+    <wangtile tileid="36" wangid="0,3,0,3,0,1,0,3"/>
+    <wangtile tileid="37" wangid="0,1,0,1,0,1,0,1"/>
+    <wangtile tileid="38" wangid="0,1,0,1,0,1,0,1"/>
+    <wangtile tileid="39" wangid="0,1,0,1,0,1,0,1"/>
+    <wangtile tileid="40" wangid="0,3,0,1,0,1,0,1"/>
+    <wangtile tileid="41" wangid="0,3,0,1,0,1,0,3"/>
+    <wangtile tileid="42" wangid="0,1,0,1,0,1,0,3"/>
+    <wangtile tileid="43" wangid="0,1,0,3,0,3,0,3"/>
+    <wangtile tileid="44" wangid="0,3,0,3,0,3,0,1"/>
+    <wangtile tileid="45" wangid="0,1,0,1,0,1,0,1"/>
+    <wangtile tileid="46" wangid="0,1,0,1,0,1,0,1"/>
+    <wangtile tileid="47" wangid="0,1,0,1,0,1,0,1"/>
+   </wangset>
+  </wangsets>
+ </tileset>
+ <layer id="1" name="Ground" width="40" height="40">
+  <data encoding="base64" compression="zlib">
+   eJztmNtOwzAMQAPjPmADJG4To2OwCwzo/38drqgly8oS20nWPfThSGuXJie2m2SbOuemBbkGRsA4oY8T4LQQV63fZaTdmWCOXRKKb6rfEfCQyGOCX2z8UN8HwCEwIPdeA+1jftTlmMX+CXhWMAHOgQtgqHTa5jf23Md7M+BNwbyg3wq4Z/lDv3fgE/jo0M/HjIwriafET1KLGCdfrS8K+2ldG2rmxf027r/+v3eUX2QVuY7Fi9dlyE8aK+6A92j88HPMj8c1V/yW7Bp9tPErnV/uyVm3+ZPypfTz5ZyeH3AvCjEQtkNeAn6SGqTrHs41xFDYzvec5f2g694NcBvhTtjO91zMpQp856s9PA9MhHPNSbUlxtST7xddOIbe2Zx+lrNZrM8cfj+sL+n+IxkzZ/wkfs04ddt2l36/Bf1GRj9e1yXjh/t+yloj8aPnC40fn6M2t1I/7Tj0PIBnuo0xhha/2ti/pR5LxC/kp937LGczq1+TY3pG7nKfpvP3/d6du7zreJXo6MvD2tlysu/wWGn/N9oX756eHj9/jGawrg==
+  </data>
+ </layer>
+ <objectgroup id="3" name="door">
+  <object id="12" x="18" y="524">
+   <properties>
+    <property name="nextMap" value="test"/>
+    <property name="nextX" type="int" value="4"/>
+    <property name="nextY" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="13" x="592" y="1007">
+   <properties>
+    <property name="nextMap" value="test_couloir"/>
+    <property name="nextX" type="int" value="8"/>
+    <property name="nextY" type="int" value="2"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="2" name="Colision"/>
+</map>

@@ -1,8 +1,7 @@
 {
-    "java.configuration.updateBuildConfiguration": "interactive"
-    "cSpell.words": [
-        "pokemudry",
-        "Spritesheet"
-    ],
-    "java.configuration.updateBuildConfiguration": "disabled"
+    "java.project.sourcePaths": ["src"],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar"
+    ]
 }
