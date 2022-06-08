@@ -1,25 +1,19 @@
+package Main;
+
 import Screen.ScreenPlayer;
 import ch.hevs.gdx2d.desktop.PortableApplication;
 import ch.hevs.gdx2d.lib.GdxGraphics;
 
 public class PokeMudry extends PortableApplication {
-    public final boolean ANDROID = false;
-    public final int PLAYERS = 1;
-    public static final int TIME = 10; // number of minutes for kill all enemy
-
-    public static final int HEIGHT = 800;
-    public static final int width = 800;
-
-
+    
     private ScreenPlayer screenPlayer = new ScreenPlayer();
 
-    
     public static void main(String[] args) {
         new PokeMudry();
     }
 
     PokeMudry(){
-        super(1000, 800);
+        super(Settings.SIDE, Settings.SIDE);
     }
     
 

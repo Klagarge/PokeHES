@@ -54,7 +54,7 @@ public class FightData {
     }
 
     //return the vector with one attak
-    public Attack getAttacks(int a){
+    public Attack getAttack(int a){
         return attacks.get(a);
     }
 

@@ -21,6 +21,5 @@ public class ScreenPlayer {
 
     public void render(GdxGraphics g){
         screenManager.render(g);
-        
     }
 }
