@@ -17,9 +17,10 @@ import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.math.Vector2;
 
 import Entity.Player;
+import ch.hevs.gdx2d.components.screen_management.RenderingScreen;
 import ch.hevs.gdx2d.lib.GdxGraphics;
 
-public class ScreenMap {
+public class ScreenMap extends RenderingScreen{
 
 	// tiles management
 	private Vector<TiledMapTileLayer> tiledLayer = new Vector<>();
@@ -41,7 +42,8 @@ public class ScreenMap {
 		tMapRenderer.put(name,new OrthogonalTiledMapRenderer(tm));
 	}
 
-    public void init() {
+    @Override
+    public void onInit() {
 		// Set initial zoom
 		zoom = 1;
 
@@ -51,7 +53,8 @@ public class ScreenMap {
 		createMap("desert");
 	}
 
-    public void graphicRender(GdxGraphics g, Player p) {
+    @Override
+    public void onGraphicRender(GdxGraphics g) {
 
         tiledLayer.clear();
 		for (int i = 0; i < 50; i++) {
@@ -69,7 +72,7 @@ public class ScreenMap {
 
 		// Camera follows the hero
 		g.zoom(zoom);
-		g.moveCamera(p.getPosition().x, p.getPosition().y, width * tileWidth, height * tileHeight);
+		//g.moveCamera(player.getPosition().x, player.getPosition().y, width * tileWidth, height * tileHeight);
         
 		// Render the tileMap
 		tMapRenderer.get(map).setView(g.getCamera());
@@ -77,6 +80,7 @@ public class ScreenMap {
 
 		g.drawFPS();
 	}
+
 
     public Vector<TiledMapTile> getTile(Vector2 position, int offsetX, int offsetY) {
         Vector<TiledMapTile> tiles = new Vector<>();
