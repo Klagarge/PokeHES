@@ -50,6 +50,8 @@ public class Player extends Character{
 					// Go
 					setSpeed(sm.getSpeed(nextCell));
 					go(goalDirection);
+				} else {
+					
 				}
 			} else {
 				// Face the wall
@@ -76,6 +78,12 @@ public class Player extends Character{
 	}
 
     private boolean enemy() {
+		/*
+		Vector<Entity> entities = testHER.getEntities;
+		for (Entity entity : entities) {
+			
+		}
+		*/
 		return false;
 	}
 

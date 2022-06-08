@@ -25,6 +25,10 @@ public class testHER extends PortableApplication{
 		sm = new ScreenMap();
 	}
 
+	public static Vector<Entity> getEntities() {
+		return entities;
+	}
+
 
 
     public static void main(String[] args) {

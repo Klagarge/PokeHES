@@ -32,6 +32,7 @@ public class ScreenMap {
     public int tileWidth;
     private int height;
     public int tileHeight;
+    
 
 
     private void createMap(String name){
