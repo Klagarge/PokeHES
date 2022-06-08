@@ -33,6 +33,7 @@ public class ScreenMap extends RenderingScreen{
     public int tileWidth;
     private int height;
     public int tileHeight;
+    
 
 
     private void createMap(String name){

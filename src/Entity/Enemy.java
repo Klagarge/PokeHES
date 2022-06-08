@@ -12,6 +12,8 @@ public class Enemy extends Character{
 
     public Enemy(String name, int x, int y, String img) {
         super(name, x, y, img);
+
+        turn(Character.Direction.DOWN);
         //generate the vector of fight
         fightData = new FightData(name);
         //TODO Auto-generated constructor stub
@@ -28,12 +30,6 @@ public class Enemy extends Character{
 
     @Override
     protected void removedPv(int pv) {
-        // TODO Auto-generated method stub
-        
-    }
-
-    @Override
-    public void draw(GdxGraphics arg0) {
         // TODO Auto-generated method stub
         
     }
