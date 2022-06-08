@@ -9024,28 +9024,28 @@
 </data>
  </layer>
  <objectgroup id="9" name="door">
-  <object id="8" x="115" y="74">
+  <object id="8" x="111" y="79">
    <properties>
     <property name="nextMap" value="test"/>
     <property name="nextX" type="int" value="2"/>
     <property name="nextY" type="int" value="0"/>
    </properties>
   </object>
-  <object id="9" x="140" y="75">
+  <object id="9" x="144" y="79">
    <properties>
     <property name="nextMap" value="test"/>
     <property name="nextX" type="int" value="2"/>
     <property name="nextY" type="int" value="0"/>
    </properties>
   </object>
-  <object id="10" x="501.5" y="75">
+  <object id="10" x="496.5" y="78">
    <properties>
     <property name="nextMap" value="test"/>
     <property name="nextX" type="int" value="6"/>
     <property name="nextY" type="int" value="0"/>
    </properties>
   </object>
-  <object id="11" x="522.5" y="75">
+  <object id="11" x="525.5" y="78">
    <properties>
     <property name="nextMap" value="test"/>
     <property name="nextX" type="int" value="6"/>

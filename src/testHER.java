@@ -1,34 +1,53 @@
 import com.badlogic.gdx.Input;
 
+import Control.Controller;
+import Entity.Entity;
+import Entity.Player;
 import Screen.ScreenMap;
 import ch.hevs.gdx2d.desktop.PortableApplication;
 import ch.hevs.gdx2d.lib.GdxGraphics;
 
+
 public class testHER extends PortableApplication{
 
-    private static ScreenMap sm;
+	private Controller controller;
+	private ScreenMap sm;
+	private Player p1;
+	private static Entity[] entities;
+	
+
+	public testHER(){
+		controller = new Controller();
+		p1 = new Player(8, 15);
+		sm = new ScreenMap();
+	}
+
 
 
     public static void main(String[] args) {
-        sm = new ScreenMap();
         new testHER();
     }
 
     @Override
     public void onInit() {
+		controller.init();
         sm.init();
+		p1.init();
     }
 
     @Override
     public void onGraphicRender(GdxGraphics g) {
-        sm.graphicRender(g);
+		g.clear();
+		p1.manageEntity(sm, controller);
+        sm.graphicRender(g, p1); // load p1 by Entity[]
+		p1.graphicRender(g);
     }
 
     @Override
 	public void onKeyUp(int keycode) {
 		super.onKeyUp(keycode);
 
-		sm.keyStatus.put(keycode, false);
+		controller.keyStatus.put(keycode, false);
 	}
 
     @Override
@@ -49,7 +68,7 @@ public class testHER extends PortableApplication{
 		default:
 			break;
 		}
-		sm.keyStatus.put(keycode, true);
+		controller.keyStatus.put(keycode, true);
 	}
     
 }

@@ -197,8 +197,8 @@
             "scale": 0.75,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 117.33333333333331,
-                "y": 452
+                "x": 640.6666666666667,
+                "y": 640.6666666666666
             }
         },
         "desert.tmx#Desert": {
@@ -212,8 +212,8 @@
             "scale": 1.5,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 119.33333333333331,
-                "y": 119.33333333333333
+                "x": 160.33333333333331,
+                "y": 160.33333333333331
             }
         },
         "test.tmx#test": {
@@ -227,8 +227,8 @@
             "scale": 1,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 115,
-                "y": 74
+                "x": 320.5,
+                "y": 159.5
             }
         },
         "test_couloir.tmx#Dungeon_Tileset": {
