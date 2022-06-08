@@ -14,7 +14,7 @@ public class Player extends Character{
     private int xp;
 
     public Player(int x, int y) {
-        super("Player", x, y, "lumberjack_sheet32");
+        super("Player", x, y, "Character");
     }
 
     public void addXp(int xp){
@@ -46,9 +46,11 @@ public class Player extends Character{
 
 			// Is the move valid ?
 			if (sm.isWalkable(nextCell)) {
-				// Go
-				setSpeed(sm.getSpeed(nextCell));
-				go(goalDirection);
+				if(!enemy()){
+					// Go
+					setSpeed(sm.getSpeed(nextCell));
+					go(goalDirection);
+				}
 			} else {
 				// Face the wall
 				turn(goalDirection);
@@ -73,7 +75,11 @@ public class Player extends Character{
 		}
 	}
 
-    public void move(int x, int y){
+    private boolean enemy() {
+		return false;
+	}
+
+	public void move(int x, int y){
 
     }
 

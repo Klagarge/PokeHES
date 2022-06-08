@@ -1,6 +1,9 @@
+import java.util.Vector;
+
 import com.badlogic.gdx.Input;
 
 import Control.Controller;
+import Entity.Enemy;
 import Entity.Entity;
 import Entity.Player;
 import Screen.ScreenMap;
@@ -13,12 +16,12 @@ public class testHER extends PortableApplication{
 	private Controller controller;
 	private ScreenMap sm;
 	private Player p1;
-	private static Entity[] entities;
+	private static Vector<Entity> entities = new Vector<>();
+	private static Vector<Player> players = new Vector<>();
 	
 
 	public testHER(){
 		controller = new Controller();
-		p1 = new Player(8, 15);
 		sm = new ScreenMap();
 	}
 
@@ -32,15 +35,25 @@ public class testHER extends PortableApplication{
     public void onInit() {
 		controller.init();
         sm.init();
-		p1.init();
+		p1 = new Player(8, 15);
+		entities.add((Entity) p1);
+		entities.add(new Enemy("Mudry", 10, 15, "lumberjack_sheet32"));
+		entities.add(new Enemy("Pignat", 12, 15, "lumberjack_sheet32"));
+		
+		for (Entity entity : entities) {
+			entity.init();
+		}
     }
 
     @Override
     public void onGraphicRender(GdxGraphics g) {
 		g.clear();
 		p1.manageEntity(sm, controller);
-        sm.graphicRender(g, p1); // load p1 by Entity[]
-		p1.graphicRender(g);
+        sm.graphicRender(g, p1);
+		
+		for (Entity entity : entities) {
+			entity.graphicRender(g);
+		}
     }
 
     @Override

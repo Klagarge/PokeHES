@@ -36,7 +36,6 @@ public abstract class Entity implements DrawableObject {
     }
 
     public void init(){
-
     }
 
     public void graphicRender(GdxGraphics g){

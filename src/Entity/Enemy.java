@@ -8,7 +8,7 @@ public class Enemy extends Character{
 
     public Enemy(String name, int x, int y, String img) {
         super(name, x, y, img);
-        //TODO Auto-generated constructor stub
+        turn(Character.Direction.DOWN);
     }
 
     public void setPosition(int x, int y){
@@ -21,12 +21,6 @@ public class Enemy extends Character{
 
     @Override
     protected void removedPv(int pv) {
-        // TODO Auto-generated method stub
-        
-    }
-
-    @Override
-    public void draw(GdxGraphics arg0) {
         // TODO Auto-generated method stub
         
     }
