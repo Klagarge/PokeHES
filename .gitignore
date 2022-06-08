@@ -6,3 +6,5 @@ build
 
 # Ignore bin
 app/bin/
+*.tiled-session
+resources/map/Maps.tiled-session
