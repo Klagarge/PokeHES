@@ -11,19 +11,21 @@ public class FightData {
     private  File file;
     private static final String REGEX = ",";
 
+    /* 
     public static void main(String[] args) {
-        FightData d = new FightData("app/src/main/java/test_map/data/donnee.csv");
+        FightData d = new FightData("enemi");
         d.readFile();
         for(Attack a : d.attacks){
             System.out.println(a);
         }
     }
+    */
 
-    public FightData(String pathname){
-        file = new File(pathname);
+    public FightData(String name) {
+        file = new File("resources//fight//" + name + ".csv");
     }
 
-    public void readFile(){
+    public void readFile() {
         Attack attack;
         String line = "";
         try {
@@ -46,37 +48,17 @@ public class FightData {
         
     }
 
+    //return the vector with all attaks of one enemi
     public Vector<Attack> getAllAttacks(){
         return attacks;
     }
 
-    
+    //return the vector with one attak
     public Attack getAttacks(int a){
         return attacks.get(a);
     }
 
 }
 
-class Attack{
-    String attack;
-    String answer1;
-    String answer2;
-    String answer3;
-    String answer4;
-    float xp;
-
-    Attack(String attack, String answer1,String answer2,String answer3, String answer4, float xp){
-        this.attack = attack;
-        this.answer1 = answer1;
-        this.answer2 = answer2;
-        this.answer3 = answer3;
-        this.answer4 = answer4;
-        this.xp = xp;
-    }
-
-    public String toString(){
-        return attack+ "  " + answer1+ "  " + answer2+ "  " + answer3+ "  " + answer4+ "  " + xp;
-    }
-}
     
 
