@@ -1,11 +1,8 @@
 package Entity;
 
-import Text.FightData;
-import Text.TextEnemy;
-
 import com.badlogic.gdx.math.Vector2;
 
-import ch.hevs.gdx2d.lib.GdxGraphics;
+import Text.TextEnemy;
 
 public class Enemy extends Character{
     private String map;

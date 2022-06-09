@@ -2,15 +2,13 @@ package Main;
 
 
 import java.util.Vector;
+
 import com.badlogic.gdx.Input;
+
 import Control.Controller;
 import Entity.Enemy;
 import Entity.Entity;
-import Entity.Player;
-import Screen.ScreenMap;
 import Screen.ScreenPlayer;
-import ch.hevs.gdx2d.desktop.PortableApplication;
-import ch.hevs.gdx2d.lib.GdxGraphics;import Screen.ScreenPlayer;
 import ch.hevs.gdx2d.desktop.PortableApplication;
 import ch.hevs.gdx2d.lib.GdxGraphics;
 
