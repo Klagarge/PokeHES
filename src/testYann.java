@@ -1,13 +1,10 @@
 
-import java.util.TreeMap;
 import java.util.Map;
-
-import com.badlogic.gdx.Input;
+import java.util.TreeMap;
 
 import Control.Controller;
 import Entity.Enemy;
 import Screen.ScreenBattle;
-
 import ch.hevs.gdx2d.desktop.PortableApplication;
 import ch.hevs.gdx2d.lib.GdxGraphics;
 import ch.hevs.gdx2d.lib.ScreenManager;
@@ -32,7 +29,7 @@ public class testYann extends PortableApplication{
     public void onInit() {
         
         s.registerScreen(ScreenBattle.class);
-        Enemy e = new Enemy("enemi", 50, 50, "resources//lumberjack_sheet32.png");
+        Enemy e = new Enemy("enemi", 50, 50, "resources//lumberjack_sheet32.png", "desert");
         
     }
 

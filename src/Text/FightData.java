@@ -22,7 +22,7 @@ public class FightData {
     */
 
     public FightData(String name) {
-        file = new File("resources//fight//" + name + ".csv");
+        file = new File("./resources/Battle/Fight/" + name + ".csv");
     }
 
     public void readFile() {
