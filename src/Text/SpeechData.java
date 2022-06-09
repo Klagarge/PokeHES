@@ -12,7 +12,7 @@ public class SpeechData {
     
 
     public SpeechData(String name){
-        file = new File("resources//fight//" + name + ".csv");
+        file = new File("./resources/Battle/Fight/" + name + ".csv");
     }
     
     public void readFile() {
@@ -24,16 +24,16 @@ public class SpeechData {
             line = bf.readLine(); 
             while(line != null){
                 
-                Speechs.add(line);
+                speechs.add(line);
 
                 line = bf.readLine();
             }
 
             bf.close();
 
-          } catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
-          }
+        }
         
     }
     public String getSpeechs(int i) {

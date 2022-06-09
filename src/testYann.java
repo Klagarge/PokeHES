@@ -32,7 +32,7 @@ public class testYann extends PortableApplication{
     public void onInit() {
         
         s.registerScreen(ScreenBattle.class);
-        Enemy e = new Enemy("enemi", 50, 50, "resources//lumberjack_sheet32.png");
+        Enemy e = new Enemy("enemi", 50, 50, "resources//lumberjack_sheet32.png", "desert");
         
     }
 
