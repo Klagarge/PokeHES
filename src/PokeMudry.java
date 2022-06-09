@@ -16,6 +16,9 @@ public class PokeMudry extends PortableApplication {
     public final int PLAYERS = 1;
     public static final int TIME = 10; // number of minutes for kill all enemy
 
+    public static final int HEIGHT = 800;
+    public static final int width = 800;
+
     private ScreenPlayer sp;
     private Controller controller;
 	//private Player p1;

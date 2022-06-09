@@ -1,6 +1,6 @@
 package Entity;
 
-import Text.FightData;
+import Text.TextEnemy;
 
 import com.badlogic.gdx.math.Vector2;
 
@@ -9,16 +9,18 @@ import ch.hevs.gdx2d.lib.GdxGraphics;
 public class Enemy extends Character{
     private String map;
 
-    public FightData fightData;
+    public TextEnemy textEnemy;
 
     public Enemy(String name, int x, int y, String img, String map) {
         super(name, x, y, img);
+        //generate his text
+        this.textEnemy = new TextEnemy(name);
+        textEnemy.generateText();
         this.map = map;
 
         turn(Character.Direction.DOWN);
         //generate the vector of fight
         fightData = new FightData(name);
-        //TODO Auto-generated constructor stub
 
     }
 
