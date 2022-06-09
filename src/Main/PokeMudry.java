@@ -13,17 +13,9 @@ import ch.hevs.gdx2d.desktop.PortableApplication;
 import ch.hevs.gdx2d.lib.GdxGraphics;
 
 public class PokeMudry extends PortableApplication {
-    
-    public final boolean ANDROID = false;
-    public final int PLAYERS = 1;
-    public static final int TIME = 10; // number of minutes for kill all enemy
-
-    public static final int HEIGHT = 800;
-    public static final int width = 800;
 
     private ScreenPlayer sp;
     private Controller controller;
-	//private Player p1;
     private static Vector<Enemy> enemies = new Vector<>();
 	private static Vector<Entity> entities = new Vector<>();
 
@@ -48,7 +40,7 @@ public class PokeMudry extends PortableApplication {
         controller.init();
 		entities.add((Entity) sp.p);
 		enemies.add(new Enemy("Mudry", 10, 15, "lumberjack_sheet32", "desert"));
-		enemies.add(new Enemy("Pignat", 12, 15, "lumberjack_sheet32", "desert"));
+		enemies.add(new Enemy("Pignat", 5, 1, "lumberjack_sheet32", "test"));
 
         for (Enemy enemy : enemies) {
             entities.add(enemy);

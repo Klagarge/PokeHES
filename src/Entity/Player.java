@@ -7,6 +7,7 @@ import com.badlogic.gdx.maps.tiled.TiledMapTile;
 import com.badlogic.gdx.math.Vector2;
 
 import Control.Controller;
+import Main.PokeMudry;
 import Screen.ScreenMap;
 
 public class Player extends Character{
@@ -29,25 +30,34 @@ public class Player extends Character{
 			// Compute direction and next cell
 			Vector<TiledMapTile> nextCell = new Vector<>();
 			Player.Direction goalDirection = Player.Direction.NULL;
+			Vector2 nextPos = position;
 
 			if (c.keyStatus.get(Input.Keys.RIGHT)) {
 				goalDirection = Player.Direction.RIGHT;
 				nextCell = sm.getTile(getPosition(), 1, 0);
+				nextPos.x+=sm.tileWidth;
 			} else if (c.keyStatus.get(Input.Keys.LEFT)) {
 				goalDirection = Player.Direction.LEFT;
 				nextCell = sm.getTile(getPosition(), -1, 0);
+				nextPos.x-=sm.tileWidth;
 			} else if (c.keyStatus.get(Input.Keys.UP)) {
 				goalDirection = Player.Direction.UP;
 				nextCell = sm.getTile(getPosition(), 0, 1);
+				nextPos.y+=sm.tileHeight;
 			} else if (c.keyStatus.get(Input.Keys.DOWN)) {
 				goalDirection = Player.Direction.DOWN;
 				nextCell = sm.getTile(getPosition(), 0, -1);
+				nextPos.y-=sm.tileHeight;
 			}
 
 			// Is the move valid ?
 			if (sm.isWalkable(nextCell)) {
-				setSpeed(sm.getSpeed(nextCell));
-				go(goalDirection);
+				if (enemy(sm, nextPos)) {
+					System.out.println("It's a enemy !!");
+				} else {
+					setSpeed(sm.getSpeed(nextCell));
+					go(goalDirection);
+				}
 			} else {
 				// Face the wall
 				turn(goalDirection);
@@ -72,11 +82,17 @@ public class Player extends Character{
 		}
 	}
 
-    private boolean enemy() {
-		//Vector<Enemy> enemies = PokeMudry.getEnemies;
-		//for (Enemy enemy : enemies) {
-			
-		//}
+    private boolean enemy(ScreenMap sm, Vector2 nextPos) {
+		Vector<Enemy> enemies = PokeMudry.getEnemies();
+		for (Enemy enemy : enemies) {
+			boolean bMap = sm.map.equals(enemy.getMap());
+			int pX = (int) nextPos.x/sm.tileWidth;
+			int pY = (int) nextPos.y/sm.tileHeight;
+			int eX = (int) enemy.position.x/sm.tileWidth;
+			int eY = (int) enemy.position.y/sm.tileHeight;
+			//System.out.println("Player: " + pX + " x " + pY + " - Enemy: " + eX + " x " + eY);
+			if(bMap && pX==eX && pY==eY) return true;
+		}
 		return false;
 	}
 
