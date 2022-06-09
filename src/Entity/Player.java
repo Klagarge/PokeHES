@@ -46,13 +46,8 @@ public class Player extends Character{
 
 			// Is the move valid ?
 			if (sm.isWalkable(nextCell)) {
-				if(!enemy()){
-					// Go
-					setSpeed(sm.getSpeed(nextCell));
-					go(goalDirection);
-				} else {
-					
-				}
+				setSpeed(sm.getSpeed(nextCell));
+				go(goalDirection);
 			} else {
 				// Face the wall
 				turn(goalDirection);
@@ -78,12 +73,10 @@ public class Player extends Character{
 	}
 
     private boolean enemy() {
-		/*
-		Vector<Entity> entities = testHER.getEntities;
-		for (Entity entity : entities) {
+		//Vector<Enemy> enemies = PokeMudry.getEnemies;
+		//for (Enemy enemy : enemies) {
 			
-		}
-		*/
+		//}
 		return false;
 	}
 

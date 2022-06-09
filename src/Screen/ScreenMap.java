@@ -55,7 +55,7 @@ public class ScreenMap extends RenderingScreen{
 
     @Override
     public void onGraphicRender(GdxGraphics g) {
-
+        
         tiledLayer.clear();
 		for (int i = 0; i < 50; i++) {
             try { tiledLayer.add((TiledMapTileLayer) tMap.get(map).getLayers().get(i)); } catch (Exception e) { }
@@ -65,25 +65,30 @@ public class ScreenMap extends RenderingScreen{
         tileWidth = (int) tl.getTileWidth();
         height = tl.getHeight();
         tileHeight = (int) tl.getTileHeight();
+        
         //System.out.println(width + " x " + height + " - " + tileWidth + " x " + tileHeight);
 		try {
-			doors = tMap.get(map).getLayers().get("door").getObjects();
+            doors = tMap.get(map).getLayers().get("door").getObjects();
 		} catch (Exception e) {	doors = null; }
-
-		// Camera follows the hero
-		g.zoom(zoom);
-		//g.moveCamera(player.getPosition().x, player.getPosition().y, width * tileWidth, height * tileHeight);
         
+		
 		// Render the tileMap
 		tMapRenderer.get(map).setView(g.getCamera());
 		tMapRenderer.get(map).render();
-
+        
 		g.drawFPS();
 	}
+
+    void camera(GdxGraphics g, Player player){
+        g.zoom(zoom);
+		g.moveCamera(player.getPosition().x, player.getPosition().y, width * tileWidth, height * tileHeight);
+        
+    }
 
 
     public Vector<TiledMapTile> getTile(Vector2 position, int offsetX, int offsetY) {
         Vector<TiledMapTile> tiles = new Vector<>();
+
         for (TiledMapTileLayer tl : tiledLayer) {
             int x = (int) (position.x / tileWidth) + offsetX;
             int y = (int) (position.y / tileHeight) + offsetY;
@@ -91,7 +96,7 @@ public class ScreenMap extends RenderingScreen{
 				Cell cell = tl.getCell(x, y);
 				if (cell == null) continue;
                 tiles.add(cell.getTile());
-            } catch (Exception e) { }
+            } catch (Exception e) { System.out.println("error: cell");}
         }
 
         return tiles;
@@ -160,5 +165,4 @@ public class ScreenMap extends RenderingScreen{
 			nextY = null;
 		}
 	}
-		
 }

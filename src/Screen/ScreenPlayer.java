@@ -2,25 +2,23 @@ package Screen;
 
 import Entity.Player;
 import ch.hevs.gdx2d.lib.GdxGraphics;
-import ch.hevs.gdx2d.lib.ScreenManager;
 
 public class ScreenPlayer {
-    public ScreenManager screenManager = new ScreenManager();
+    public ManagerOfScreen screenManager = new ManagerOfScreen();
+    public Player p;
+    public ScreenMap sm;
 
-    private Player player;
 
     public void init(){
-        
-        player = new Player(8, 15);
-
-
         screenManager.registerScreen(ScreenMap.class);
         screenManager.registerScreen(ScreenBattle.class);
-
+        sm = screenManager.getScreenMap();
+        p = new Player(8, 15);
     }
 
     public void render(GdxGraphics g){
         screenManager.render(g);
-        
+        sm.camera(g, p);
     }
+
 }
