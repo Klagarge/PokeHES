@@ -22,6 +22,7 @@ public class ScreenBattle extends RenderingScreen{
 	private static int WIDTH_DIALOG = Settings.SIDE - 2*EDGE;
 	
 	private boolean attackOn;
+	private int numAttack =0;
 
 
 	private BitmapFont optimus40;
@@ -60,14 +61,14 @@ public class ScreenBattle extends RenderingScreen{
 	}
 
 	public void displayEnemy(Enemy e){
-		if(e.textEnemy.attackOn){
-			attackOn = true;
-		}
-		else()
+		// stock his speech
+
+		//display the person
+
 	}
 
 	public void readNextLine(){
-
+		//display the speech
 		
 	}
 
