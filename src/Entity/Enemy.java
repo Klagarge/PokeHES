@@ -7,34 +7,38 @@ import com.badlogic.gdx.math.Vector2;
 import ch.hevs.gdx2d.lib.GdxGraphics;
 
 public class Enemy extends Character{
+    private String map;
 
     public TextEnemy textEnemy;
 
-    public Enemy(String name, int x, int y, String img) {
+    public Enemy(String name, int x, int y, String img, String map) {
         super(name, x, y, img);
         //generate his text
         this.textEnemy = new TextEnemy(name);
         textEnemy.generateText();
-        //TODO Auto-generated constructor stub
+        this.map = map;
+
+        turn(Character.Direction.DOWN);
+        //generate the vector of fight
+        fightData = new FightData(name);
 
     }
 
-    public void setPosition(int x, int y){
-
+    public String getMap() {
+        return map;
     }
 
-    public void setPosition(Vector2 vPosition){
-        setPosition((int)vPosition.x, (int)vPosition.y);
+    public void setPosition(int x, int y, String map){
+        position.set(x, y);
+        this.map = map;
+    }
+
+    public void setPosition(Vector2 vPosition, String map){
+        setPosition((int)vPosition.x, (int)vPosition.y, map);
     }
 
     @Override
     protected void removedPv(int pv) {
-        // TODO Auto-generated method stub
-        
-    }
-
-    @Override
-    public void draw(GdxGraphics arg0) {
         // TODO Auto-generated method stub
         
     }
