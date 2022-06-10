@@ -27,12 +27,13 @@ public class ScreenMap extends RenderingScreen{
 	private MapObjects doors;
 	Map<String,TiledMap> tMap = new TreeMap<String,TiledMap>();
 	Map<String,TiledMapRenderer> tMapRenderer = new TreeMap<String,TiledMapRenderer>();
-	public String map = "desert";
+	public String map = "test_couloir";
 	public float zoom;
     private int width;
     public int tileWidth;
     private int height;
     public int tileHeight;
+    private Player player;
     
 
 
@@ -47,6 +48,8 @@ public class ScreenMap extends RenderingScreen{
 		// Set initial zoom
 		zoom = 1;
 
+        try { map = player.getMap(); } catch (Exception e) {}
+
 		// create map
 		createMap("test");
 		createMap("test_couloir");
@@ -57,6 +60,9 @@ public class ScreenMap extends RenderingScreen{
     public void onGraphicRender(GdxGraphics g) {
         
         tiledLayer.clear();
+        
+        try { map = player.getMap(); } catch (Exception e) {}
+
 		for (int i = 0; i < 50; i++) {
             try { tiledLayer.add((TiledMapTileLayer) tMap.get(map).getLayers().get(i)); } catch (Exception e) { }
         }
@@ -73,17 +79,13 @@ public class ScreenMap extends RenderingScreen{
         
 		
 		// Render the tileMap
+        g.zoom(zoom);
+        g.moveCamera(player.getPosition().x, player.getPosition().y, width * tileWidth, height * tileHeight);
 		tMapRenderer.get(map).setView(g.getCamera());
 		tMapRenderer.get(map).render();
         
 		g.drawFPS();
 	}
-
-    void camera(GdxGraphics g, Player player){
-        g.zoom(zoom);
-		g.moveCamera(player.getPosition().x, player.getPosition().y, width * tileWidth, height * tileHeight);
-        
-    }
 
 
     public Vector<TiledMapTile> getTile(Vector2 position, int offsetX, int offsetY) {
@@ -165,4 +167,8 @@ public class ScreenMap extends RenderingScreen{
 			nextY = null;
 		}
 	}
+
+    public void setPlayer(Player p) {
+        player = p;
+    }
 }
