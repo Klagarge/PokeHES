@@ -104,11 +104,6 @@ public class ScreenBattle extends RenderingScreen{
 		//TODO afficher le joueur
 	}
 
-	public void displayEnemy(Enemy e){
-		//TODO display the person
-
-	}
-
 	public void readNextLine(){
 		//display the speech and change line
 		lineDialog = textEnemy.lines.get(lineSpeech).line;
