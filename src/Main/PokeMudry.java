@@ -2,10 +2,7 @@ package Main;
 
 
 import java.util.Vector;
-import java.util.Map.Entry;
-
 import com.badlogic.gdx.Input;
-
 import Control.Controller;
 import Entity.Enemy;
 import Entity.Entity;
@@ -60,6 +57,8 @@ public class PokeMudry extends PortableApplication {
             
             if (entity.getMap().equals(sp.sm.map) && sp.screenManager.getActiveScreen().getClass().equals(ScreenMap.class))
                 entity.graphicRender(g);
+
+            
 		}
         
         if (sp.p.frontOfEnemy && sp.screenManager.getActiveScreen().getClass().equals(ScreenMap.class)){

@@ -1,6 +1,5 @@
 package Entity;
 
-import java.util.TreeMap;
 import java.util.Vector;
 
 import com.badlogic.gdx.Input;
