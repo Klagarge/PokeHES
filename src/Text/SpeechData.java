@@ -12,7 +12,7 @@ public class SpeechData {
     
 
     public SpeechData(String name){
-        file = new File("./resources/Battle/Fight/" + name + ".csv");
+        file = new File("./resources/Battle/Speech/" + name + ".txt");
     }
     
     public void readFile() {

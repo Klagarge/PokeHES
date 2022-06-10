@@ -22,7 +22,7 @@ public class testYann extends PortableApplication{
     }
 
     testYann(){
-		super(800, 800);
+		super( 800, 800);
 	}
 
     @Override
@@ -36,6 +36,13 @@ public class testYann extends PortableApplication{
     @Override
     public void onGraphicRender(GdxGraphics g) {
         s.render(g);
+        ((ScreenBattle) s.getActiveScreen()).manage(controller);
+    }
+    
+    @Override
+    public void onDispose() {
+        // TODO Auto-generated method stub
+        super.onDispose();
     }
 
     @Override

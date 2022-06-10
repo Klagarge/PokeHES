@@ -1,19 +1,16 @@
 package Entity;
 
-import com.badlogic.gdx.math.Vector2;
-
-import Text.TextEnemy;
+import com.badlogic.gdx.math.Vector2; 
 
 public class Enemy extends Character{
     private String map;
 
-    public TextEnemy textEnemy;
+
 
     public Enemy(String name, int x, int y, String img, String map) {
         super(name, x, y, img);
         //generate his text
-        this.textEnemy = new TextEnemy("enemi"); //TODO should be name
-        textEnemy.generateText();
+
         this.map = map;
 
         turn(Character.Direction.DOWN);
