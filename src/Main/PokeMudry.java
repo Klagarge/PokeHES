@@ -57,7 +57,7 @@ public class PokeMudry extends PortableApplication {
 		sp.p.manageEntity(sp.sm, controller);
         sp.render(g);
 		for (Entity entity : entities) {
-			entity.graphicRender(g);
+            if (entity.getMap().equals(sp.sm.map)) entity.graphicRender(g);
 		}
     }
 
@@ -71,8 +71,6 @@ public class PokeMudry extends PortableApplication {
             case Input.Keys.Z:
                 if (sp.sm.zoom == 1.0) {
                     sp.sm.zoom = 0.5f;
-                } else if (sp.sm.zoom == 0.5) {
-                    sp.sm.zoom = 0.25f;
                 } else {
                     sp.sm.zoom = 1;
                 }

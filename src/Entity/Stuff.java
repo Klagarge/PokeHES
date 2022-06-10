@@ -4,8 +4,8 @@ import ch.hevs.gdx2d.lib.GdxGraphics;
 
 public class Stuff extends Entity{
 
-    public Stuff(String name) {
-        super(name);
+    public Stuff(String name, int x, int y, String map) {
+        super(name, x, y, map);
         //TODO Auto-generated constructor stub
     }
 

@@ -14,8 +14,8 @@ public class Player extends Character{
 
     private int xp;
 
-    public Player(int x, int y) {
-        super("Player", x, y, "Character");
+    public Player(int x, int y, String map) {
+        super("Player", x, y, "lumberjack_sheet32", map);
     }
 
     public void addXp(int xp){
@@ -52,6 +52,7 @@ public class Player extends Character{
 
 			// Is the move valid ?
 			if (sm.isWalkable(nextCell)) {
+				
 				if (enemy(sm, nextPos)) {
 					System.out.println("It's a enemy !!");
 				} else {
@@ -75,7 +76,7 @@ public class Player extends Character{
 				} catch (Exception e) { }
 				ScreenMap.Door.reset();
 				if (nMap == null || x == null || y == null) return;
-				sm.map = nMap;
+				map = nMap;
 				setPosition(x*sm.tileWidth, y*sm.tileHeight);
 				System.out.println("Go to: " + sm.map + " in " + x + " x " + y);
 			}

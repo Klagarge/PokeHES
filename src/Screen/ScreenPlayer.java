@@ -8,17 +8,16 @@ public class ScreenPlayer {
     public Player p;
     public ScreenMap sm;
 
-
     public void init(){
+        p = new Player(8, 15, "desert");
         screenManager.registerScreen(ScreenMap.class);
         screenManager.registerScreen(ScreenBattle.class);
         sm = screenManager.getScreenMap();
-        p = new Player(8, 15);
     }
 
     public void render(GdxGraphics g){
+        sm.setPlayer(p);
         screenManager.render(g);
-        sm.camera(g, p);
     }
 
 }
