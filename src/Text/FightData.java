@@ -11,16 +11,6 @@ public class FightData {
     private  File file;
     private static final String REGEX = ",";
 
-    /* 
-    public static void main(String[] args) {
-        FightData d = new FightData("enemi");
-        d.readFile();
-        for(Attack a : d.attacks){
-            System.out.println(a);
-        }
-    }
-    */
-
     public FightData(String name) {
         file = new File("./resources/Battle/Fight/" + name + ".csv");
     }
@@ -42,9 +32,12 @@ public class FightData {
 
             bf.close();
 
-          } catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
-          }
+        }
+
+     
+
         
     }
 
