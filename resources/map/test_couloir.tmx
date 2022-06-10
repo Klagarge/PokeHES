@@ -8984,8 +8984,8 @@
  <layer id="2" name="floor" width="20" height="10">
   <data encoding="csv">
 956,956,956,956,956,956,956,956,956,956,956,956,956,956,956,956,956,956,956,956,
-956,956,956,956,956,956,956,956,956,956,956,956,956,956,956,956,956,956,956,956,
-1079,1079,1079,1079,1079,1079,1079,1079,1079,1079,1079,1079,1079,1079,1079,1079,1079,1079,1079,1079,
+956,956,956,1113,1113,956,956,956,956,956,956,956,956,956,956,1113,1113,956,956,956,
+1079,1079,1079,1113,1113,1079,1079,1079,1079,1079,1079,1079,1079,1079,1079,1113,1113,1079,1079,1079,
 1113,1113,1113,1113,1113,1113,1113,1113,1113,1113,1113,1113,1113,1113,1113,1113,1113,1113,1113,1113,
 1113,1113,1113,1113,1113,1113,1113,1113,1113,1113,1113,1113,1113,1113,1113,1113,1113,1113,1113,1113,
 1113,1113,1113,1113,1113,1113,1113,1113,1113,1113,1113,1113,1113,1113,1113,1113,1113,1113,1113,1113,
@@ -9024,28 +9024,28 @@
 </data>
  </layer>
  <objectgroup id="9" name="door">
-  <object id="8" x="111" y="79">
+  <object id="8" x="112" y="49.3333">
    <properties>
     <property name="nextMap" value="test"/>
     <property name="nextX" type="int" value="2"/>
     <property name="nextY" type="int" value="0"/>
    </properties>
   </object>
-  <object id="9" x="144" y="79">
+  <object id="9" x="144.667" y="49">
    <properties>
     <property name="nextMap" value="test"/>
     <property name="nextX" type="int" value="2"/>
     <property name="nextY" type="int" value="0"/>
    </properties>
   </object>
-  <object id="10" x="496.5" y="78">
+  <object id="10" x="497.167" y="48">
    <properties>
     <property name="nextMap" value="test"/>
     <property name="nextX" type="int" value="6"/>
     <property name="nextY" type="int" value="0"/>
    </properties>
   </object>
-  <object id="11" x="525.5" y="78">
+  <object id="11" x="526.167" y="48">
    <properties>
     <property name="nextMap" value="test"/>
     <property name="nextX" type="int" value="6"/>

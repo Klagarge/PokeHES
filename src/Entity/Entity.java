@@ -8,6 +8,7 @@ import ch.hevs.gdx2d.lib.interfaces.DrawableObject;
 
 public abstract class Entity implements DrawableObject {
     protected String name;
+    protected String map;
 
     Spritesheet ss;
     
@@ -20,19 +21,17 @@ public abstract class Entity implements DrawableObject {
 
     protected boolean move = false;
 
-    public Entity(String name){
-        this(name, new Vector2(0,0));
+
+    public Entity(String name, int x, int y, String map){
+        this(name, new Vector2(SPRITE_WIDTH * x, SPRITE_HEIGHT * y), map);
     }
 
-    public Entity(String name, int x, int y){
-        this(name, new Vector2(SPRITE_WIDTH * x, SPRITE_HEIGHT * y));
-    }
-
-    public Entity(String name, Vector2 initialPosition){
+    public Entity(String name, Vector2 initialPosition, String map){
         this.name = name;
         lastPosition = new Vector2(initialPosition);
         newPosition = new Vector2(initialPosition);
         position = new Vector2(initialPosition);
+        this.map = map;
     }
 
     public void init(){
@@ -57,5 +56,9 @@ public abstract class Entity implements DrawableObject {
 
     public String getName() {
         return name;
+    }
+
+    public String getMap() {
+        return map;
     }
 }

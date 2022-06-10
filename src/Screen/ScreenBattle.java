@@ -25,6 +25,11 @@ public class ScreenBattle extends RenderingScreen{
 	private static int EDGE = 10;
 	private static int HEIGHT_DIALOG = Settings.SIDE / 3;
 	private static int WIDTH_DIALOG = Settings.SIDE - 2*EDGE;
+	private Enemy e;
+	
+	private boolean attackOn;
+	private int numAttack =0;
+
 
 	private BitmapFont optimus40;
 
@@ -87,6 +92,13 @@ public class ScreenBattle extends RenderingScreen{
 		g.drawString(15, 245 ,lineDialog , optimus40);
 
 	}
+	public void setEnemy(Enemy e) {
+		this.e = e;
+	}
+
+	public void displayEnemy(Enemy e){
+		// stock his speech
+  }
 
 	public void displayPlayer(Player p){
 		//TODO afficher le joueur

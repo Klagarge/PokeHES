@@ -32,10 +32,9 @@ public abstract class Character extends Entity{
 
     protected int pv;
 
-    public Character(String name, int x, int y, String img){
-        super(name, x, y);
+    public Character(String name, int x, int y, String img, String map){
+        super(name, x, y, map);
         this.img = img;
-        
     }
 
     @Override

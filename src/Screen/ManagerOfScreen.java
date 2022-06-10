@@ -4,15 +4,14 @@ import ch.hevs.gdx2d.lib.ScreenManager;
 
 public class ManagerOfScreen extends ScreenManager{
     ManagerOfScreen(){
-        
     }
 
-    ScreenMap getScreenMap(){
+    public ScreenMap getScreenMap(){
         this.activateScreen(0);
         return (ScreenMap)this.getActiveScreen();
     }
 
-    ScreenBattle getScreenBattle(){
+    public ScreenBattle getScreenBattle(){
         this.activateScreen(1);
         return (ScreenBattle)this.getActiveScreen();
     }

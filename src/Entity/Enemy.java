@@ -3,12 +3,11 @@ package Entity;
 import com.badlogic.gdx.math.Vector2; 
 
 public class Enemy extends Character{
-    private String map;
 
 
 
     public Enemy(String name, int x, int y, String img, String map) {
-        super(name, x, y, img);
+        super(name, x, y, img, map);
         //generate his text
 
         this.map = map;
@@ -17,10 +16,6 @@ public class Enemy extends Character{
         //generate the vector of fight
         //FightData fightData = new FightData(name);
 
-    }
-
-    public String getMap() {
-        return map;
     }
 
     public void setPosition(int x, int y, String map){

@@ -10,7 +10,8 @@
     "file.lastUsedOpenFilter": "Fichiers de jeu de tuiles Tiled (*.tsx *.xml)",
     "fileStates": {
         "": {
-            "scaleInDock": 1
+            "scaleInDock": 1,
+            "scaleInEditor": 1
         },
         "C:/Users/remi/AppData/Roaming/Tiled/#Tests": {
             "dynamicWrapping": true
@@ -197,8 +198,8 @@
             "scale": 0.75,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 640.6666666666667,
-                "y": 640.6666666666666
+                "x": 640,
+                "y": 640
             }
         },
         "desert.tmx#Desert": {
@@ -212,7 +213,7 @@
             "scale": 1.5,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 160.33333333333331,
+                "x": 160.66666666666669,
                 "y": 160.33333333333331
             }
         },
@@ -224,11 +225,11 @@
             "expandedObjectLayers": [
                 9
             ],
-            "scale": 1,
+            "scale": 3,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 320.5,
-                "y": 159.5
+                "x": 62.66666666666667,
+                "y": 172.83333333333331
             }
         },
         "test_couloir.tmx#Dungeon_Tileset": {
