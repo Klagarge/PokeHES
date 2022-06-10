@@ -66,6 +66,7 @@ public class PokeMudry extends PortableApplication {
             sp.e = sp.p.lastEnemy;
             System.out.println("switch screen");
             sp.screenManager.activateNextScreen();
+            g.resetCamera();
         }
     }
 
