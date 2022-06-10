@@ -1,5 +1,6 @@
 package Entity;
 
+import java.util.TreeMap;
 import java.util.Vector;
 
 import com.badlogic.gdx.Input;
@@ -13,9 +14,11 @@ import Screen.ScreenMap;
 public class Player extends Character{
 
     private int xp;
+	public Enemy lastEnemy = null;
+	public boolean frontOfEnemy = false;
 
     public Player(int x, int y, String map) {
-        super("Player", x, y, "lumberjack_sheet32", map);
+        super("Player", x, y, "Character", map);
     }
 
     public void addXp(int xp){
@@ -54,6 +57,7 @@ public class Player extends Character{
 			if (sm.isWalkable(nextCell)) {
 				
 				if (enemy(sm, nextPos)) {
+					//turn(goalDirection);
 					System.out.println("It's a enemy !!");
 				} else {
 					setSpeed(sm.getSpeed(nextCell));
@@ -92,18 +96,14 @@ public class Player extends Character{
 			int eX = (int) enemy.position.x/sm.tileWidth;
 			int eY = (int) enemy.position.y/sm.tileHeight;
 			//System.out.println("Player: " + pX + " x " + pY + " - Enemy: " + eX + " x " + eY);
-			if(bMap && pX==eX && pY==eY) return true;
+			if(bMap && pX==eX && pY==eY) {
+				lastEnemy = enemy;
+				frontOfEnemy = true;
+				return true;
+			}
 		}
 		return false;
 	}
-
-	public void move(int x, int y){
-
-    }
-
-    public void move(Vector2 vMove){
-        move((int)vMove.x, (int)vMove.y);
-    }
 
     @Override
     protected void removedPv(int pv) {
