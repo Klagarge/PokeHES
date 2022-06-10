@@ -2,12 +2,14 @@ package Main;
 
 
 import java.util.Vector;
+import java.util.Map.Entry;
 
 import com.badlogic.gdx.Input;
 
 import Control.Controller;
 import Entity.Enemy;
 import Entity.Entity;
+import Screen.ScreenMap;
 import Screen.ScreenPlayer;
 import ch.hevs.gdx2d.desktop.PortableApplication;
 import ch.hevs.gdx2d.lib.GdxGraphics;
@@ -42,13 +44,9 @@ public class PokeMudry extends PortableApplication {
 		enemies.add(new Enemy("Mudry", 10, 15, "lumberjack_sheet32", "desert"));
 		enemies.add(new Enemy("Pignat", 5, 1, "lumberjack_sheet32", "test"));
 
-        for (Enemy enemy : enemies) {
-            entities.add(enemy);
-        }
+        for (Enemy enemy : enemies) { entities.add(enemy); }
 
-		for (Entity entity : entities) {
-			entity.init();
-		}
+		for (Entity entity : entities) { entity.init(); }
     }
 
     @Override
@@ -56,9 +54,20 @@ public class PokeMudry extends PortableApplication {
         g.clear();
 		sp.p.manageEntity(sp.sm, controller);
         sp.render(g);
+        System.out.println(sp.screenManager.getActiveScreen().getClass());
+        //System.out.println(ScreenMap.class);
 		for (Entity entity : entities) {
-            if (entity.getMap().equals(sp.sm.map)) entity.graphicRender(g);
+            
+            if (entity.getMap().equals(sp.sm.map) && sp.screenManager.getActiveScreen().getClass().equals(ScreenMap.class))
+                entity.graphicRender(g);
 		}
+        
+        if (sp.p.frontOfEnemy && sp.screenManager.getActiveScreen().getClass().equals(ScreenMap.class)){
+            sp.e = sp.p.lastEnemy;
+            System.out.println("switch screen");
+            sp.screenManager.activateNextScreen();
+            g.resetCamera();
+        }
     }
 
 

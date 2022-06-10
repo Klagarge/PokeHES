@@ -79,8 +79,13 @@ public class ScreenMap extends RenderingScreen{
         
 		
 		// Render the tileMap
-        g.zoom(zoom);
-        g.moveCamera(player.getPosition().x, player.getPosition().y, width * tileWidth, height * tileHeight);
+        try {
+            g.zoom(zoom);
+            g.moveCamera(player.getPosition().x, player.getPosition().y, width * tileWidth, height * tileHeight);   
+        } catch (Exception e) {
+            //TODO: handle exception
+        }
+
 		tMapRenderer.get(map).setView(g.getCamera());
 		tMapRenderer.get(map).render();
         
