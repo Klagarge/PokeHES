@@ -36,7 +36,7 @@ public class testYann extends PortableApplication{
     @Override
     public void onGraphicRender(GdxGraphics g) {
         s.render(g);
-        ((ScreenBattle) s.getActiveScreen()).manage(controller);
+
     }
     
     @Override
