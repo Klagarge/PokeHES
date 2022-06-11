@@ -25,10 +25,6 @@ public class ScreenBattle extends RenderingScreen{
 	private static int EDGE = 10;
 	private static int HEIGHT_DIALOG = Settings.SIDE / 3;
 	private static int WIDTH_DIALOG = Settings.SIDE - 2*EDGE;
-	private Enemy e;
-	
-	private boolean attackOn;
-	private int numAttack =0;
 
 
 	private BitmapFont optimus40;
@@ -62,6 +58,8 @@ public class ScreenBattle extends RenderingScreen{
 
 		displayDialog(g);
 
+		System.out.println(textEnemy.lines.get(lineSpeech).attackOn);
+
 		
 	}
 
@@ -92,16 +90,13 @@ public class ScreenBattle extends RenderingScreen{
 		g.drawString(15, 245 ,lineDialog , optimus40);
 
 	}
-	public void setEnemy(Enemy e) {
-		this.e = e;
-	}
 
 	public void displayEnemy(Enemy e){
-		// stock his speech
+		// TODO affficher l'enemi
   }
 
 	public void displayPlayer(Player p){
-		//TODO afficher le joueur
+		//TODO afficher le joueur                 
 	}
 
 	public void readNextLine(){
@@ -113,6 +108,7 @@ public class ScreenBattle extends RenderingScreen{
 
 	public void manage(Controller c){
 		if (c.keyStatus.get(Input.Keys.SPACE)){
+			
 			if(textEnemy.lines.get(lineSpeech).attackOn == false){
 				readNextLine();
 			}
@@ -136,7 +132,7 @@ public class ScreenBattle extends RenderingScreen{
 			}
 		}
 		if (c.keyStatus.get(Input.Keys.NUM_4)){
-			if(textEnemy.lines.get(lineSpeech).attackOn == false){
+			if(textEnemy.lines.get(lineSpeech).attackOn == true){
 				readNextLine();
 				answer = 4;
 			}

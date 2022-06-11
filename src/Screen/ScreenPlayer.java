@@ -20,7 +20,7 @@ public class ScreenPlayer {
     }
 
     public void render(GdxGraphics g){
-        sb.setEnemy(e);
+        sb.displayEnemy(e);
         sm.setPlayer(p);
         screenManager.render(g);
     }

@@ -53,8 +53,8 @@ public class PokeMudry extends PortableApplication {
     public void onGraphicRender(GdxGraphics g) {
         g.clear();
 		sp.p.manageEntity(sp.sm, controller);
+        sp.sb.manage(controller);
         sp.render(g);
-        System.out.println(sp.screenManager.getActiveScreen().getClass());
         //System.out.println(ScreenMap.class);
 		for (Entity entity : entities) {
             
@@ -64,7 +64,6 @@ public class PokeMudry extends PortableApplication {
         
         if (sp.p.frontOfEnemy && sp.screenManager.getActiveScreen().getClass().equals(ScreenMap.class)){
             sp.e = sp.p.lastEnemy;
-            System.out.println("switch screen");
             sp.screenManager.activateNextScreen();
             g.resetCamera();
         }
