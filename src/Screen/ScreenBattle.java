@@ -44,6 +44,9 @@ public class ScreenBattle extends RenderingScreen{
 		textEnemy = new TextEnemy("enemi");
 		textEnemy.generateText();
 
+	
+		
+
         //display the question
 		generateFont("resources/font/OptimusPrinceps.ttf", 40, Color.BLACK);
 		
@@ -58,9 +61,6 @@ public class ScreenBattle extends RenderingScreen{
 
 		displayDialog(g);
 
-		System.out.println(textEnemy.lines.get(lineSpeech).attackOn);
-
-		
 	}
 
 	@Override
@@ -108,10 +108,10 @@ public class ScreenBattle extends RenderingScreen{
 
 	public void manage(Controller c){
 		if (c.keyStatus.get(Input.Keys.SPACE)){
-			
 			if(textEnemy.lines.get(lineSpeech).attackOn == false){
 				readNextLine();
 			}
+			
 		}
 		if (c.keyStatus.get(Input.Keys.NUM_1)){
 			if(textEnemy.lines.get(lineSpeech).attackOn == true){
