@@ -21,6 +21,8 @@ public class PokeMudry extends PortableApplication {
     private static Vector<Enemy> enemies = new Vector<>();
 	private static Vector<Entity> entities = new Vector<>();
 
+    public static boolean front_montant = false;
+
 
     public static void main(String[] args) {
         new PokeMudry();
@@ -74,7 +76,7 @@ public class PokeMudry extends PortableApplication {
     @Override
     public void onKeyDown(int keycode) {
         super.onKeyDown(keycode);
-        
+        front_montant = true;
         switch (keycode) {
             case Input.Keys.Z:
                 if (sp.sm.zoom == 1.0) {
@@ -93,6 +95,7 @@ public class PokeMudry extends PortableApplication {
     @Override
     public void onKeyUp(int keycode) {
         super.onKeyUp(keycode);
+        front_montant = false;
         controller.keyStatus.put(keycode, false);
         sp.screenManager.getActiveScreen().onKeyDown(keycode);
     }

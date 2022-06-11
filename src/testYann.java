@@ -5,13 +5,14 @@ import java.util.TreeMap;
 import Control.Controller;
 import Entity.Enemy;
 import Screen.ScreenBattle;
+import Screen.ScreenPlayer;
 import ch.hevs.gdx2d.desktop.PortableApplication;
 import ch.hevs.gdx2d.lib.GdxGraphics;
 import ch.hevs.gdx2d.lib.ScreenManager;
 
 public class testYann extends PortableApplication{
 
-    private ScreenManager s = new ScreenManager();
+    ScreenPlayer sp = new ScreenPlayer();
     public Map<Integer, Boolean> keyStatus = new TreeMap<Integer, Boolean>();
     double zoom;
     Controller controller = new Controller();
@@ -28,15 +29,16 @@ public class testYann extends PortableApplication{
     @Override
     public void onInit() {
         
-        s.registerScreen(ScreenBattle.class);
+        
         Enemy e = new Enemy("enemi", 50, 50, "resources//lumberjack_sheet32.png", "desert");
         
     }
 
     @Override
     public void onGraphicRender(GdxGraphics g) {
-        s.render(g);
-
+        
+        sp.render(g);
+        sp.sb.manage(controller);
     }
     
     @Override
