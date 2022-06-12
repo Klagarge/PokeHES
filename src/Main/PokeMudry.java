@@ -2,6 +2,10 @@ package Main;
 
 
 import java.util.Vector;
+import java.util.Map.Entry;
+
+import org.lwjgl.opencl.CLSampler;
+
 import com.badlogic.gdx.Input;
 import Control.Controller;
 import Entity.Enemy;
@@ -17,6 +21,8 @@ public class PokeMudry extends PortableApplication {
     private Controller controller;
     private static Vector<Enemy> enemies = new Vector<>();
 	private static Vector<Entity> entities = new Vector<>();
+
+    public static boolean front_montant = false;
 
 
     public static void main(String[] args) {
@@ -51,6 +57,10 @@ public class PokeMudry extends PortableApplication {
     @Override
     public void onGraphicRender(GdxGraphics g) {
         g.clear();
+		sp.p.manageEntity(sp.sm, controller);
+        sp.sb.manage(controller);
+        sp.render(g);
+        //System.out.println(ScreenMap.class);
 
         boolean onMapScreen = sp.screenManager.getActiveScreen().getClass().equals(ScreenMap.class);
 		
@@ -66,7 +76,6 @@ public class PokeMudry extends PortableApplication {
         // Switch screen
         if (sp.p.frontOfEnemy && onMapScreen){
             sp.e = sp.p.lastEnemy;
-            System.out.println("switch screen");
             sp.screenManager.activateNextScreen();
             g.resetCamera();
         }
@@ -77,7 +86,7 @@ public class PokeMudry extends PortableApplication {
     @Override
     public void onKeyDown(int keycode) {
         super.onKeyDown(keycode);
-        
+        front_montant = true;
         switch (keycode) {
             case Input.Keys.Z:
                 if (sp.sm.zoom == 1.0) {
@@ -86,7 +95,6 @@ public class PokeMudry extends PortableApplication {
                     sp.sm.zoom = 1;
                 }
                 return;
-    
             default:
                 break;
         }
@@ -96,6 +104,7 @@ public class PokeMudry extends PortableApplication {
     @Override
     public void onKeyUp(int keycode) {
         super.onKeyUp(keycode);
+        front_montant = false;
         controller.keyStatus.put(keycode, false);
         sp.screenManager.getActiveScreen().onKeyDown(keycode);
     }
