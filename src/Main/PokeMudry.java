@@ -4,6 +4,8 @@ package Main;
 import java.util.Vector;
 import java.util.Map.Entry;
 
+import org.lwjgl.opencl.CLSampler;
+
 import com.badlogic.gdx.Input;
 
 import Control.Controller;
@@ -85,7 +87,6 @@ public class PokeMudry extends PortableApplication {
                     sp.sm.zoom = 1;
                 }
                 return;
-    
             default:
                 break;
         }

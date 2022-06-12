@@ -32,33 +32,17 @@ public class ScreenBattle extends RenderingScreen{
 
 	private Battle battle;
 
-	private TextEnemy textEnemy;
-	private static int lineSpeech = 0;
-	private static String lineDialog = "";
-	int i = 0;
-	
-	private int answer = 0;
-
-
+	private Enemy enemy;
 
 
     @Override
 	public void onInit() {
-
-		textEnemy = new TextEnemy("enemi");
-		textEnemy.generateText();
-
 		//new battle game
-		battle = new Battle();
-
-	
+		battle = new Battle(enemy);
+		
         //display the question
 		generateFont("resources/font/OptimusPrinceps.ttf", 40, Color.BLACK);
-		
 
-		//initialize the first line
-		readNextLine();
-		System.out.println(1);
 	}
 
 
@@ -68,9 +52,7 @@ public class ScreenBattle extends RenderingScreen{
 
 		displayDialog(g);
 
-		
-		
-
+		System.out.println(battle.lineSpeech);
 	}
 
 	@Override
@@ -95,8 +77,14 @@ public class ScreenBattle extends RenderingScreen{
 		g.drawFilledRectangle(Settings.SIDE/2, HEIGHT_DIALOG/2 + EDGE, WIDTH_DIALOG, HEIGHT_DIALOG, 0);
 
 		//dialog
-		g.drawString(15, 245 ,lineDialog , optimus40);
+		g.drawString(15, 245 ,battle.getLine() , optimus40);
 
+
+
+	}
+
+	public void setEnemy(Enemy enemy){
+		this.enemy = enemy;
 	}
 
 	public void displayEnemy(Enemy e){
@@ -107,42 +95,37 @@ public class ScreenBattle extends RenderingScreen{
 		//TODO afficher le joueur                 
 	}
 
-	public void readNextLine(){
-		//display the speech and change line
-		lineDialog = textEnemy.lines.get(lineSpeech).line;
-		lineSpeech++;
-
-	}
-
-
 	public void manage(Controller c){
 		if(PokeMudry.front_montant){
-			if (c.keyStatus.get(Input.Keys.SPACE)){
-				if(textEnemy.lines.get(lineSpeech).attackOn == false){
-					readNextLine();
-			}
-			else if (c.keyStatus.get(Input.Keys.NUM_1)){
-				if(textEnemy.lines.get(lineSpeech).attackOn == true){
-					readNextLine();
-					answer = 1;
+ 	     		System.out.println(battle.lineSpeech);
+
+
+			if( battle.getAttackOn() == false){
+				if (c.keyStatus.get(Input.Keys.SPACE)){
+					System.out.println("in");
+					battle.readNextLine();
 				}
 			}
-			else if (c.keyStatus.get(Input.Keys.NUM_2)){
-				if(textEnemy.lines.get(lineSpeech).attackOn == true){
-					readNextLine();
-					answer = 2;
+
+
+			if(battle.getAttackOn() == true){
+				if (c.keyStatus.get(Input.Keys.NUM_1)){
+					System.out.println("je sui dansakjshfljkahflkasjhfdlkajshflkajshfdlkasjdhfalsdkjfh123412341234");
+					battle.readNextLine();
+					battle.answer = 1;
 				}
-			}
-			else if (c.keyStatus.get(Input.Keys.NUM_3)){
-				if(textEnemy.lines.get(lineSpeech).attackOn == true){
-					readNextLine();
-					answer = 3;
+				else if (c.keyStatus.get(Input.Keys.NUM_2)){
+					battle.readNextLine();
+					battle.answer = 2;
 				}
-			}
-			else if (c.keyStatus.get(Input.Keys.NUM_4)){
-				if(textEnemy.lines.get(lineSpeech).attackOn == true){
-					readNextLine();
-					answer = 4;
+				else if (c.keyStatus.get(Input.Keys.NUM_3)){
+					battle.readNextLine();
+					battle.answer = 3;
+				}
+				else if (c.keyStatus.get(Input.Keys.NUM_4)){
+					battle.readNextLine();
+					battle.answer = 4;
+					
 				}
 			}
 
@@ -151,7 +134,7 @@ public class ScreenBattle extends RenderingScreen{
 		}
 
 
-	}
+	
 
 	}
 }
