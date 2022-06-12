@@ -52,7 +52,7 @@ public class ScreenBattle extends RenderingScreen{
 
 		displayDialog(g);
 
-		System.out.println(battle.lineSpeech);
+		System.out.println("render: " + battle.getLineSpeech());
 	}
 
 	@Override
@@ -97,7 +97,7 @@ public class ScreenBattle extends RenderingScreen{
 
 	public void manage(Controller c){
 		if(PokeMudry.front_montant){
- 	     		System.out.println(battle.lineSpeech);
+ 	     	System.out.println("manage: " + battle.getLineSpeech());
 
 
 			if( battle.getAttackOn() == false){

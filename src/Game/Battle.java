@@ -8,15 +8,18 @@ public class Battle {
     private Enemy enemy;
 
     TextEnemy textEnemy;
-    public int lineSpeech = 0;
+    private int lineSpeech;
 	
-	public int answer = 0;
-    private boolean c;
+	public int answer;
+   
 
     public Battle(Enemy enemy){
         this.enemy = enemy;
         textEnemy = new TextEnemy("enemi"); // should be enemy.name
 		textEnemy.generateText();
+
+        lineSpeech = 0;
+        answer = 0;
 
         //initialize the first line
         System.out.println("lll : "+ getLine());
@@ -26,6 +29,7 @@ public class Battle {
     public void readNextLine(){
     //change line
 		lineSpeech++;
+
 	}
 
     public boolean getAttackOn(){
@@ -34,6 +38,10 @@ public class Battle {
 
     public String getLine(){
         return textEnemy.lines.get(lineSpeech).line;
+    }
+
+    public int getLineSpeech() {
+        return lineSpeech;
     }
      
     

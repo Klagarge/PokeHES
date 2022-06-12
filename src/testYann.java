@@ -1,67 +1,54 @@
 
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.Random;
 
-import Control.Controller;
-import Entity.Enemy;
-import Screen.ScreenBattle;
-import Screen.ScreenPlayer;
-import ch.hevs.gdx2d.desktop.PortableApplication;
-import ch.hevs.gdx2d.lib.GdxGraphics;
-import ch.hevs.gdx2d.lib.ScreenManager;
 
-public class testYann extends PortableApplication{
 
-    ScreenPlayer sp = new ScreenPlayer();
-    public Map<Integer, Boolean> keyStatus = new TreeMap<Integer, Boolean>();
-    double zoom;
-    Controller controller = new Controller();
-    
+
+class testYann{
     public static void main(String[] args) {
-        new testYann();
+        int max = 8-1;
+        Random r = new Random();
+
+        int nbre = 4;
+
+        int[] a = new int[nbre];
+        int x;
+        int i=0;
+        boolean same = false;
+
+        for(int j=0; j<nbre ; j++){
+            a[j] = -1;
+        }
+
+        while(i< nbre){
+            x = r.nextInt(max);
+            System.out.println(x);
+            for(int j : a){
+                if(x==j){
+                    same = true;
+                    break;
+                }
+            }
+            if(same){
+                same = false;
+            }
+            else{
+                a[i] = x;
+                i++;
+            }
+        }
+        System.out.println("\n");
+
+
+        for(int j : a){
+            System.out.println(j);
+        }
+        
+
+        
+        
         
     }
 
-    testYann(){
-		super( 800, 800);
-	}
 
-    @Override
-    public void onInit() {
-        
-        
-        Enemy e = new Enemy("enemi", 50, 50, "resources//lumberjack_sheet32.png", "desert");
-        
-    }
-
-    @Override
-    public void onGraphicRender(GdxGraphics g) {
-        
-        sp.render(g);
-        sp.sb.manage(controller);
-    }
-    
-    @Override
-    public void onDispose() {
-        // TODO Auto-generated method stub
-        super.onDispose();
-    }
-
-    @Override
-	public void onKeyUp(int keycode) {
-		super.onKeyUp(keycode);
-
-		controller.keyStatus.put(keycode, false);
-	}
-
-    @Override
-	public void onKeyDown(int keycode) {
-		super.onKeyDown(keycode);
-
-		switch (keycode) {
-		default:
-			break;
-		}
-		controller.keyStatus.put(keycode, true);
-	}
 }

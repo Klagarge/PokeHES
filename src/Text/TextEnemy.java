@@ -35,25 +35,41 @@ public class TextEnemy {
 
     }
 
-     int[] randomGenerate(int max_val){
-        int min_val = 0;
+    int[] randomGenerate(int max_val){
+        int max = 8-1;
+        Random r = new Random();
+
+        int nbre = 4;
+
+        int[] t = new int[nbre];
         int x;
-        int[] t = new int[max_val-1];
-        Random ran = new Random();
-
         int i=0;
+        boolean same = false;
 
+        // initialize array at -1
+        for(int j=0; j<nbre ; j++){
+            t[j] = -1;
+        }
+
+        //assign 4 different random value between 0 and max
+        while(i< nbre){
+            x = r.nextInt(max);
             
-        while(i<t.length){
-            System.out.println(i);
-            t[i] = ran.nextInt(max_val) + min_val;
+            //test if the value is valid
             for(int j : t){
-                if(t[i] == j){
-                    t[i] = ran.nextInt(max_val) + min_val;
+                if(x==j){
+                    same = true;
+                    break;
                 }
-                else{
-                    i++;
-                }
+            }
+
+            //do again the loop
+            if(same){
+                same = false;
+            }
+            else{
+                t[i] = x;
+                i++;
             }
         }
         
