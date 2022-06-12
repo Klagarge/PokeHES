@@ -4,7 +4,8 @@
     ],
     "extensionsPath": ".",
     "folders": [
-        "."
+        ".",
+        "png"
     ],
     "objectTypesFile": "",
     "propertyTypes": [

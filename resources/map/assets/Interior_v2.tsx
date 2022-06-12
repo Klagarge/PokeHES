@@ -111,19 +111,19 @@
  </tile>
  <tile id="18">
   <properties>
-   <property name="speed" type="float" value="1"/>
+   <property name="speed" type="float" value="1.5"/>
    <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="19">
   <properties>
-   <property name="speed" type="float" value="1"/>
+   <property name="speed" type="float" value="1.5"/>
    <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="20">
   <properties>
-   <property name="speed" type="float" value="1"/>
+   <property name="speed" type="float" value="1.5"/>
    <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
@@ -147,19 +147,19 @@
  </tile>
  <tile id="24">
   <properties>
-   <property name="speed" type="float" value="1"/>
+   <property name="speed" type="float" value="1.5"/>
    <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="25">
   <properties>
-   <property name="speed" type="float" value="1"/>
+   <property name="speed" type="float" value="1.5"/>
    <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="26">
   <properties>
-   <property name="speed" type="float" value="1"/>
+   <property name="speed" type="float" value="1.5"/>
    <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
@@ -183,19 +183,19 @@
  </tile>
  <tile id="30">
   <properties>
-   <property name="speed" type="float" value="1"/>
+   <property name="speed" type="float" value="1.5"/>
    <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="31">
   <properties>
-   <property name="speed" type="float" value="1"/>
+   <property name="speed" type="float" value="1.5"/>
    <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="32">
   <properties>
-   <property name="speed" type="float" value="1"/>
+   <property name="speed" type="float" value="1.5"/>
    <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
