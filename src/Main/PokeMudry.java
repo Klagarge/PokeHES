@@ -2,11 +2,8 @@ package Main;
 
 
 import java.util.Vector;
-import java.util.Map.Entry;
-
-import org.lwjgl.opencl.CLSampler;
-
 import com.badlogic.gdx.Input;
+
 import Control.Controller;
 import Entity.Enemy;
 import Entity.Entity;
@@ -67,7 +64,6 @@ public class PokeMudry extends PortableApplication {
         // Switch screen
         if (sp.p.frontOfEnemy && onMapScreen){
             sp.e = sp.p.lastEnemy;
-            //sp.screenManager.activateNextScreen();
             sp.sb = sp.screenManager.getScreenBattle();
             sp.b = new Battle(sp.e);
             g.resetCamera();
