@@ -27,7 +27,7 @@ public class ScreenMap extends RenderingScreen{
 	private MapObjects doors;
 	Map<String,TiledMap> tMap = new TreeMap<String,TiledMap>();
 	Map<String,TiledMapRenderer> tMapRenderer = new TreeMap<String,TiledMapRenderer>();
-	public String map = "test_couloir";
+	public String map;
 	public float zoom;
     private int width;
     public int tileWidth;
@@ -35,8 +35,6 @@ public class ScreenMap extends RenderingScreen{
     public int tileHeight;
     private Player player;
     
-
-
     private void createMap(String name){
 		TiledMap tm =new TmxMapLoader().load("./resources/map/"+ name + ".tmx");
 		tMap.put(name,tm);
@@ -79,12 +77,9 @@ public class ScreenMap extends RenderingScreen{
         
 		
 		// Render the tileMap
-        try {
-            g.zoom(zoom);
-            g.moveCamera(player.getPosition().x, player.getPosition().y, width * tileWidth, height * tileHeight);   
-        } catch (Exception e) {
-            //TODO: handle exception
-        }
+        g.zoom(zoom);
+        try {g.moveCamera(player.getPosition().x, player.getPosition().y, width * tileWidth, height * tileHeight);}
+        catch (Exception e) {System.out.println("Fail to move camera");}
 
 		tMapRenderer.get(map).setView(g.getCamera());
 		tMapRenderer.get(map).render();

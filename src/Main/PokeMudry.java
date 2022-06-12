@@ -7,7 +7,6 @@ import java.util.Map.Entry;
 import org.lwjgl.opencl.CLSampler;
 
 import com.badlogic.gdx.Input;
-
 import Control.Controller;
 import Entity.Enemy;
 import Entity.Entity;
@@ -44,13 +43,15 @@ public class PokeMudry extends PortableApplication {
     public void onInit() {
         sp.init();
         controller.init();
+
+        // add player, create and add all enemies in entities
 		entities.add((Entity) sp.p);
 		enemies.add(new Enemy("Mudry", 10, 15, "lumberjack_sheet32", "desert"));
 		enemies.add(new Enemy("Pignat", 5, 1, "lumberjack_sheet32", "test"));
-
         for (Enemy enemy : enemies) { entities.add(enemy); }
 
-		for (Entity entity : entities) { entity.init(); }
+		//Init all entities
+        for (Entity entity : entities) { entity.init(); }
     }
 
     @Override
@@ -60,13 +61,20 @@ public class PokeMudry extends PortableApplication {
         sp.sb.manage(controller);
         sp.render(g);
         //System.out.println(ScreenMap.class);
+
+        boolean onMapScreen = sp.screenManager.getActiveScreen().getClass().equals(ScreenMap.class);
+		
+        if(onMapScreen) sp.p.manageEntity(sp.sm, controller);
+        sp.render(g);
+        
 		for (Entity entity : entities) {
-            
-            if (entity.getMap().equals(sp.sm.map) && sp.screenManager.getActiveScreen().getClass().equals(ScreenMap.class))
+            // Render only entities on the good map
+            if (entity.getMap().equals(sp.sm.map) && onMapScreen)
                 entity.graphicRender(g);
 		}
         
-        if (sp.p.frontOfEnemy && sp.screenManager.getActiveScreen().getClass().equals(ScreenMap.class)){
+        // Switch screen
+        if (sp.p.frontOfEnemy && onMapScreen){
             sp.e = sp.p.lastEnemy;
             sp.screenManager.activateNextScreen();
             g.resetCamera();

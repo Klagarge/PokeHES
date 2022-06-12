@@ -12,7 +12,11 @@ public class ScreenPlayer {
     public ScreenBattle sb;
 
     public void init(){
+
+        // One player by ScreenPlayer
         p = new Player(8, 15, "desert");
+
+        // Create both type of screen and record for reuse
         screenManager.registerScreen(ScreenMap.class);
         screenManager.registerScreen(ScreenBattle.class);
         sb = screenManager.getScreenBattle();
