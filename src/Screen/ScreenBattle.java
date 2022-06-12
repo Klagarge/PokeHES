@@ -30,7 +30,7 @@ public class ScreenBattle extends RenderingScreen{
 
 	private BitmapFont optimus40;
 
-	private Battle battle;
+	private Battle b = null;
 
 	private Enemy enemy;
 
@@ -38,7 +38,7 @@ public class ScreenBattle extends RenderingScreen{
     @Override
 	public void onInit() {
 		//new battle game
-		battle = new Battle(enemy);
+		//battle = new Battle(enemy);
 		
         //display the question
 		generateFont("resources/font/OptimusPrinceps.ttf", 40, Color.BLACK);
@@ -52,7 +52,7 @@ public class ScreenBattle extends RenderingScreen{
 
 		displayDialog(g);
 
-		System.out.println("render: " + battle.getLineSpeech());
+		//System.out.println("render: " + battle.getLineSpeech());
 	}
 
 	@Override
@@ -60,7 +60,13 @@ public class ScreenBattle extends RenderingScreen{
 		optimus40.dispose();
 	}
 
+	
+	public void setBattle(Battle battle) {
+		this.b = battle;
+	}
+
 	public void generateFont(String file, int height, Color c ){
+
 		//Generate font with the file .ttf
 		FileHandle fileHandle = Gdx.files.internal(file);
 		FreeTypeFontParameter parameter = new FreeTypeFontParameter();
@@ -77,7 +83,8 @@ public class ScreenBattle extends RenderingScreen{
 		g.drawFilledRectangle(Settings.SIDE/2, HEIGHT_DIALOG/2 + EDGE, WIDTH_DIALOG, HEIGHT_DIALOG, 0);
 
 		//dialog
-		g.drawString(15, 245 ,battle.getLine() , optimus40);
+		
+		if(b != null) g.drawString(15, 245 ,b.getLine() , optimus40);
 
 
 
@@ -95,7 +102,7 @@ public class ScreenBattle extends RenderingScreen{
 		//TODO afficher le joueur                 
 	}
 
-	public void manage(Controller c){
+	public void manage(Controller c, Battle battle){
 		if(PokeMudry.front_montant){
  	     	System.out.println("manage: " + battle.getLineSpeech());
 
