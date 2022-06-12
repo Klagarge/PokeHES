@@ -32,6 +32,14 @@ public abstract class Character extends Entity{
 
     protected int pv;
 
+    /**
+     * Create a character on the world
+     * @param name Name of the new character
+     * @param x initial x position
+     * @param y initial y position
+     * @param img the name of the spritesheet for this character
+     * @param map the initial map
+     */
     public Character(String name, int x, int y, String img, String map){
         super(name, x, y, map);
         this.img = img;
@@ -87,7 +95,7 @@ public abstract class Character extends Entity{
     }
 
     /**
-     * @param speed The new speed of the hero.
+     * @param speed The new speed of the character.
      */
     public void setSpeed(float speed){
         this.speed = speed;
