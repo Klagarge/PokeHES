@@ -56,7 +56,7 @@ public class Player extends Character{
 			if (sm.isWalkable(nextCell)) {
 				
 				if (enemy(sm, nextPos)) {
-					//turn(goalDirection);
+					turn(goalDirection);
 					System.out.println("It's a enemy !!");
 				} else {
 					setSpeed(sm.getSpeed(nextCell));
@@ -94,7 +94,7 @@ public class Player extends Character{
 			int pY = (int) nextPos.y/sm.tileHeight;
 			int eX = (int) enemy.position.x/sm.tileWidth;
 			int eY = (int) enemy.position.y/sm.tileHeight;
-			//System.out.println("Player: " + pX + " x " + pY + " - Enemy: " + eX + " x " + eY);
+			
 			if(bMap && pX==eX && pY==eY) {
 				lastEnemy = enemy;
 				frontOfEnemy = true;

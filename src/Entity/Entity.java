@@ -22,10 +22,23 @@ public abstract class Entity implements DrawableObject {
     protected boolean move = false;
 
 
+    /**
+     * Create an entity
+     * @param name The name of this new entity
+     * @param x The initial x position
+     * @param y The initial y position
+     * @param map The initial map
+     */
     public Entity(String name, int x, int y, String map){
         this(name, new Vector2(SPRITE_WIDTH * x, SPRITE_HEIGHT * y), map);
     }
 
+    /**
+     * Create an entity
+     * @param name The name of this new entity
+     * @param initialPosition The initial position by a Vector2
+     * @param map The initial map
+     */
     public Entity(String name, Vector2 initialPosition, String map){
         this.name = name;
         lastPosition = new Vector2(initialPosition);
