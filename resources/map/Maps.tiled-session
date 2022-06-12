@@ -213,8 +213,8 @@
             "scale": 1.5,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 160.66666666666669,
-                "y": 160.33333333333331
+                "x": 159.33333333333331,
+                "y": 160.66666666666663
             }
         },
         "test.tmx#test": {
@@ -225,11 +225,11 @@
             "expandedObjectLayers": [
                 9
             ],
-            "scale": 3,
+            "scale": 1.5,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 62.66666666666667,
-                "y": 172.83333333333331
+                "x": 299.66666666666663,
+                "y": 221
             }
         },
         "test_couloir.tmx#Dungeon_Tileset": {
