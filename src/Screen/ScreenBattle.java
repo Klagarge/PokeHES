@@ -1,8 +1,5 @@
 package Screen;
 
-import ch.hevs.gdx2d.components.screen_management.RenderingScreen;
-import ch.hevs.gdx2d.lib.GdxGraphics;
-
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.files.FileHandle;
@@ -10,16 +7,15 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator.FreeTypeFontParameter;
-import com.badlogic.gdx.utils.Align;
 
 import Control.Controller;
 import Entity.Enemy;
 import Entity.Player;
 import Game.Battle;
-import Text.Line;
-import Text.TextEnemy;
 import Main.PokeMudry;
 import Main.Settings;
+import ch.hevs.gdx2d.components.screen_management.RenderingScreen;
+import ch.hevs.gdx2d.lib.GdxGraphics;
 
 public class ScreenBattle extends RenderingScreen{
 
@@ -37,9 +33,6 @@ public class ScreenBattle extends RenderingScreen{
 
     @Override
 	public void onInit() {
-		//new battle game
-		//battle = new Battle(enemy);
-		
         //display the question
 		generateFont("resources/font/OptimusPrinceps.ttf", 40, Color.BLACK);
 
@@ -83,7 +76,6 @@ public class ScreenBattle extends RenderingScreen{
 		g.drawFilledRectangle(Settings.SIDE/2, HEIGHT_DIALOG/2 + EDGE, WIDTH_DIALOG, HEIGHT_DIALOG, 0);
 
 		//dialog
-		
 		if(b != null) g.drawString(15, 245 ,b.getLine() , optimus40);
 
 

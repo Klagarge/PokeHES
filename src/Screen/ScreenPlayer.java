@@ -26,7 +26,9 @@ public class ScreenPlayer {
     }
 
     public void render(GdxGraphics g){
-        sm.setPlayer(p);
+        if(sm != null){
+            sm.setPlayer(p);
+        }
         
         if(sb != null){
             sb.setEnemy(e);
