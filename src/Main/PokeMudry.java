@@ -10,6 +10,8 @@ import com.badlogic.gdx.Input;
 import Control.Controller;
 import Entity.Enemy;
 import Entity.Entity;
+import Game.Battle;
+import Screen.ScreenBattle;
 import Screen.ScreenMap;
 import Screen.ScreenPlayer;
 import ch.hevs.gdx2d.desktop.PortableApplication;
@@ -57,28 +59,29 @@ public class PokeMudry extends PortableApplication {
     @Override
     public void onGraphicRender(GdxGraphics g) {
         g.clear();
-		sp.p.manageEntity(sp.sm, controller);
-        sp.sb.manage(controller);
-        sp.render(g);
-        //System.out.println(ScreenMap.class);
-
         boolean onMapScreen = sp.screenManager.getActiveScreen().getClass().equals(ScreenMap.class);
+        boolean onBattleScreen = sp.screenManager.getActiveScreen().getClass().equals(ScreenBattle.class);
 		
         if(onMapScreen) sp.p.manageEntity(sp.sm, controller);
-        sp.render(g);
-        
-		for (Entity entity : entities) {
-            // Render only entities on the good map
-            if (entity.getMap().equals(sp.sm.map) && onMapScreen)
-                entity.graphicRender(g);
-		}
         
         // Switch screen
         if (sp.p.frontOfEnemy && onMapScreen){
             sp.e = sp.p.lastEnemy;
-            sp.screenManager.activateNextScreen();
+            //sp.screenManager.activateNextScreen();
+            sp.sb = sp.screenManager.getScreenBattle();
+            sp.b = new Battle(sp.e);
             g.resetCamera();
         }
+        
+        if(onBattleScreen) sp.sb.manage(controller, sp.b);
+
+        // Graphics render
+        sp.render(g);
+        for (Entity entity : entities) {
+            // Render only entities on the good map
+            if (entity.getMap().equals(sp.sm.map) && onMapScreen)
+            entity.graphicRender(g);
+		}
     }
 
 
