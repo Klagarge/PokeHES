@@ -74,7 +74,7 @@
 1009,1169,0,1044,1046,0,1044,1010,1010,1046,1031,1031,0,1031,1031,1031,1031,1031,1031,1031,1031,0,1031,1050,1050,1050,1050,1050,1050,1025,1026,1026,1026,1026,1027,0,0,0,0,0,1006,
 1008,620,0,0,0,0,0,0,0,1031,1031,1031,1031,1031,0,1031,0,0,0,1031,1031,0,0,0,0,0,0,0,0,1044,1045,1045,1045,1045,1046,0,0,0,0,0,1006,
 1008,0,0,0,0,0,0,0,0,1031,1031,0,1031,1031,1031,1031,0,0,0,0,1031,0,0,0,1031,0,0,0,0,1031,0,0,0,0,0,0,0,0,0,0,1006,
-1008,727,1031,1031,1031,1029,1031,1031,1031,727,1031,1031,1031,1031,1031,727,1031,1031,1031,1031,1031,727,1031,1031,1031,0,0,727,0,1031,1031,0,0,727,1031,1031,1031,0,1031,727,1006,
+1008,727,1031,1031,1031,1031,1031,1031,1031,727,1031,1031,1031,1031,1031,727,1031,1031,1031,1031,1031,727,1031,1031,1031,0,0,727,0,1031,1031,0,0,727,1031,1031,1031,0,1031,727,1006,
 1008,761,1031,1031,1031,1031,1031,1031,1031,761,1031,1031,1031,1031,1031,761,1031,1031,1031,1031,1031,761,1031,1031,1031,1031,1031,761,1031,1031,1031,1031,1031,761,1031,1031,1031,1031,1031,761,1006,
 1028,1029,1029,1029,1029,1029,1029,1029,1029,1029,1029,1029,1029,1029,1029,1029,1029,1029,1029,1029,1029,1029,1029,1029,1029,1029,1029,1029,1029,1029,1029,1029,1029,1029,1029,1029,1029,1188,1031,1189,1190,
 1047,1048,1048,1048,1048,1048,1048,1048,1048,1048,1048,1048,1048,1048,1048,1048,1048,1048,1048,1048,1048,1048,1048,1048,1048,1048,1048,1048,1048,1048,1048,1048,1048,1048,1048,1048,1048,1207,1031,1208,1209,
@@ -94,28 +94,28 @@
   <object id="1" name="down" x="80.6667" y="177.667">
    <properties>
     <property name="nextDirection" value="down"/>
-    <property name="nextMap" value="21N1"/>
-    <property name="nextX" type="int" value="0"/>
-    <property name="nextY" type="int" value="0"/>
+    <property name="nextMap" value="21RI"/>
+    <property name="nextX" type="int" value="5"/>
+    <property name="nextY" type="int" value="16"/>
    </properties>
   </object>
   <object id="2" name="up" x="178" y="177.667">
    <properties>
     <property name="nextDirection" value="down"/>
-    <property name="nextMap" value="21N3"/>
+    <property name="nextMap" value="21N2"/>
     <property name="nextX" type="int" value="2"/>
     <property name="nextY" type="int" value="16"/>
    </properties>
   </object>
-  <object id="11" x="1231.5" y="497.5">
+  <object id="11" name="RI" x="1231.5" y="497.5">
    <properties>
     <property name="nextDirection" value="down"/>
     <property name="nextMap" value="21RI"/>
-    <property name="nextX" type="int" value="0"/>
-    <property name="nextY" type="int" value="0"/>
+    <property name="nextX" type="int" value="38"/>
+    <property name="nextY" type="int" value="2"/>
    </properties>
   </object>
-  <object id="12" x="1200.5" y="16.5">
+  <object id="12" name="out" x="1200.5" y="16.5">
    <properties>
     <property name="nextDirection" value="down"/>
     <property name="nextMap" value="21N1"/>
@@ -123,7 +123,7 @@
     <property name="nextY" type="int" value="0"/>
    </properties>
   </object>
-  <object id="13" x="1233" y="15.5">
+  <object id="13" name="out" x="1233" y="15.5">
    <properties>
     <property name="nextDirection" value="down"/>
     <property name="nextMap" value="21N1"/>

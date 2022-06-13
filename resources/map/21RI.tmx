@@ -99,7 +99,7 @@
   <object id="2" name="up" x="178" y="177.667">
    <properties>
     <property name="nextDirection" value="down"/>
-    <property name="nextMap" value="21N2"/>
+    <property name="nextMap" value="21RS"/>
     <property name="nextX" type="int" value="2"/>
     <property name="nextY" type="int" value="16"/>
    </properties>
@@ -116,8 +116,8 @@
    <properties>
     <property name="nextDirection" value="up"/>
     <property name="nextMap" value="21RS"/>
-    <property name="nextX" type="int" value="0"/>
-    <property name="nextY" type="int" value="0"/>
+    <property name="nextX" type="int" value="38"/>
+    <property name="nextY" type="int" value="9"/>
    </properties>
   </object>
  </objectgroup>

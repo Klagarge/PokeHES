@@ -84,14 +84,7 @@
     <property name="nextY" type="int" value="16"/>
    </properties>
   </object>
-  <object id="2" name="up" x="175.333" y="48.6667">
-   <properties>
-    <property name="nextDirection" value="down"/>
-    <property name="nextMap" value="21N4"/>
-    <property name="nextX" type="int" value="0"/>
-    <property name="nextY" type="int" value="0"/>
-   </properties>
-  </object>
+  <object id="2" name="up" x="175.333" y="48.6667"/>
   <object id="3" name="21N308" x="48.6667" y="241.333">
    <properties>
     <property name="nextDirection" value=""/>
