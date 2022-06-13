@@ -6,8 +6,7 @@ import Entity.Enemy;
 import Text.TextEnemy;
 
 public class Battle {
-
-    private Enemy enemy;
+    
 
     TextEnemy textEnemy;
     private int lineSpeech;
@@ -15,10 +14,11 @@ public class Battle {
 	public int answer;
 
     private int winPoint;
+
+    private boolean screenBattleOn = true;
    
 
     public Battle(Enemy enemy){
-        this.enemy = enemy;
         textEnemy = new TextEnemy("enemi"); // should be enemy.name
 		textEnemy.generateText();
 
@@ -77,6 +77,10 @@ public class Battle {
     
     public int getLineSpeech() {
         return lineSpeech;
+    }
+
+    public boolean getScreenBattle(){
+        return screenBattleOn;
     }
      
     

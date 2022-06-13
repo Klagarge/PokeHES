@@ -31,7 +31,6 @@ public class ScreenPlayer {
         }
         
         if(sb != null){
-            sb.setEnemy(e);
             sb.setBattle(b);
         }
         
