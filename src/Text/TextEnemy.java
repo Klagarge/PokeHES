@@ -1,6 +1,7 @@
 package Text;
 
 import java.util.Vector;
+import java.util.Arrays;
 import java.util.Random;
 
 public class TextEnemy {
@@ -9,7 +10,8 @@ public class TextEnemy {
 
     public Vector<Line> lines = new Vector<Line>();
 
-    public int[] orderAnswer;
+    private int[] orderAttack;
+    private int[] orderAnswer;
 
     public static void main(String[] args) {
         
@@ -35,45 +37,37 @@ public class TextEnemy {
 
     }
 
-    int[] randomGenerate(int max_val){
-        int max = 8-1;
-        Random r = new Random();
-
-        int nbre = 4;
-
-        int[] t = new int[nbre];
-        int x;
-        int i=0;
-        boolean same = false;
-
-        // initialize array at -1
-        for(int j=0; j<nbre ; j++){
-            t[j] = -1;
+    public static int[] randomGenerate( int min, int max, int nbreRandom){
+        //create an array with all the number I need
+        int[] a = new int[max-min+1];
+        int k = min;
+        for(int i=0;k<=max;i++){
+            a[i] = k;
+            k++;
         }
 
-        //assign 4 different random value between 0 and max
-        while(i< nbre){
-            x = r.nextInt(max);
-            
-            //test if the value is valid
-            for(int j : t){
-                if(x==j){
-                    same = true;
-                    break;
-                }
-            }
+        //create a new array with the numbers I want
+        int[] b = new int[nbreRandom];
 
-            //do again the loop
-            if(same){
-                same = false;
-            }
-            else{
-                t[i] = x;
-                i++;
-            }
+        // Creating object for Random class
+        Random rd = new Random();
+         
+        // Starting from the last element and swapping one by one.
+        for (int i = a.length-1; i > 0; i--) {
+             
+            // Pick a random index from 0 to i
+            int j = rd.nextInt(i+1);
+             
+            // Swap array[i] with the element at random index
+            int temp = a[i];
+            a[i] = a[j];
+            a[j] = temp;
         }
-        
-        return t;        
+        //add the numbers I want
+        for(int i=0;i<nbreRandom;i++){
+            b[i] = a[i];
+        }
+        return b;
     }
 
 
@@ -82,19 +76,19 @@ public class TextEnemy {
         
         //introduction line
         lines.add(new Line(speechData.getSpeechs(0), false));
-        orderAnswer = randomGenerate(fightData.nbre_line);
+        orderAttack = randomGenerate(0, fightData.nbre_line-1, 4);
         for(int j=0; j<4;j++){
 
             //generate the order of the answer
-            
+            orderAnswer = randomGenerate(0, 3, 4);
+            System.out.println("\n" + Arrays.toString(orderAnswer) + "\n");
         //attack and answer (number on vector : 1-4) 
             lines.add(new Line(
-                speechData.getSpeechs(i++) + fightData.getAttack(orderAnswer[j]).attack + " ?  ("+fightData.getAttack(orderAnswer[j]).xp+ ") " + "\n" +
-                fightData.getAttack(orderAnswer[j]).answer1 + "\n" +
-                fightData.getAttack(orderAnswer[j]).answer2 + "\n" + 
-                fightData.getAttack(orderAnswer[j]).answer3 + "\n" + 
-                fightData.getAttack(orderAnswer[j]).answer4, true));
-            // TODO mélanger les attaques aléatoirement
+                speechData.getSpeechs(i++) + fightData.getAttack(orderAttack[j]).attack + " ?  ("+fightData.getAttack(orderAttack[j]).xp+ ") " + "\n" +
+                fightData.getAttack(orderAttack[j]).getAnswer(orderAnswer[0]) + "\n" +
+                fightData.getAttack(orderAttack[j]).getAnswer(orderAnswer[1]) + "\n" + 
+                fightData.getAttack(orderAttack[j]).getAnswer(orderAnswer[2]) + "\n" + 
+                fightData.getAttack(orderAttack[j]).getAnswer(orderAnswer[3]), true));
         }
         //finish (win and death)
         lines.add(new Line(speechData.getSpeechs(5), false));
