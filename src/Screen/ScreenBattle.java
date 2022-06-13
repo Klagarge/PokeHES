@@ -23,12 +23,9 @@ public class ScreenBattle extends RenderingScreen{
 	private static int HEIGHT_DIALOG = Settings.SIDE / 3;
 	private static int WIDTH_DIALOG = Settings.SIDE - 2*EDGE;
 
-
 	private BitmapFont optimus40;
 
 	private Battle b = null;
-
-	private Enemy enemy;
 
 
     @Override
@@ -82,9 +79,7 @@ public class ScreenBattle extends RenderingScreen{
 
 	}
 
-	public void setEnemy(Enemy enemy){
-		this.enemy = enemy;
-	}
+
 
 	public void displayEnemy(Enemy e){
 		// TODO affficher l'enemi
