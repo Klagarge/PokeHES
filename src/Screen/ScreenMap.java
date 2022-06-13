@@ -71,15 +71,15 @@ public class ScreenMap extends RenderingScreen{
         tileHeight = (int) tl.getTileHeight();
         
         //System.out.println(width + " x " + height + " - " + tileWidth + " x " + tileHeight);
+        
 		try {
             doors = tMap.get(map).getLayers().get("door").getObjects();
 		} catch (Exception e) {	doors = null; }
         
 		
 		// Render the tileMap
-        g.zoom(zoom);
-        try {g.moveCamera(player.getPosition().x, player.getPosition().y, width * tileWidth, height * tileHeight);}
-        catch (Exception e) {System.out.println("Fail to move camera");}
+        //g.zoom(zoom);
+        g.moveCamera(player.getPosition().x, player.getPosition().y, width * tileWidth, height * tileHeight);
 
 		tMapRenderer.get(map).setView(g.getCamera());
 		tMapRenderer.get(map).render();
@@ -150,6 +150,7 @@ public class ScreenMap extends RenderingScreen{
 				try { Door.nextMap = mapProperties.get("nextMap").toString(); } catch (Exception e) { }
 				try { Door.nextX = Integer.parseInt(mapProperties.get("nextX").toString()); } catch (Exception e) { }
 				try { Door.nextY = Integer.parseInt(mapProperties.get("nextY").toString()); } catch (Exception e) { }
+				try { Door.nextDirection = Door.nextDirection.valueOf(mapProperties.get("nextDirection").toString()); } catch (Exception e) { }
 			}
         }
         
@@ -160,11 +161,13 @@ public class ScreenMap extends RenderingScreen{
 		public static String nextMap;
 		public static Integer nextX;
 		public static Integer nextY;
+        public static Player.Direction nextDirection;
 
 		public static void reset(){
 			nextMap = null;
 			nextX = null;
 			nextY = null;
+            nextDirection = null;
 		}
 	}
 
