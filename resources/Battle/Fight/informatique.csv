@@ -1,5 +1,5 @@
-ï»¿Convertir 0b01010111 en dÃ©cimal :;87;79;afg;83;25
-Convertir 0b11110011 en hÃ©xadÃ©cimal :;F3;Q8;35;12;25
-Quel est la valeur de 'a' en ASCII en dÃ©cimal ?;97;0;42;2;25
-Quel mot est utile Ã  une fonction qui retourne rien ?;void;break;Integer;false;25
+Convertir 0b01010111 en décimal :;87;79;afg;83;25
+Convertir 0b11110011 en héxadécimal :;F3;Q8;35;12;25
+Quel est la valeur de 'a' en ASCII en décimal ?;97;0;42;2;25
+Quel mot est utile à une fonction qui retourne rien ?;void;break;Integer;false;25
 Comment convertir un string en int ?;int a = Integer.parseInt(String s);int a  = String s;Je sais pas;int a = String.changeInt(String s);25

@@ -7,6 +7,7 @@ import Text.TextEnemy;
 
 public class Battle {
 
+    private Enemy e;
     public TextEnemy textEnemy;
     private int lineSpeech;
 	public int answer;
@@ -16,9 +17,11 @@ public class Battle {
     public boolean screenBattleOn = true;
    
     public Battle(Enemy e){
-        textEnemy = new TextEnemy("enemi"); // should be enemy.name
-		textEnemy.generateText();
-
+        if(e != null){
+            textEnemy = new TextEnemy(e);  
+            textEnemy.generateText();
+        }
+        
         lineSpeech = 0;
         newXp = 0;
 
@@ -76,7 +79,10 @@ public class Battle {
     }
 
     public String getLine(){
+        if(e==null) return null;
+    
         return textEnemy.lines.get(lineSpeech).line;
+        
     }
 
     
@@ -90,5 +96,9 @@ public class Battle {
 
     public int getNewXp(){
         return newXp;
+    }
+
+    public void setEnemy(Enemy e){
+        this.e = e;
     }
 }

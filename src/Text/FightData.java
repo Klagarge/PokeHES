@@ -9,14 +9,14 @@ public class FightData {
 
     private  Vector<Attack> attacks = new Vector<Attack>();
     private  File file;
-    private static final String REGEX = ",";
+    private static String regex = ";";
 
     
 
     public int nbre_line =0;
 
-    public FightData(String name) {
-        file = new File("./resources/Battle/Fight/" + name + ".csv");
+    public FightData(String branch) {
+        file = new File("./resources/Battle/Fight/" + branch + ".csv");
         
     }
 
@@ -30,9 +30,11 @@ public class FightData {
 
             //add the line in the vector attacks of attack
             line = bf.readLine(); 
+            System.out.println(line);
             while(line != null){
-                String[] a = line.split(REGEX);//change the regex if it is another
-                attack = new Attack(a[0], a[1], a[2], a[3], a[4], Float.valueOf(a[5]));
+                String[] a = line.split(regex);//change the regex if it is another
+                System.out.println(a.length);
+                attack = new Attack(a[0], a[1], a[2], a[3], a[4], Integer.valueOf(a[5]));
                 attacks.add(attack);
                 line = bf.readLine();
                 //add line

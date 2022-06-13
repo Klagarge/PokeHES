@@ -17,7 +17,8 @@ public class ScreenPlayer {
 
         // One player by ScreenPlayer
         p = new Player(8, 15, "desert");
-        b = new Battle(e);
+
+        b = new Battle(new Enemy("enemi", 0, 0, "charachter", "desert", 50, "enemi"));
 
         // Create both type of screen and record for reuse
         screenManager.registerScreen(ScreenMap.class);
@@ -34,6 +35,7 @@ public class ScreenPlayer {
         
         if(sb != null){
             sb.setBattle(b);
+            
         }
         
         screenManager.render(g);

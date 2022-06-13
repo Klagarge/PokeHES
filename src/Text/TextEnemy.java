@@ -1,6 +1,9 @@
 package Text;
 
 import java.util.Vector;
+
+import Entity.Enemy;
+
 import java.util.Arrays;
 import java.util.Random;
 
@@ -17,24 +20,22 @@ public class TextEnemy {
 
     public static void main(String[] args) {
         
-        TextEnemy t  = new TextEnemy("enemi");
+        TextEnemy t  = new TextEnemy(new Enemy("Mudry", 10, 15, "lumberjack_sheet32", "desert", 25, "informatique"));
 
         t.generateText();
 
         for(Line l : t.lines) {
             System.out.println(l.line);
         }
-        
-       
     }
     
-    public TextEnemy(String name){
+    public TextEnemy(Enemy e){
         //generate the vector of fight
-        fightData = new FightData(name);
+        fightData = new FightData(e.getBranch());
         fightData.readFile();
 
         //generate the vector of Speechs
-        speechData = new SpeechData(name);
+        speechData = new SpeechData(e.getName());
         speechData.readFile();
 
         //save random data (attack and ansver) : attack, answer 1, answer 2 answer 3, answer 4
@@ -98,7 +99,7 @@ public class TextEnemy {
 
             //attack and answer (number on vector : 1-4) 
             lines.add(new Line(
-                speechData.getSpeechs(i++) + fightData.getAttack(orderAttack[j]).attack + " ?  ("+fightData.getAttack(orderAttack[j]).xp+ ") " + "\n" +
+                speechData.getSpeechs(i++) + fightData.getAttack(orderAttack[j]).attack + " ?  ("+fightData.getAttack(orderAttack[j]).getXp()+ ") " + "\n" +
                 "1. " + fightData.getAttack(orderAttack[j]).getAnswer(orderAnswer[0]) + "\n" +
                 "2. " + fightData.getAttack(orderAttack[j]).getAnswer(orderAnswer[1]) + "\n" + 
                 "3. " + fightData.getAttack(orderAttack[j]).getAnswer(orderAnswer[2]) + "\n" + 
