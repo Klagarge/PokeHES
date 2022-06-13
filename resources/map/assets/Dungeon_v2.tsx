@@ -40,7 +40,7 @@
  <tile id="6">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="7">
@@ -154,7 +154,7 @@
  <tile id="25">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="26">
@@ -256,7 +256,7 @@
  <tile id="42">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="43">
@@ -268,7 +268,7 @@
  <tile id="44">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="45">
@@ -328,19 +328,19 @@
  <tile id="54">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="55">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="56">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="57">
@@ -382,7 +382,7 @@
  <tile id="63">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="64">
@@ -436,25 +436,25 @@
  <tile id="72">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="73">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="74">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="75">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="76">
@@ -490,49 +490,49 @@
  <tile id="81">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="true"/>
+   <property name="walkable" type="bool" value="false"/>
   </properties>
  </tile>
  <tile id="82">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="true"/>
+   <property name="walkable" type="bool" value="false"/>
   </properties>
  </tile>
  <tile id="83">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="true"/>
+   <property name="walkable" type="bool" value="false"/>
   </properties>
  </tile>
  <tile id="84">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="true"/>
+   <property name="walkable" type="bool" value="false"/>
   </properties>
  </tile>
  <tile id="85">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="true"/>
+   <property name="walkable" type="bool" value="false"/>
   </properties>
  </tile>
  <tile id="86">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="true"/>
+   <property name="walkable" type="bool" value="false"/>
   </properties>
  </tile>
  <tile id="87">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="true"/>
+   <property name="walkable" type="bool" value="false"/>
   </properties>
  </tile>
  <tile id="88">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="true"/>
+   <property name="walkable" type="bool" value="false"/>
   </properties>
  </tile>
  <tile id="89">
@@ -586,7 +586,7 @@
  <tile id="97">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="true"/>
+   <property name="walkable" type="bool" value="false"/>
   </properties>
  </tile>
  <tile id="98">
@@ -694,19 +694,19 @@
  <tile id="115">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="true"/>
+   <property name="walkable" type="bool" value="false"/>
   </properties>
  </tile>
  <tile id="116">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="true"/>
+   <property name="walkable" type="bool" value="false"/>
   </properties>
  </tile>
  <tile id="117">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="true"/>
+   <property name="walkable" type="bool" value="false"/>
   </properties>
  </tile>
  <tile id="118">
@@ -766,37 +766,37 @@
  <tile id="127">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="128">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="129">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="130">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="131">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="132">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="133">
@@ -814,7 +814,7 @@
  <tile id="135">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="true"/>
+   <property name="walkable" type="bool" value="false"/>
   </properties>
  </tile>
  <tile id="136">
@@ -832,85 +832,85 @@
  <tile id="138">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="true"/>
+   <property name="walkable" type="bool" value="false"/>
   </properties>
  </tile>
  <tile id="139">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="true"/>
+   <property name="walkable" type="bool" value="false"/>
   </properties>
  </tile>
  <tile id="140">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="true"/>
+   <property name="walkable" type="bool" value="false"/>
   </properties>
  </tile>
  <tile id="141">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="true"/>
+   <property name="walkable" type="bool" value="false"/>
   </properties>
  </tile>
  <tile id="142">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="true"/>
+   <property name="walkable" type="bool" value="false"/>
   </properties>
  </tile>
  <tile id="143">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="true"/>
+   <property name="walkable" type="bool" value="false"/>
   </properties>
  </tile>
  <tile id="144">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="true"/>
+   <property name="walkable" type="bool" value="false"/>
   </properties>
  </tile>
  <tile id="145">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="true"/>
+   <property name="walkable" type="bool" value="false"/>
   </properties>
  </tile>
  <tile id="146">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="147">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="148">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="149">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="150">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="151">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="152">
@@ -1000,31 +1000,31 @@
  <tile id="166">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="167">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="168">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="169">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="170">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="171">
@@ -1042,7 +1042,7 @@
  <tile id="173">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="true"/>
+   <property name="walkable" type="bool" value="false"/>
   </properties>
  </tile>
  <tile id="174">
@@ -1114,31 +1114,31 @@
  <tile id="185">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="186">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="187">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="188">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="189">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="190">
@@ -1150,19 +1150,19 @@
  <tile id="191">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="true"/>
+   <property name="walkable" type="bool" value="false"/>
   </properties>
  </tile>
  <tile id="192">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="true"/>
+   <property name="walkable" type="bool" value="false"/>
   </properties>
  </tile>
  <tile id="193">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="true"/>
+   <property name="walkable" type="bool" value="false"/>
   </properties>
  </tile>
  <tile id="194">
@@ -1210,13 +1210,13 @@
  <tile id="201">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="202">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="203">
@@ -1228,67 +1228,67 @@
  <tile id="204">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="205">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="206">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="207">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="208">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="209">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="210">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="211">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="212">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="213">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="214">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="215">
@@ -1306,13 +1306,13 @@
  <tile id="217">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="218">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="219">
@@ -1342,31 +1342,31 @@
  <tile id="223">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="224">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="225">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="226">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="227">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="false"/>
+   <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>
 </tileset>
