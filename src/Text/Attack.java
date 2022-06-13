@@ -2,11 +2,12 @@ package Text;
 
 public class Attack {
     String attack;
+    int currentAttack;
     String answer1;
     String answer2;
     String answer3;
     String answer4;
-    String[] s;
+    public String[] s;
 
     float xp;
 
@@ -32,4 +33,9 @@ public class Attack {
     public String getAnswer(int i){
         return s[i];
     }
+
+    public String getTrueAnswer(){
+        return answer1;
+    }
+
 }

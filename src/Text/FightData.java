@@ -11,13 +11,14 @@ public class FightData {
     private  File file;
     private static final String REGEX = ",";
 
+    
+
     public int nbre_line =0;
 
     public FightData(String name) {
         file = new File("./resources/Battle/Fight/" + name + ".csv");
+        
     }
-
-
 
     public void readFile() {
         Attack attack;
@@ -43,7 +44,8 @@ public class FightData {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.println(attacks.size());
+
+        
     }
 
     //return the vector with all attaks of one enemi
@@ -55,6 +57,10 @@ public class FightData {
     public Attack getAttack(int a){
         return attacks.get(a);
     }
+
+
+
+
 
 }
 

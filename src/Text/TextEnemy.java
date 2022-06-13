@@ -13,6 +13,8 @@ public class TextEnemy {
     private int[] orderAttack;
     private int[] orderAnswer;
 
+    private Vector<int[]> currentData;
+
     public static void main(String[] args) {
         
         TextEnemy t  = new TextEnemy("enemi");
@@ -34,6 +36,9 @@ public class TextEnemy {
         //generate the vector of Speechs
         speechData = new SpeechData(name);
         speechData.readFile();
+
+        //save random data (attack and ansver) : attack, answer 1, answer 2 answer 3, answer 4
+        currentData = new Vector<int[]>();
 
     }
 
@@ -74,25 +79,46 @@ public class TextEnemy {
     public void generateText(){
         int i =1;
         
+
         //introduction line
         lines.add(new Line(speechData.getSpeechs(0), false));
         orderAttack = randomGenerate(0, fightData.nbre_line-1, 4);
         for(int j=0; j<4;j++){
+            int[] currentRandom = new int[5];
+            currentRandom[0] = orderAttack[j];
 
             //generate the order of the answer
             orderAnswer = randomGenerate(0, 3, 4);
-            System.out.println("\n" + Arrays.toString(orderAnswer) + "\n");
-        //attack and answer (number on vector : 1-4) 
+            System.out.println("\n attaque " + j + " : " + Arrays.toString(orderAnswer) + "\n");
+
+            //save the order of answer and attack
+            for(int k=1;k<5;k++){
+                currentRandom[k] = orderAnswer[k-1];
+            }
+
+            //attack and answer (number on vector : 1-4) 
             lines.add(new Line(
                 speechData.getSpeechs(i++) + fightData.getAttack(orderAttack[j]).attack + " ?  ("+fightData.getAttack(orderAttack[j]).xp+ ") " + "\n" +
-                fightData.getAttack(orderAttack[j]).getAnswer(orderAnswer[0]) + "\n" +
-                fightData.getAttack(orderAttack[j]).getAnswer(orderAnswer[1]) + "\n" + 
-                fightData.getAttack(orderAttack[j]).getAnswer(orderAnswer[2]) + "\n" + 
-                fightData.getAttack(orderAttack[j]).getAnswer(orderAnswer[3]), true));
+                "1. " + fightData.getAttack(orderAttack[j]).getAnswer(orderAnswer[0]) + "\n" +
+                "2. " + fightData.getAttack(orderAttack[j]).getAnswer(orderAnswer[1]) + "\n" + 
+                "3. " + fightData.getAttack(orderAttack[j]).getAnswer(orderAnswer[2]) + "\n" + 
+                "4. " + fightData.getAttack(orderAttack[j]).getAnswer(orderAnswer[3]), true));
+
+            
+            currentData.add(currentRandom);
         }
+        
+        for(int[] a : currentData){
+            System.out.println(Arrays.toString(a));
+        }
+
         //finish (win and death)
         lines.add(new Line(speechData.getSpeechs(5), false));
         lines.add(new Line(speechData.getSpeechs(6), false));
+    }
+
+    public Vector<int[]> getCurrentData() {
+        return currentData;
     }
 
     

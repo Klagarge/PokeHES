@@ -14,10 +14,10 @@ public class Player extends Character{
 
     private int xp;
 	public Enemy lastEnemy = null;
-	public boolean onEnemy = false;
+	public boolean frontOfEnemy = false;
 
     public Player(int x, int y, String map) {
-        super("Player", x, y, "character", map);
+        super("Player", x, y, "Character", map);
     }
 
     public void addXp(int xp){
@@ -32,7 +32,7 @@ public class Player extends Character{
 			// Compute direction and next cell
 			Vector<TiledMapTile> nextCell = new Vector<>();
 			Player.Direction goalDirection = Player.Direction.NULL;
-			Vector2 nextPos = new Vector2(position);
+			Vector2 nextPos = position;
 
 			if (c.keyStatus.get(Input.Keys.RIGHT)) {
 				goalDirection = Player.Direction.RIGHT;
@@ -76,13 +76,12 @@ public class Player extends Character{
 					nMap = ScreenMap.Door.nextMap;
 					x = ScreenMap.Door.nextX;
 					y = ScreenMap.Door.nextY;
-					goalDirection = ScreenMap.Door.direction;
 				} catch (Exception e) { }
 				ScreenMap.Door.reset();
 				if (nMap == null || x == null || y == null) return;
 				map = nMap;
 				setPosition(x*sm.tileWidth, y*sm.tileHeight);
-				System.out.println("Go to: " + map + " in " + x + " x " + y);
+				System.out.println("Go to: " + sm.map + " in " + x + " x " + y);
 			}
 		}
 	}
@@ -98,7 +97,7 @@ public class Player extends Character{
 			
 			if(bMap && pX==eX && pY==eY) {
 				lastEnemy = enemy;
-				onEnemy = true;
+				frontOfEnemy = true;
 				return true;
 			}
 		}

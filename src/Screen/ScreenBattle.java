@@ -98,7 +98,6 @@ public class ScreenBattle extends RenderingScreen{
 		if(PokeMudry.front_montant){
  	     	System.out.println("manage: " + battle.getLineSpeech());
 
-
 			if( battle.getAttackOn() == false){
 				if (c.keyStatus.get(Input.Keys.SPACE)){
 					System.out.println("in");
@@ -106,24 +105,22 @@ public class ScreenBattle extends RenderingScreen{
 				}
 			}
 
-
 			if(battle.getAttackOn() == true){
 				if (c.keyStatus.get(Input.Keys.NUM_1)){
-					System.out.println("je sui dansakjshfljkahflkasjhfdlkajshflkajshfdlkasjdhfalsdkjfh123412341234");
-					battle.readNextLine();
-					battle.answer = 1;
+					
+					battle.checkAnswer(1);
 				}
 				else if (c.keyStatus.get(Input.Keys.NUM_2)){
-					battle.readNextLine();
-					battle.answer = 2;
+
+					battle.checkAnswer(2);
 				}
 				else if (c.keyStatus.get(Input.Keys.NUM_3)){
-					battle.readNextLine();
-					battle.answer = 3;
+	
+					battle.checkAnswer(3);
 				}
 				else if (c.keyStatus.get(Input.Keys.NUM_4)){
-					battle.readNextLine();
-					battle.answer = 4;
+
+					battle.checkAnswer(4);
 					
 				}
 			}
@@ -131,6 +128,7 @@ public class ScreenBattle extends RenderingScreen{
 			//mettre le front à false jusqu'à ce que le bouton soit relâché
 			PokeMudry.front_montant = false;
 		}
+	
 
 
 	
