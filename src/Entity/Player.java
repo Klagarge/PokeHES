@@ -14,7 +14,7 @@ public class Player extends Character{
 
     private int xp;
 	public Enemy lastEnemy = null;
-	public boolean frontOfEnemy = false;
+	public boolean onEnemy = false;
 
     public Player(int x, int y, String map) {
         super("Player", x, y, "Character", map);
@@ -32,7 +32,7 @@ public class Player extends Character{
 			// Compute direction and next cell
 			Vector<TiledMapTile> nextCell = new Vector<>();
 			Player.Direction goalDirection = Player.Direction.NULL;
-			Vector2 nextPos = position;
+			Vector2 nextPos = new Vector2(position);
 
 			if (c.keyStatus.get(Input.Keys.RIGHT)) {
 				goalDirection = Player.Direction.RIGHT;
@@ -76,6 +76,7 @@ public class Player extends Character{
 					nMap = ScreenMap.Door.nextMap;
 					x = ScreenMap.Door.nextX;
 					y = ScreenMap.Door.nextY;
+					goalDirection = ScreenMap.Door.nextDirection;
 				} catch (Exception e) { }
 				ScreenMap.Door.reset();
 				if (nMap == null || x == null || y == null) return;
@@ -97,7 +98,7 @@ public class Player extends Character{
 			
 			if(bMap && pX==eX && pY==eY) {
 				lastEnemy = enemy;
-				frontOfEnemy = true;
+				onEnemy = true;
 				return true;
 			}
 		}
