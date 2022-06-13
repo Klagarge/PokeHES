@@ -22,7 +22,7 @@
             "scale": 0.75,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 648,
+                "x": 571.9999999999999,
                 "y": 186
             }
         },
@@ -33,7 +33,7 @@
             "scale": 0.75,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 425.3333333333333,
+                "x": 425.33333333333337,
                 "y": 276.66666666666663
             }
         },
@@ -49,22 +49,22 @@
             "expandedObjectLayers": [
                 6
             ],
-            "scale": 1,
-            "selectedLayer": 2,
+            "scale": 0.75,
+            "selectedLayer": 3,
             "viewCenter": {
-                "x": 653,
-                "y": 393.5
+                "x": 583.9999999999999,
+                "y": 498
             }
         },
         "21RS.tmx": {
             "expandedObjectLayers": [
                 6
             ],
-            "scale": 0.5,
+            "scale": 0.75,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 756,
-                "y": -33
+                "x": 589.3333333333333,
+                "y": 99.33333333333337
             }
         },
         "C:/Users/remi/AppData/Roaming/Tiled/#Tests": {
