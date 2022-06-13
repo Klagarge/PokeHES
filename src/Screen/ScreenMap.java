@@ -59,11 +59,12 @@ public class ScreenMap extends RenderingScreen{
         
         tiledLayer.clear();
         
-        try { map = player.getMap(); } catch (Exception e) {}
+        try { map = player.getMap(); } catch (Exception e) { System.out.println("error for get map");}
 
 		for (int i = 0; i < 50; i++) {
             try { tiledLayer.add((TiledMapTileLayer) tMap.get(map).getLayers().get(i)); } catch (Exception e) { }
         }
+        if (tiledLayer.size() <= 0) System.out.println("TiledLayer empty !!!");
         TiledMapTileLayer tl = tiledLayer.get(0);
         width = tl.getWidth();
         tileWidth = (int) tl.getTileWidth();
@@ -106,10 +107,11 @@ public class ScreenMap extends RenderingScreen{
 
     public boolean isWalkable(Vector<TiledMapTile> tile) {
 		if (tile == null) return false;
-        boolean walkable = false;
+		if (tile.size() == 0) return false;
+        boolean walkable = true;
         for (TiledMapTile tiledMapTile : tile) {
             Object test = tiledMapTile.getProperties().get("walkable");
-            walkable = Boolean.parseBoolean(test.toString()) ? true:walkable;
+            walkable = Boolean.parseBoolean(test.toString()) ? walkable:false;
         }
         return walkable;
 	}
@@ -150,6 +152,7 @@ public class ScreenMap extends RenderingScreen{
 				try { Door.nextMap = mapProperties.get("nextMap").toString(); } catch (Exception e) { }
 				try { Door.nextX = Integer.parseInt(mapProperties.get("nextX").toString()); } catch (Exception e) { }
 				try { Door.nextY = Integer.parseInt(mapProperties.get("nextY").toString()); } catch (Exception e) { }
+				try { Door.direction = Player.Direction.valueOf(mapProperties.get("nextDirection").toString()); } catch (Exception e) { }
 			}
         }
         
@@ -160,11 +163,13 @@ public class ScreenMap extends RenderingScreen{
 		public static String nextMap;
 		public static Integer nextX;
 		public static Integer nextY;
+        public static Player.Direction direction;
 
 		public static void reset(){
 			nextMap = null;
 			nextX = null;
 			nextY = null;
+			direction = null;
 		}
 	}
 

@@ -9,7 +9,7 @@ W, H = 32, 32
 
 def pilToPygame(pilImage):
     return pygame.image.fromstring(
-        pilImage.tobytes(), pilImage.size, pilImage.mode).convert()
+        pilImage.tobytes(), pilImage.size, pilImage.mode).convert_alpha()
 
 def rect(p1, p2):
     x = min(p1[0], p2[0])
@@ -38,7 +38,7 @@ class Rect:
             color = (0,255,0)
             self.hover = True
         
-        pygame.draw.rect(w, color, [x*W-sx, y*H-sy, self.w*W, self.h*H], 1)
+        pygame.draw.rect(w, color, [x*W-sx, y*H-sy, self.w*W, self.h*H], 2)
     
     @property
     def area(self):
@@ -76,6 +76,7 @@ class Editor:
         self.win = pygame.display.set_mode([self.WIDTH, self.HEIGHT], pygame.SRCALPHA)
         self.over = pygame.Surface([self.WIDTH, self.HEIGHT], pygame.SRCALPHA)
         self.clock = pygame.time.Clock()
+        pygame.display.set_caption(f"Texture Splitter - {self.base}{self.ext}")
         
         self.img = pilToPygame(img)
         self.a = np.array(img)
@@ -91,6 +92,7 @@ class Editor:
         self.rects = []
         self.sel = (False, None)
         self.scroll_x, self.scroll_y = 0, 0
+        self.moving = False
     
     def mainloop(self):
         while self.running:
@@ -140,15 +142,17 @@ class Editor:
                     speed = self.SCROLL_SPEED if event.button == 5 else -self.SCROLL_SPEED
                     if pygame.key.get_pressed()[pygame.K_LSHIFT]:
                         self.scroll_x += speed
-                        self.scroll_x = min(self.a.shape[1]-self.WIDTH, self.scroll_x)
-                        self.scroll_x = max(0, self.scroll_x)
+                        
                     else:
                         self.scroll_y += speed
-                        self.scroll_y = min(self.a.shape[0]-self.HEIGHT, self.scroll_y)
-                        self.scroll_y = max(0, self.scroll_y)
+                    
+                    self.clamp_scroll()
                 
                 elif event.button == 3:
                     self.rects = list(filter(lambda r: not r.hover, self.rects))
+                
+                elif event.button == 2:
+                    self.moving = True
                 
             elif event.type == pygame.MOUSEBUTTONUP:
                 if event.button == 1:
@@ -156,10 +160,25 @@ class Editor:
                         self.rects.append(Rect(*self.sel[1], self.mx, self.my))
                         self.sel = (False, None)
                         self.organize()
+                
+                elif event.button == 2:
+                    self.moving = False
             
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_s and event.mod & pygame.KMOD_CTRL:
                     self.save()
+            
+            elif event.type == pygame.MOUSEMOTION:
+                if self.moving:
+                    self.scroll_x -= event.rel[0]
+                    self.scroll_y -= event.rel[1]
+                    self.clamp_scroll()
+    
+    def clamp_scroll(self):
+        self.scroll_x = min(self.a.shape[1]-self.WIDTH, self.scroll_x)
+        self.scroll_x = max(0, self.scroll_x)
+        self.scroll_y = min(self.a.shape[0]-self.HEIGHT, self.scroll_y)
+        self.scroll_y = max(0, self.scroll_y)
     
     def organize(self):
         for rect in self.rects:

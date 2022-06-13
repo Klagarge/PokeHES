@@ -76,12 +76,13 @@ public class Player extends Character{
 					nMap = ScreenMap.Door.nextMap;
 					x = ScreenMap.Door.nextX;
 					y = ScreenMap.Door.nextY;
+					goalDirection = ScreenMap.Door.direction;
 				} catch (Exception e) { }
 				ScreenMap.Door.reset();
 				if (nMap == null || x == null || y == null) return;
 				map = nMap;
 				setPosition(x*sm.tileWidth, y*sm.tileHeight);
-				System.out.println("Go to: " + sm.map + " in " + x + " x " + y);
+				System.out.println("Go to: " + map + " in " + x + " x " + y);
 			}
 		}
 	}

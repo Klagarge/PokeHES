@@ -1823,6 +1823,7 @@
  <objectgroup id="2" name="door">
   <object id="3" x="46" y="14.6667">
    <properties>
+    <property name="nextDirection" value=""/>
     <property name="nextMap" value="desert"/>
     <property name="nextX" type="int" value="8"/>
     <property name="nextY" type="int" value="15"/>
@@ -1830,6 +1831,7 @@
   </object>
   <object id="4" x="208" y="16.6667">
    <properties>
+    <property name="nextDirection" value=""/>
     <property name="nextMap" value="test_couloir"/>
     <property name="nextX" type="int" value="11"/>
     <property name="nextY" type="int" value="2"/>

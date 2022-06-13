@@ -3,15 +3,69 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "test_couloir.tmx",
+    "activeFile": "21RI.tmx",
     "expandedProjectPaths": [
-        "."
+        "png",
+        ".",
+        "assets"
     ],
-    "file.lastUsedOpenFilter": "Fichiers de jeu de tuiles Tiled (*.tsx *.xml)",
+    "file.lastUsedOpenFilter": "Tous les Fichiers (*)",
     "fileStates": {
         "": {
             "scaleInDock": 1,
             "scaleInEditor": 1
+        },
+        "21N2.tmx": {
+            "expandedObjectLayers": [
+                6
+            ],
+            "scale": 0.75,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 648,
+                "y": 186
+            }
+        },
+        "21N3.tmx": {
+            "expandedObjectLayers": [
+                6
+            ],
+            "scale": 0.75,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 425.3333333333333,
+                "y": 276.66666666666663
+            }
+        },
+        "21N3_v2.tmx": {
+            "scale": 3,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 404.3333333333333,
+                "y": 137.5
+            }
+        },
+        "21RI.tmx": {
+            "expandedObjectLayers": [
+                6
+            ],
+            "scale": 1,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 653,
+                "y": 393.5
+            }
+        },
+        "21RS.tmx": {
+            "expandedObjectLayers": [
+                6
+            ],
+            "scale": 0.5,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 756,
+                "y": -33
+            }
         },
         "C:/Users/remi/AppData/Roaming/Tiled/#Tests": {
             "dynamicWrapping": true
@@ -116,6 +170,17 @@
             "scaleInDock": 1,
             "scaleInEditor": 5.5
         },
+        "I21N3.tmx": {
+            "expandedObjectLayers": [
+                6
+            ],
+            "scale": 0.75,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 397.3333333333333,
+                "y": 347.3333333333333
+            }
+        },
         "assets/32x32 first tileset.tsx": {
             "dynamicWrapping": false,
             "scaleInDock": 1,
@@ -131,10 +196,14 @@
             "scaleInEditor": 1
         },
         "assets/Dungeon_v2.tsx": {
+            "scaleInDock": 1.5,
+            "scaleInEditor": 1.5
+        },
+        "assets/HKU tileset.tsx": {
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
-        "assets/HKU tileset.tsx": {
+        "assets/Interior.tsx": {
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
@@ -145,7 +214,11 @@
         },
         "assets/Interior_v2.tsx": {
             "scaleInDock": 1,
-            "scaleInEditor": 1
+            "scaleInEditor": 3
+        },
+        "assets/MegaPixelArt_v2.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 3
         },
         "assets/OuterTileset.tsx": {
             "scaleInDock": 1,
@@ -167,7 +240,7 @@
         },
         "assets/Slates_v2.tsx": {
             "scaleInDock": 1,
-            "scaleInEditor": 1
+            "scaleInEditor": 3
         },
         "assets/TileSet_V2.tsx": {
             "scaleInDock": 1,
@@ -184,7 +257,7 @@
             "scaleInEditor": 1.5
         },
         "assets/pokemon_v2.tsx": {
-            "scaleInDock": 1,
+            "scaleInDock": 1.5,
             "scaleInEditor": 1
         },
         "assets/tpq_v2.tsx": {
@@ -198,8 +271,8 @@
             "scale": 0.75,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 640,
-                "y": 640
+                "x": 18,
+                "y": 524.6666666666666
             }
         },
         "desert.tmx#Desert": {
@@ -213,8 +286,8 @@
             "scale": 1.5,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 159.33333333333331,
-                "y": 160.66666666666663
+                "x": 208.66666666666663,
+                "y": 17
             }
         },
         "test.tmx#test": {
@@ -226,10 +299,10 @@
                 9
             ],
             "scale": 1.5,
-            "selectedLayer": 4,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 299.66666666666663,
-                "y": 221
+                "x": 285.99999999999994,
+                "y": 60.333333333333314
             }
         },
         "test_couloir.tmx#Dungeon_Tileset": {
@@ -273,8 +346,8 @@
         }
     },
     "last.exportedFilePath": "C:/Users/remi/OneDrive/Documents/Cours/05-HEVS/S2fb/informatic/vscode/tests_gdx2d_gradle/app/src/main/java/test_map/data",
-    "last.externalTilesetPath": "C:/Users/remi/Desktop",
-    "last.imagePath": "C:/Users/remi/OneDrive/Documents/Cours/05-HEVS/S2fb/informatic/projet/map/assets",
+    "last.externalTilesetPath": "C:/Users/remi/OneDrive/Documents/Cours/05-HEVS/S2fb/informatic/vscode/PokeMudry/resources/map/assets",
+    "last.imagePath": "C:/Users/remi/OneDrive/Documents/Cours/05-HEVS/S2fb/informatic/vscode/PokeMudry/resources/map/assets",
     "last.objectTypesPath": "C:/Users/remi/OneDrive/Documents/Cours/05-HEVS/S2fb/informatic/projet/map/propertytypes.json",
     "last.worldFilePath": "C:/Users/remi/OneDrive/Documents/Cours/05-HEVS/S2fb/informatic/projet/map",
     "lastUsedTilesetExportFilter": "Tous les Fichiers (*)",
@@ -288,26 +361,28 @@
     "map.tileWidth": 32,
     "map.width": 20,
     "openFiles": [
-        "test_couloir.tmx",
-        "test.tmx",
-        "desert.tmx"
+        "21RI.tmx",
+        "21RS.tmx",
+        "21N2.tmx",
+        "21N3.tmx"
     ],
     "project": "Maps.tiled-project",
     "property.type": "string",
     "recentFiles": [
-        "desert.tmx",
-        "test.tmx",
-        "test_couloir.tmx",
-        "assets/Dungeon_v2.tsx",
-        "assets/Interior_v2.tsx",
+        "21N3.tmx",
+        "21N2.tmx",
+        "21RS.tmx",
+        "21RI.tmx",
         "assets/pokemon_v2.tsx",
         "assets/Slates_v2.tsx",
-        "assets/TileSet_V2.tsx",
-        "assets/tpq_v2.tsx",
-        "assets/Dungeon.tsx",
-        "assets/pokemon.tsx",
-        "assets/Tiny Platform Quest Tiles.tsx"
+        "assets/Dungeon_v2.tsx",
+        "assets/Interior_v2.tsx",
+        "test.tmx",
+        "test_couloir.tmx",
+        "I21N3.tmx",
+        "desert.tmx"
     ],
+    "tileset.lastUsedFilter": "Fichiers de jeu de tuiles Tiled (*.tsx *.xml)",
     "tileset.lastUsedFormat": "tsx",
     "tileset.margin": 0,
     "tileset.spacing": 0,
