@@ -62,7 +62,7 @@ public class PokeMudry extends PortableApplication {
         if(onMapScreen) sp.p.manageEntity(sp.sm, controller);
         
         // Switch screen
-        if (sp.p.onEnemy && onMapScreen){
+        if (sp.p.frontOfEnemy && onMapScreen){
             sp.e = sp.p.lastEnemy;
             sp.sb = sp.screenManager.getScreenBattle();
             sp.b = new Battle(sp.e);
