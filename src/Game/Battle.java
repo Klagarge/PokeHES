@@ -86,7 +86,7 @@ public class Battle {
         return lineSpeech;
     }
 
-    public boolean getScreenBattle(){
+    public boolean getScreenBattleOn(){
         return screenBattleOn;
     }
      

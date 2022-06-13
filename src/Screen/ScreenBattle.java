@@ -28,7 +28,7 @@ public class ScreenBattle extends RenderingScreen{
 	private Battle b = null;
 
 
-	private boolean screenBattleOn = true;
+
 
     @Override
 	public void onInit() {
@@ -91,9 +91,7 @@ public class ScreenBattle extends RenderingScreen{
 		//TODO afficher le joueur                 
 	}
 
-	public boolean getScreenBattleOn(){
-		return screenBattleOn;
-	}
+
 
 	public void manage(Controller c, Battle battle){
 		if(PokeMudry.front_montant){
