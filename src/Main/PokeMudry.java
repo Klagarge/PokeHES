@@ -71,6 +71,12 @@ public class PokeMudry extends PortableApplication {
         
         if(onBattleScreen) sp.sb.manage(controller, sp.b);
 
+
+        if(!sp.sb.getScreenBattleOn() && onBattleScreen){
+            sp.p.onEnemy = false;
+            sp.sm = sp.screenManager.getScreenMap();
+        }
+
         // Graphics render
         sp.render(g);
         for (Entity entity : entities) {

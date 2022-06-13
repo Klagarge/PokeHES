@@ -31,8 +31,10 @@ public class Battle {
 
     public void readNextLine(){
     //change line
-		lineSpeech++;
-
+    System.out.println(textEnemy.lines.size());
+        if(lineSpeech < textEnemy.lines.size()-1){
+            lineSpeech++;
+        }
 	}
 
     //check the choice answer
@@ -64,6 +66,11 @@ public class Battle {
 
         readNextLine();
 
+    }
+
+    
+    public boolean finish(){
+        return false;
     }
 
     public boolean getAttackOn(){
