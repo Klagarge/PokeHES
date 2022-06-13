@@ -15,7 +15,7 @@ public class Battle {
 
     private int winPoint;
 
-    private boolean screenBattleOn = true;
+    public boolean screenBattleOn = true;
    
 
     public Battle(Enemy enemy){
