@@ -31,6 +31,8 @@ public class ScreenBattle extends RenderingScreen{
 	private Enemy enemy;
 
 
+	private boolean screenBattleOn = true;
+
     @Override
 	public void onInit() {
         //display the question
@@ -94,6 +96,10 @@ public class ScreenBattle extends RenderingScreen{
 		//TODO afficher le joueur                 
 	}
 
+	public boolean getScreenBattleOn(){
+		return screenBattleOn;
+	}
+
 	public void manage(Controller c, Battle battle){
 		if(PokeMudry.front_montant){
  	     	System.out.println("manage: " + battle.getLineSpeech());
@@ -102,6 +108,9 @@ public class ScreenBattle extends RenderingScreen{
 				if (c.keyStatus.get(Input.Keys.SPACE)){
 					System.out.println("in");
 					battle.readNextLine();
+				}
+				if (c.keyStatus.get(Input.Keys.ENTER)){
+					screenBattleOn = battle.finish();
 				}
 			}
 

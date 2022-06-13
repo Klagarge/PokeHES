@@ -21,6 +21,7 @@ public class ScreenPlayer {
         // Create both type of screen and record for reuse
         screenManager.registerScreen(ScreenMap.class);
         screenManager.registerScreen(ScreenBattle.class);
+        sb = screenManager.getScreenBattle();
         sm = screenManager.getScreenMap();
 
     }
