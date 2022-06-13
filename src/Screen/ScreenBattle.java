@@ -103,7 +103,7 @@ public class ScreenBattle extends RenderingScreen{
 					battle.readNextLine();
 				}
 				if (c.keyStatus.get(Input.Keys.ENTER)){
-					screenBattleOn = battle.finish();
+					battle.screenBattleOn = battle.finish();
 				}
 			}
 
