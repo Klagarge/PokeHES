@@ -27,8 +27,6 @@ public class FightData {
             FileReader f = new FileReader(file);
             BufferedReader bf = new BufferedReader(f); 
 
-
-
             //add the line in the vector attacks of attack
             line = bf.readLine(); 
             while(line != null){
@@ -45,6 +43,7 @@ public class FightData {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        System.out.println(attacks.size());
     }
 
     //return the vector with all attaks of one enemi

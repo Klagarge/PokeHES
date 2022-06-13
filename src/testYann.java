@@ -1,54 +1,30 @@
 
+import Text.*;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.ListIterator;
 import java.util.Random;
+import java.util.RandomAccess;
+
 
 
 
 
 class testYann{
     public static void main(String[] args) {
-        int max = 8-1;
-        Random r = new Random();
 
-        int nbre = 4;
+        FightData t = new FightData("enemi");
+        t.readFile();
 
-        int[] a = new int[nbre];
-        int x;
-        int i=0;
-        boolean same = false;
-
-        for(int j=0; j<nbre ; j++){
-            a[j] = -1;
-        }
-
-        while(i< nbre){
-            x = r.nextInt(max);
-            System.out.println(x);
-            for(int j : a){
-                if(x==j){
-                    same = true;
-                    break;
-                }
-            }
-            if(same){
-                same = false;
-            }
-            else{
-                a[i] = x;
-                i++;
-            }
-        }
-        System.out.println("\n");
-
-
-        for(int j : a){
-            System.out.println(j);
-        }
-        
-
-        
-        
-        
+        System.out.println(t.getAttack(1).getAnswer(0).toString());
+       
     }
+
+   
+
+
+
 
 
 }
