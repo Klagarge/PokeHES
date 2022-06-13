@@ -11,7 +11,7 @@ public class Attack {
 
     private int xp;
 
-    Attack(String attack, String answer1,String answer2,String answer3, String answer4, float xp){
+    Attack(String attack, String answer1,String answer2,String answer3, String answer4, int xp){
         this.attack = attack;
         this.answer1 = answer1;
         this.answer2 = answer2;
