@@ -59,19 +59,24 @@ public class ScreenMap extends RenderingScreen{
         
         tiledLayer.clear();
         
+        // Get actual map of the player
         try { map = player.getMap(); } catch (Exception e) { System.out.println("error for get map");}
 
-		for (int i = 0; i < 50; i++) {
+		// Get all layers on the current map
+        for (int i = 0; i < 50; i++) {
             try { tiledLayer.add((TiledMapTileLayer) tMap.get(map).getLayers().get(i)); } catch (Exception e) { }
         }
-        if (tiledLayer.size() <= 0) System.out.println("TiledLayer empty !!!");
+
+        // Get heigh and width of tiles and the size of the tiles
         TiledMapTileLayer tl = tiledLayer.get(0);
         width = tl.getWidth();
         tileWidth = (int) tl.getTileWidth();
         height = tl.getHeight();
         tileHeight = (int) tl.getTileHeight();
         
-        //System.out.println(width + " x " + height + " - " + tileWidth + " x " + tileHeight);
+        // System.out.println(width + " x " + height + " - " + tileWidth + " x " + tileHeight);
+
+        // Get all doors on the current map
 		try {
             doors = tMap.get(map).getLayers().get("door").getObjects();
 		} catch (Exception e) {	doors = null; }
@@ -79,8 +84,7 @@ public class ScreenMap extends RenderingScreen{
 		
 		// Render the tileMap
         g.zoom(zoom);
-        try {g.moveCamera(player.getPosition().x, player.getPosition().y, width * tileWidth, height * tileHeight);}
-        catch (Exception e) {System.out.println("Fail to move camera");}
+        g.moveCamera((int)player.getPosition().x, (int)player.getPosition().y, width * tileWidth, height * tileHeight);
 
 		tMapRenderer.get(map).setView(g.getCamera());
 		tMapRenderer.get(map).render();
