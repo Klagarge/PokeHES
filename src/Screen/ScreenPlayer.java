@@ -17,6 +17,7 @@ public class ScreenPlayer {
 
         // One player by ScreenPlayer
         p = new Player(8, 15, "desert");
+        b = new Battle(e);
 
         // Create both type of screen and record for reuse
         screenManager.registerScreen(ScreenMap.class);
