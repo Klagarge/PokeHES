@@ -735,7 +735,7 @@
  </tile>
  <tile id="122">
   <properties>
-   <property name="speed" type="float" value="1"/>
+   <property name="speed" type="float" value="1.5"/>
    <property name="walkable" type="bool" value="true"/>
   </properties>
  </tile>

@@ -89,16 +89,16 @@
    <properties>
     <property name="nextDirection" value=""/>
     <property name="nextMap" value="21N308"/>
-    <property name="nextX" type="int" value="0"/>
-    <property name="nextY" type="int" value="0"/>
+    <property name="nextX" type="int" value="1"/>
+    <property name="nextY" type="int" value="12"/>
    </properties>
   </object>
   <object id="4" name="21N307" x="370" y="242">
    <properties>
     <property name="nextDirection" value=""/>
     <property name="nextMap" value="21N307"/>
-    <property name="nextX" type="int" value="0"/>
-    <property name="nextY" type="int" value="0"/>
+    <property name="nextX" type="int" value="2"/>
+    <property name="nextY" type="int" value="12"/>
    </properties>
   </object>
   <object id="5" name="WC" x="336" y="80.0003"/>
@@ -115,16 +115,16 @@
    <properties>
     <property name="nextDirection" value=""/>
     <property name="nextMap" value="21N307"/>
-    <property name="nextX" type="int" value="0"/>
+    <property name="nextX" type="int" value="11"/>
     <property name="nextY" type="int" value="0"/>
    </properties>
   </object>
   <object id="9" name="21N304" x="1039.67" y="240.75">
    <properties>
-    <property name="nextDirection" value="down"/>
+    <property name="nextDirection" value=""/>
     <property name="nextMap" value="21N304"/>
-    <property name="nextX" type="int" value="0"/>
-    <property name="nextY" type="int" value="0"/>
+    <property name="nextX" type="int" value="1"/>
+    <property name="nextY" type="int" value="1"/>
    </properties>
   </object>
   <object id="10" name="21N305" x="1008" y="401.333"/>

@@ -114,8 +114,8 @@
    <properties>
     <property name="nextDirection" value=""/>
     <property name="nextMap" value="21N205"/>
-    <property name="nextX" type="int" value="0"/>
-    <property name="nextY" type="int" value="0"/>
+    <property name="nextX" type="int" value="1"/>
+    <property name="nextY" type="int" value="1"/>
    </properties>
   </object>
   <object id="10" name="21N206" x="1008" y="529.333"/>
