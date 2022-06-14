@@ -73,6 +73,12 @@ public class PokeMudry extends PortableApplication {
         
         if(onBattleScreen) sp.sb.manage(controller, sp.b);
 
+        //manage battle
+        if(!sp.b.getScreenBattleOn()){
+            sp.b.setPvEnemy(sp.e.getPv());
+            sp.b.setXpPlayer(sp.p.getXp());
+        }
+
 
         if(!sp.b.getScreenBattleOn() && onBattleScreen){
             sp.p.onEnemy = false;

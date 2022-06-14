@@ -13,6 +13,8 @@ public class Battle {
 	public int answer;
 
     private int newXp;
+    private int pvEnemy;
+    private int xpPlayer;
 
     public boolean screenBattleOn = true;
    
@@ -69,10 +71,22 @@ public class Battle {
 
     }
 
+    public void FinishSpeech(int pvEnemy){
+        if(pvEnemy>0){
+            //alive
+            readNextLine();
+        }
+        else{
+            //dead
+        }
+    }
+
+
     
     public boolean finish(){
         return false;
     }
+
 
     public boolean getAttackOn(){
         return textEnemy.lines.get(lineSpeech).attackOn;
@@ -80,24 +94,33 @@ public class Battle {
 
     public String getLine(){
         if(e==null) return null;
-    
         return textEnemy.lines.get(lineSpeech).line;
-        
     }
 
-    
+    //get the line for the dialog
     public int getLineSpeech() {
         return lineSpeech;
     }
 
+    //return true if the screen is active
     public boolean getScreenBattleOn(){
         return screenBattleOn;
     }
 
+    //get the total xp win in the battle
     public int getNewXp(){
         return newXp;
     }
 
+    public void setPvEnemy(int pv){
+        pvEnemy = pv;
+    }
+
+    public void setXpPlayer(int xp){
+        xpPlayer = xp;
+    }
+
+    //set enemy
     public void setEnemy(Enemy e){
         this.e = e;
     }

@@ -24,6 +24,10 @@ public class Player extends Character{
 		this.xp += xp;
     }
 
+	public int getXp(){
+		return xp;
+	}
+
     public void manageEntity(ScreenMap sm, Controller c) {
 
 		// Do nothing if hero is already moving

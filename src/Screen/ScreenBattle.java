@@ -101,8 +101,14 @@ public class ScreenBattle extends RenderingScreen{
 
 			if( battle.getAttackOn() == false){
 				if (c.keyStatus.get(Input.Keys.SPACE)){
-					System.out.println("in");
-					battle.readNextLine();
+					if(battle.getLineSpeech() <= 5){
+						battle.screenBattleOn = battle.finish();
+					}
+					else{
+						System.out.println("in");
+						battle.readNextLine();
+					}
+					
 				}
 				if (c.keyStatus.get(Input.Keys.ENTER)){
 					battle.screenBattleOn = battle.finish();
