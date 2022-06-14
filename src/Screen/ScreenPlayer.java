@@ -35,7 +35,7 @@ public class ScreenPlayer {
         
         if(sb != null){
             sb.setBattle(b);
-            
+            b.setEnemy(e);
         }
         
         screenManager.render(g);
