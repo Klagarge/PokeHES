@@ -75,7 +75,9 @@ public class ScreenBattle extends RenderingScreen{
 		g.drawFilledRectangle(Settings.SIDE/2, HEIGHT_DIALOG/2 + EDGE, WIDTH_DIALOG, HEIGHT_DIALOG, 0);
 
 		//dialog
-		if(b != null) g.drawString(15, 245 ,b.getLine() , optimus40);
+		if(b == null) return;
+		if(b.getLine() == null) return;
+		g.drawString(15, 245 ,b.getLine() , optimus40);
 
 
 

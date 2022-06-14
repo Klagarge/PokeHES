@@ -45,8 +45,8 @@ public class PokeMudry extends PortableApplication {
 
         // add player, create and add all enemies in entities
 		entities.add((Entity) sp.p);
-		enemies.add(new Enemy("Mudry", 10, 15, "lumberjack_sheet32", "desert"));
-		enemies.add(new Enemy("Pignat", 5, 1, "lumberjack_sheet32", "test"));
+		enemies.add(new Enemy("Mudry", 10, 15, "lumberjack_sheet32", "desert", 25, "informatique"));
+		//enemies.add(new Enemy("Pignat", 5, 1, "lumberjack_sheet32", "test", 150));
         for (Enemy enemy : enemies) { entities.add(enemy); }
 
 		//Init all entities
@@ -65,6 +65,8 @@ public class PokeMudry extends PortableApplication {
         if (sp.p.onEnemy && onMapScreen){
             sp.e = sp.p.lastEnemy;
             sp.sb = sp.screenManager.getScreenBattle();
+            if(sp.e == null) System.out.println("sdfsdfsdfsdf");
+            
             sp.b = new Battle(sp.e);
             g.resetCamera();
         }
@@ -75,6 +77,8 @@ public class PokeMudry extends PortableApplication {
         if(!sp.b.getScreenBattleOn() && onBattleScreen){
             sp.p.onEnemy = false;
             sp.sm = sp.screenManager.getScreenMap();
+            sp.p.addXp(sp.b.getNewXp());
+            sp.e.removedPv(sp.b.getNewXp());
         }
 
         // Graphics render

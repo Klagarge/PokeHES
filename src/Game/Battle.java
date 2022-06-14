@@ -6,24 +6,24 @@ import Entity.Enemy;
 import Text.TextEnemy;
 
 public class Battle {
-    
 
-    TextEnemy textEnemy;
+    private Enemy e;
+    public TextEnemy textEnemy;
     private int lineSpeech;
-	
 	public int answer;
 
-    private int winPoint;
+    private int newXp;
 
     public boolean screenBattleOn = true;
    
-
-    public Battle(Enemy enemy){
-        textEnemy = new TextEnemy("enemi"); // should be enemy.name
-		textEnemy.generateText();
-
+    public Battle(Enemy e){
+        if(e != null){
+            textEnemy = new TextEnemy(e);  
+            textEnemy.generateText();
+        }
+        
         lineSpeech = 0;
-        winPoint = 0;
+        newXp = 0;
 
         System.out.println("lll : "+ getLine());
         
@@ -46,7 +46,6 @@ public class Battle {
 
         //get number current answer random
         int currentAnswer = textEnemy.getCurrentData().get(attack)[answer];
-        System.out.println("current answer  : " + currentAnswer);
 
         //get the answer of the player
         String answerPlayer = textEnemy.fightData.getAttack(currentAttack).getAnswer(currentAnswer);
@@ -58,7 +57,9 @@ public class Battle {
 
         //check the choice of the player
         if(answerPlayer == trueAsnwer){
+            newXp += textEnemy.fightData.getAttack(currentAttack).getXp();
             System.out.println("it's true !!!!");
+
         }
         else{
             System.out.println("it's false !!!!");
@@ -78,7 +79,10 @@ public class Battle {
     }
 
     public String getLine(){
+        if(e==null) return null;
+    
         return textEnemy.lines.get(lineSpeech).line;
+        
     }
 
     
@@ -89,6 +93,12 @@ public class Battle {
     public boolean getScreenBattleOn(){
         return screenBattleOn;
     }
-     
-    
+
+    public int getNewXp(){
+        return newXp;
+    }
+
+    public void setEnemy(Enemy e){
+        this.e = e;
+    }
 }

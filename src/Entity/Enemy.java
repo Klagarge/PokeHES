@@ -4,17 +4,22 @@ import com.badlogic.gdx.math.Vector2;
 
 public class Enemy extends Character{
 
+    private String branch;
 
 
-    public Enemy(String name, int x, int y, String img, String map) {
+
+    public Enemy(String name, int x, int y, String img, String map, int pv, String branch) {
         super(name, x, y, img, map);
         //generate his text
 
         this.map = map;
 
         turn(Character.Direction.DOWN);
-        //generate the vector of fight
-        //FightData fightData = new FightData(name);
+
+        this.branch = branch;
+
+        this.pv = pv;
+
 
     }
 
@@ -28,9 +33,13 @@ public class Enemy extends Character{
     }
 
     @Override
-    protected void removedPv(int pv) {
-        // TODO Auto-generated method stub
+    public void removedPv(int pv) {
+        this.pv -= pv;
         
+    }
+
+    public String getBranch(){
+        return branch;
     }
     
 }

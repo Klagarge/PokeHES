@@ -12,7 +12,7 @@ import Screen.ScreenMap;
 
 public class Player extends Character{
 
-    private int xp;
+    private int xp = 0;
 	public Enemy lastEnemy = null;
 	public boolean onEnemy = false;
 
@@ -21,7 +21,7 @@ public class Player extends Character{
     }
 
     public void addXp(int xp){
-
+		this.xp += xp;
     }
 
     public void manageEntity(ScreenMap sm, Controller c) {
