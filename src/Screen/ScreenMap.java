@@ -52,6 +52,16 @@ public class ScreenMap extends RenderingScreen{
 		createMap("test");
 		createMap("test_couloir");
 		createMap("desert");
+        createMap("SS");
+        createMap("21RI");
+        createMap("21RS");
+        createMap("21N2");
+        createMap("21N3");
+        createMap("21N205");
+        createMap("21N304");
+        createMap("21N307");
+        createMap("21N308");
+        
 	}
 
     @Override

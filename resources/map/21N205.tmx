@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.5" orientation="orthogonal" renderorder="right-down" width="10" height="14" tilewidth="32" tileheight="32" infinite="0" nextlayerid="7" nextobjectid="1">
+<map version="1.8" tiledversion="1.8.5" orientation="orthogonal" renderorder="right-down" width="10" height="14" tilewidth="32" tileheight="32" infinite="0" nextlayerid="8" nextobjectid="2">
  <tileset firstgid="1" source="assets/Dungeon_v2.tsx"/>
  <tileset firstgid="229" source="assets/Slates_v2.tsx"/>
  <tileset firstgid="293" source="assets/pokemon_v2.tsx"/>
- <imagelayer id="3" name="Calque d'Images 1" offsetx="-1369" offsety="25">
-  <image source="png/21N2.PNG" width="4164" height="1053"/>
- </imagelayer>
  <layer id="4" name="floor" width="10" height="14">
   <data encoding="csv">
 242,242,242,242,242,242,242,242,242,242,
@@ -22,24 +19,6 @@
 242,242,242,242,242,242,242,242,242,242,
 242,242,242,242,242,242,242,242,242,242,
 242,242,242,242,242,242,242,242,242,242
-</data>
- </layer>
- <layer id="5" name="stair" width="10" height="14">
-  <data encoding="csv">
-0,0,0,0,0,0,0,0,0,0,
-0,0,45,45,0,0,0,0,45,0,
-0,0,45,45,45,45,45,45,45,0,
-0,0,0,0,0,0,0,0,45,0,
-0,0,0,0,0,0,0,0,45,0,
-0,0,0,0,0,0,0,45,45,0,
-0,0,0,0,0,0,0,45,0,0,
-0,0,0,0,0,0,0,45,45,0,
-0,0,0,0,0,0,0,0,45,0,
-0,0,0,0,0,0,0,0,45,0,
-0,0,0,0,0,0,0,0,45,0,
-0,0,45,45,45,45,45,45,45,0,
-0,0,45,0,0,0,0,45,45,0,
-0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
  <layer id="1" name="wall" width="10" height="14">
@@ -78,4 +57,14 @@
 0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
+ <objectgroup id="7" name="door">
+  <object id="1" x="49" y="433.5">
+   <properties>
+    <property name="nextDirection" value=""/>
+    <property name="nextMap" value="21N2"/>
+    <property name="nextX" type="int" value="32"/>
+    <property name="nextY" type="int" value="11"/>
+   </properties>
+  </object>
+ </objectgroup>
 </map>
