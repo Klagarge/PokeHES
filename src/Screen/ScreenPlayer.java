@@ -16,7 +16,9 @@ public class ScreenPlayer {
     public void init(){
 
         // One player by ScreenPlayer
-        p = new Player(8, 15, "desert");
+        //p = new Player(8, 15, "desert");
+        p = new Player(4, 2, "21RI");
+
         b = new Battle(e);
 
         // Create both type of screen and record for reuse
