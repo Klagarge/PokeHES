@@ -16,6 +16,7 @@ import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.math.Vector2;
 
+import Entity.Character.Direction;
 import Entity.Player;
 import ch.hevs.gdx2d.components.screen_management.RenderingScreen;
 import ch.hevs.gdx2d.lib.GdxGraphics;
@@ -160,7 +161,7 @@ public class ScreenMap extends RenderingScreen{
 				try { Door.nextMap = mapProperties.get("nextMap").toString(); } catch (Exception e) { }
 				try { Door.nextX = Integer.parseInt(mapProperties.get("nextX").toString()); } catch (Exception e) { }
 				try { Door.nextY = Integer.parseInt(mapProperties.get("nextY").toString()); } catch (Exception e) { }
-				try { Door.nextDirection = Door.nextDirection.valueOf(mapProperties.get("nextDirection").toString()); } catch (Exception e) { }
+				try { Door.nextDirection = Direction.valueOf(mapProperties.get("nextDirection").toString()); } catch (Exception e) { }
 			}
         }
         
