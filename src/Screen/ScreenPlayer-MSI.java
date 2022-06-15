@@ -17,7 +17,7 @@ public class ScreenPlayer {
 
         // One player by ScreenPlayer
         p = new Player(8, 15, "desert");
-        // = new Player(4, 2, "21RI");
+      //p = new Player(4, 2, "21RI");
 
         b = new Battle(new Enemy("enemi", 0, 0, "charachter", "desert", 50, "enemi"));
 

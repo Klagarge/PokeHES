@@ -75,16 +75,17 @@ public class PokeMudry extends PortableApplication {
 
         //manage battle
         if(!sp.b.getScreenBattleOn()){
+            sp.p.addXp(sp.b.getNewXp());
+            sp.e.removedPv(sp.b.getNewXp());
             sp.b.setPvEnemy(sp.e.getPv());
             sp.b.setXpPlayer(sp.p.getXp());
         }
 
-
         if(!sp.b.getScreenBattleOn() && onBattleScreen){
             sp.p.onEnemy = false;
             sp.sm = sp.screenManager.getScreenMap();
-            sp.p.addXp(sp.b.getNewXp());
-            sp.e.removedPv(sp.b.getNewXp());
+            
+            
         }
 
         // Graphics render
