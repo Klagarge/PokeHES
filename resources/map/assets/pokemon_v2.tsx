@@ -4342,7 +4342,7 @@
  <tile id="723">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="true"/>
+   <property name="walkable" type="bool" value="false"/>
   </properties>
  </tile>
  <tile id="724">
@@ -4360,7 +4360,7 @@
  <tile id="726">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="true"/>
+   <property name="walkable" type="bool" value="false"/>
   </properties>
  </tile>
  <tile id="727">
@@ -4564,7 +4564,7 @@
  <tile id="760">
   <properties>
    <property name="speed" type="float" value="1"/>
-   <property name="walkable" type="bool" value="true"/>
+   <property name="walkable" type="bool" value="false"/>
   </properties>
  </tile>
  <tile id="761">

@@ -137,10 +137,10 @@ public abstract class Character extends Entity{
                 textureY = 2;
                 break;
             case LEFT:
-                textureY = 1;
+                textureY = 3;
                 break;
             case UP:
-                textureY = 3;
+                textureY = 1;
                 break;
             case DOWN:
                 textureY = 0;
