@@ -78,7 +78,7 @@
  <objectgroup id="7" name="door">
   <object id="1" x="80.6667" y="16">
    <properties>
-    <property name="nextDirection" value=""/>
+    <property name="changeDirection" value="UP"/>
     <property name="nextMap" value="21N3"/>
     <property name="nextX" type="int" value="1"/>
     <property name="nextY" type="int" value="13"/>

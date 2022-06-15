@@ -46,7 +46,8 @@ public class PokeMudry extends PortableApplication {
         // add player, create and add all enemies in entities
 		entities.add((Entity) sp.p);
 		enemies.add(new Enemy("Mudry", 10, 15, "lumberjack_sheet32", "desert", 25, "informatique"));
-		//enemies.add(new Enemy("Pignat", 5, 1, "lumberjack_sheet32", "test", 150));
+		enemies.add(new Enemy("Mudry", 5, 11, "lumberjack_sheet32", "21N304", 25, "informatique"));
+		
         for (Enemy enemy : enemies) { entities.add(enemy); }
 
 		//Init all entities

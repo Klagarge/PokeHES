@@ -17,7 +17,7 @@ public class Player extends Character{
 	public boolean onEnemy = false;
 
     public Player(int x, int y, String map) {
-        super("Player", x, y, "Character", map);
+        super("Player", x, y, "Character_flipped", map);
     }
 
     public void addXp(int xp){
@@ -25,6 +25,8 @@ public class Player extends Character{
     }
 
     public void manageEntity(ScreenMap sm, Controller c) {
+
+		boolean onDoor = sm.isDoor(getPosition());
 
 		// Do nothing if hero is already moving
 		if (!isMoving()) {
@@ -34,19 +36,21 @@ public class Player extends Character{
 			Player.Direction goalDirection = Player.Direction.NULL;
 			Vector2 nextPos = new Vector2(position);
 
-			if (c.keyStatus.get(Input.Keys.RIGHT)) {
+
+
+			if (c.keyStatus.get(Input.Keys.RIGHT) && !onDoor) {
 				goalDirection = Player.Direction.RIGHT;
 				nextCell = sm.getTile(getPosition(), 1, 0);
 				nextPos.x+=sm.tileWidth;
-			} else if (c.keyStatus.get(Input.Keys.LEFT)) {
+			} else if (c.keyStatus.get(Input.Keys.LEFT) && !onDoor) {
 				goalDirection = Player.Direction.LEFT;
 				nextCell = sm.getTile(getPosition(), -1, 0);
 				nextPos.x-=sm.tileWidth;
-			} else if (c.keyStatus.get(Input.Keys.UP)) {
+			} else if (c.keyStatus.get(Input.Keys.UP) && !onDoor) {
 				goalDirection = Player.Direction.UP;
 				nextCell = sm.getTile(getPosition(), 0, 1);
 				nextPos.y+=sm.tileHeight;
-			} else if (c.keyStatus.get(Input.Keys.DOWN)) {
+			} else if (c.keyStatus.get(Input.Keys.DOWN) && !onDoor) {
 				goalDirection = Player.Direction.DOWN;
 				nextCell = sm.getTile(getPosition(), 0, -1);
 				nextPos.y-=sm.tileHeight;
@@ -59,7 +63,7 @@ public class Player extends Character{
 					turn(goalDirection);
 					System.out.println("It's a enemy !!");
 				} else {
-					setSpeed(sm.getSpeed(nextCell));
+					setSpeed(sm.getSpeed(nextCell)*3); //TODO remove x3
 					go(goalDirection);
 				}
 			} else {
@@ -68,7 +72,7 @@ public class Player extends Character{
 			}
 
 			
-			if(sm.isDoor(getPosition())){
+			if(onDoor){
 				String nMap = null;
 				Integer x = null;
 				Integer y = null;
@@ -77,12 +81,32 @@ public class Player extends Character{
 					x = ScreenMap.Door.nextX;
 					y = ScreenMap.Door.nextY;
 					goalDirection = ScreenMap.Door.nextDirection;
+					/*
+					if (ScreenMap.Door.changeDirection) {
+						switch (goalDirection) {
+							case UP:
+								goalDirection = Direction.DOWN;
+								System.out.println("go down");
+								break;
+
+							case DOWN:
+								goalDirection = Direction.UP;
+								System.out.println("go up");
+						
+							default:
+								goalDirection = Direction.NULL;
+								break;
+						}
+					}
+					*/
 				} catch (Exception e) { }
 				ScreenMap.Door.reset();
 				if (nMap == null || x == null || y == null) return;
 				map = nMap;
 				setPosition(x*sm.tileWidth, y*sm.tileHeight);
-				System.out.println("Go to: " + sm.map + " in " + x + " x " + y);
+				System.out.println(goalDirection);
+				turn(goalDirection);
+				System.out.println("Go to: " + map + " in " + x + " x " + y);
 			}
 		}
 	}

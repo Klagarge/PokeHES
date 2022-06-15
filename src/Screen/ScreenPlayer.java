@@ -16,10 +16,10 @@ public class ScreenPlayer {
     public void init(){
 
         // One player by ScreenPlayer
-        p = new Player(8, 15, "desert");
-      //p = new Player(4, 2, "21RI");
+        //p = new Player(8, 15, "desert");
+        p = new Player(4, 2, "21RI");
 
-        b = new Battle(new Enemy("enemi", 0, 0, "charachter", "desert", 50, "enemi"));
+        b = new Battle(new Enemy("enemi", 0, 0, "lumberjack_sheet32", "desert", 50, "enemi"));
 
         // Create both type of screen and record for reuse
         screenManager.registerScreen(ScreenMap.class);
