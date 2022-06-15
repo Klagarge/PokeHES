@@ -8,13 +8,13 @@ public class Enemy extends Character{
 
 
 
-    public Enemy(String name, int x, int y, String img, String map, int pv, String branch) {
+    public Enemy(String name, int x, int y, String img, String map, int pv, String branch, Character.Direction dir) {
         super(name, x, y, img, map);
         //generate his text
 
         this.map = map;
 
-        turn(Character.Direction.DOWN);
+        turn(dir);
 
         this.branch = branch;
 
