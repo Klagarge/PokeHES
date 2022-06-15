@@ -28,10 +28,10 @@
                 6
             ],
             "scale": 0.75,
-            "selectedLayer": 1,
+            "selectedLayer": 3,
             "viewCenter": {
-                "x": 552.6666666666667,
-                "y": 527.3333333333333
+                "x": 385.99999999999994,
+                "y": 167.33333333333331
             }
         },
         "21N205.tmx": {
@@ -115,8 +115,8 @@
             "scale": 0.5,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 457,
-                "y": 33
+                "x": 639,
+                "y": 367
             }
         },
         "23N1.tmx": {
@@ -507,6 +507,7 @@
     "property.type": "string",
     "recentFiles": [
         "21RS.tmx",
+        "21N2.tmx",
         "21RI.tmx",
         "23RI.tmx",
         "23RS.tmx",
@@ -516,7 +517,6 @@
         "23N3.tmx",
         "23N1.tmx",
         "21N3.tmx",
-        "21N2.tmx",
         "SS.tmx"
     ],
     "resizeMap.removeObjects": true,
