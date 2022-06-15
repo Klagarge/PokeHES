@@ -81,30 +81,11 @@ public class Player extends Character{
 					x = ScreenMap.Door.nextX;
 					y = ScreenMap.Door.nextY;
 					goalDirection = ScreenMap.Door.nextDirection;
-					/*
-					if (ScreenMap.Door.changeDirection) {
-						switch (goalDirection) {
-							case UP:
-								goalDirection = Direction.DOWN;
-								System.out.println("go down");
-								break;
-
-							case DOWN:
-								goalDirection = Direction.UP;
-								System.out.println("go up");
-						
-							default:
-								goalDirection = Direction.NULL;
-								break;
-						}
-					}
-					*/
 				} catch (Exception e) { }
 				ScreenMap.Door.reset();
 				if (nMap == null || x == null || y == null) return;
 				map = nMap;
 				setPosition(x*sm.tileWidth, y*sm.tileHeight);
-				System.out.println(goalDirection);
 				turn(goalDirection);
 				System.out.println("Go to: " + map + " in " + x + " x " + y);
 			}

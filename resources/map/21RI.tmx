@@ -114,7 +114,7 @@
   <object id="18" name="out" x="1136" y="751"/>
   <object id="19" name="stair" x="1232" y="590">
    <properties>
-    <property name="nextDirection" value="up"/>
+    <property name="nextDirection" value="UP"/>
     <property name="nextMap" value="21RS"/>
     <property name="nextX" type="int" value="38"/>
     <property name="nextY" type="int" value="9"/>

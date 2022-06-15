@@ -181,7 +181,6 @@ public class ScreenMap extends RenderingScreen{
 				try { Door.nextX = Integer.parseInt(mapProperties.get("nextX").toString()); } catch (Exception e) { }
 				try { Door.nextY = Integer.parseInt(mapProperties.get("nextY").toString()); } catch (Exception e) { }
                 try { Door.nextDirection = Character.Direction.valueOf(mapProperties.get("nextDirection").toString()); } catch (Exception e) { }
-				try { Door.changeDirection = Boolean.parseBoolean(mapProperties.get("changeDirection").toString()); } catch (Exception e) { }
 			}
         }
         
@@ -193,14 +192,12 @@ public class ScreenMap extends RenderingScreen{
 		public static Integer nextX;
 		public static Integer nextY;
         public static Character.Direction nextDirection;
-        public static Boolean changeDirection;
 
 		public static void reset(){
 			nextMap = null;
 			nextX = null;
 			nextY = null;
             nextDirection = null;
-            changeDirection = null;
 		}
 	}
 

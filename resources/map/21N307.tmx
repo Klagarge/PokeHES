@@ -60,18 +60,18 @@
  <objectgroup id="5" name="door">
   <object id="1" x="81.3333" y="14.6667">
    <properties>
-    <property name="changeDirection" value="UP"/>
+    <property name="nextDirection" value="UP"/>
     <property name="nextMap" value="21N3"/>
     <property name="nextX" type="int" value="11"/>
-    <property name="nextY" type="int" value="7"/>
+    <property name="nextY" type="int" value="13"/>
    </properties>
   </object>
   <object id="2" x="370.667" y="16">
    <properties>
-    <property name="changeDirection" value="UP"/>
-    <property name="nextMap" value="21N307"/>
+    <property name="nextDirection" value="UP"/>
+    <property name="nextMap" value="21N3"/>
     <property name="nextX" type="int" value="20"/>
-    <property name="nextY" type="int" value="7"/>
+    <property name="nextY" type="int" value="13"/>
    </properties>
   </object>
  </objectgroup>
