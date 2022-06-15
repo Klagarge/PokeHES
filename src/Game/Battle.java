@@ -12,9 +12,9 @@ public class Battle {
     private int lineSpeech;
 	public int answer;
 
-    private int newXp;
-    private int pvEnemy;
-    private int xpPlayer;
+    public int newXp;
+    public int pvEnemy;
+    public int xpPlayer;
 
     public boolean screenBattleOn = true;
    
@@ -23,12 +23,9 @@ public class Battle {
             textEnemy = new TextEnemy(e);  
             textEnemy.generateText();
         }
-        
+        pvEnemy = e.getPv();
         lineSpeech = 0;
         newXp = 0;
-
-        System.out.println("lll : "+ getLine());
-        
     }
 
     public void readNextLine(){
@@ -44,44 +41,54 @@ public class Battle {
         int attack = lineSpeech-1;
         //get number current attack random
         int currentAttack = textEnemy.getCurrentData().get(attack)[0];
-        System.out.println(Arrays.toString(textEnemy.getCurrentData().get(attack)));
 
         //get number current answer random
         int currentAnswer = textEnemy.getCurrentData().get(attack)[answer];
 
         //get the answer of the player
         String answerPlayer = textEnemy.fightData.getAttack(currentAttack).getAnswer(currentAnswer);
-        System.out.println("answer player  : " + answerPlayer);
 
         //get true answer
         String trueAsnwer = textEnemy.fightData.getAttack(currentAttack).getTrueAnswer();
-        System.out.println("true answer : " + trueAsnwer);
 
         //check the choice of the player
         if(answerPlayer == trueAsnwer){
             newXp += textEnemy.fightData.getAttack(currentAttack).getXp();
+            updatePlayerEnemy(textEnemy.fightData.getAttack(currentAttack).getXp());
             System.out.println("it's true !!!!");
 
         }
         else{
             System.out.println("it's false !!!!");
         }
+        System.out.println("pv enemy : " +pvEnemy);
+        System.out.println("xp player : " + xpPlayer);
+        System.out.println("xp win " + newXp);
 
-        readNextLine();
+
+        if(lineSpeech < 4) readNextLine();
+        
 
     }
 
-    public void FinishSpeech(int pvEnemy){
+    public void updatePlayerEnemy(int xp){
+        //add xp for the player
+        xpPlayer += xp;
+        //remove pv enemy
+        pvEnemy -= xp;
+        
+    }
+
+    public void FinishSpeech(){
         if(pvEnemy>0){
-            //alive
-            readNextLine();
+            //alive (speechline = 6)
+            for(int i=0;i<2;i++)readNextLine();;
         }
         else{
-            //dead
+            //dead (speechline = 5)
+            readNextLine();
         }
     }
-
-
     
     public boolean finish(){
         return false;
@@ -110,10 +117,6 @@ public class Battle {
     //get the total xp win in the battle
     public int getNewXp(){
         return newXp;
-    }
-
-    public void setPvEnemy(int pv){
-        pvEnemy = pv;
     }
 
     public void setXpPlayer(int xp){

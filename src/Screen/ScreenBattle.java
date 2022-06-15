@@ -35,6 +35,7 @@ public class ScreenBattle extends RenderingScreen{
         //display the question
 		generateFont("resources/font/OptimusPrinceps.ttf", 40, Color.BLACK);
 
+		
 	}
 
 
@@ -98,14 +99,21 @@ public class ScreenBattle extends RenderingScreen{
 	public void manage(Controller c, Battle battle){
 		if(PokeMudry.front_montant){
  	     	System.out.println("manage: " + battle.getLineSpeech());
+			
+
 
 			if( battle.getAttackOn() == false){
 				if (c.keyStatus.get(Input.Keys.SPACE)){
-					if(battle.getLineSpeech() <= 5){
+					if(battle.getLineSpeech() == 4){
+						//dislpay the finish speech
+						battle.FinishSpeech();
+					}
+					else if(battle.getLineSpeech() > 4){
+						//return in the map
 						battle.screenBattleOn = battle.finish();
 					}
 					else{
-						System.out.println("in");
+						//fix next line
 						battle.readNextLine();
 					}
 					
@@ -117,19 +125,15 @@ public class ScreenBattle extends RenderingScreen{
 
 			if(battle.getAttackOn() == true){
 				if (c.keyStatus.get(Input.Keys.NUM_1)){
-					
 					battle.checkAnswer(1);
 				}
 				else if (c.keyStatus.get(Input.Keys.NUM_2)){
-
 					battle.checkAnswer(2);
 				}
 				else if (c.keyStatus.get(Input.Keys.NUM_3)){
-	
 					battle.checkAnswer(3);
 				}
 				else if (c.keyStatus.get(Input.Keys.NUM_4)){
-
 					battle.checkAnswer(4);
 					
 				}
