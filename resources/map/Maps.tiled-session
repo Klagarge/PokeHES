@@ -41,11 +41,11 @@
             "expandedObjectLayers": [
                 6
             ],
-            "scale": 1,
-            "selectedLayer": 3,
+            "scale": 2,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 319.5,
-                "y": 279.5
+                "x": 530.25,
+                "y": 223.25
             }
         },
         "21N304.tmx": {
@@ -96,8 +96,8 @@
             "scale": 0.75,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 750,
-                "y": 750
+                "x": 527.3333333333333,
+                "y": 732.6666666666666
             }
         },
         "21RS.tmx": {
@@ -105,9 +105,9 @@
                 6
             ],
             "scale": 1,
-            "selectedLayer": 3,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 893.5,
+                "x": 874.5,
                 "y": 286.5
             }
         },
@@ -115,27 +115,33 @@
             "expandedObjectLayers": [
                 5
             ],
-            "scale": 1,
+            "scale": 1.5,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 878.5,
-                "y": 210.5
+                "x": 2608.333333333333,
+                "y": 700.3333333333333
             }
         },
         "23RI.tmx": {
-            "scale": 0.75,
-            "selectedLayer": 1,
+            "expandedObjectLayers": [
+                5
+            ],
+            "scale": 1.5,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 2868.6666666666665,
-                "y": 370
+                "x": 969.6666666666666,
+                "y": 727
             }
         },
         "23RS.tmx": {
-            "scale": 0.5,
-            "selectedLayer": 1,
+            "expandedObjectLayers": [
+                5
+            ],
+            "scale": 2,
+            "selectedLayer": 3,
             "viewCenter": {
-                "x": 1995,
-                "y": 439
+                "x": 762.75,
+                "y": 562.25
             }
         },
         "C:/Users/remi/AppData/Roaming/Tiled/#Tests": {
@@ -256,11 +262,11 @@
             "expandedObjectLayers": [
                 6
             ],
-            "scale": 0.5,
+            "scale": 0.75,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 2849,
-                "y": 701
+                "x": 4220.666666666666,
+                "y": 542
             }
         },
         "assets/32x32 first tileset.tsx": {
@@ -451,18 +457,18 @@
     "project": "Maps.tiled-project",
     "property.type": "string",
     "recentFiles": [
+        "SS.tmx",
+        "23RS.tmx",
+        "23RI.tmx",
+        "21RS.tmx",
+        "21RI.tmx",
+        "21N2.tmx",
         "21N3.tmx",
+        "assets/Dungeon_v2.tsx",
         "21N307.tmx",
         "21N304.tmx",
         "21N308.tmx",
-        "21N2.tmx",
-        "21N205.tmx",
-        "21RS.tmx",
-        "assets/pokemon_v2.tsx",
-        "assets/PokeMudry.tsx",
-        "SS.tmx",
-        "21RI.tmx",
-        "23N1.tmx"
+        "21N205.tmx"
     ],
     "resizeMap.removeObjects": true,
     "tileset.lastUsedFilter": "Fichiers de jeu de tuiles Tiled (*.tsx *.xml)",

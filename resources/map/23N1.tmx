@@ -101,17 +101,17 @@
   <object id="2" name="down" x="976" y="208.5">
    <properties>
     <property name="nextDirection" value="DOWN"/>
-    <property name="nextMap" value="SS"/>
-    <property name="nextX" type="int" value="81"/>
-    <property name="nextY" type="int" value="10"/>
+    <property name="nextMap" value="23RI"/>
+    <property name="nextX" type="int" value="27"/>
+    <property name="nextY" type="int" value="17"/>
    </properties>
   </object>
   <object id="3" name="down" x="2511" y="592.5">
    <properties>
     <property name="nextDirection" value="UP"/>
-    <property name="nextMap" value="SS"/>
-    <property name="nextX" type="int" value="133"/>
-    <property name="nextY" type="int" value="1"/>
+    <property name="nextMap" value="23RS"/>
+    <property name="nextX" type="int" value="24"/>
+    <property name="nextY" type="int" value="8"/>
    </properties>
   </object>
   <object id="4" name="up" x="2607" y="592">

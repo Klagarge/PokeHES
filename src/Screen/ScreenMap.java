@@ -61,21 +61,19 @@ public class ScreenMap extends RenderingScreen{
         createMap("21RI");
         createMap("21RS");
         createMap("21N2");
-        createMap("21N3");
-        
         createMap("21N205");
+        createMap("21N3");
         createMap("21N304");
         createMap("21N307");
         createMap("21N308");
-
-        //createMap("23RI");
-        //createMap("23RS");
+        
+        createMap("23RI");
+        createMap("23RS");
         createMap("23N1");
         //createMap("23N2");
-        
-        //createMap("23N20");
         //createMap("23N215");
-        
+        //createMap("23N3");
+        //createMap("23N308");
 	}
 
     @Override
