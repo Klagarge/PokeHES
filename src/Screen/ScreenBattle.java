@@ -70,7 +70,7 @@ public class ScreenBattle extends RenderingScreen{
 		//dialog
 		if(b == null) return;
 		if(b.getLine() == null) return;
-		g.drawString(15, 245 ,b.getLine() , optimus40);
+		g.drawString(15, 260 ,b.getLine() , optimus40);
 
 	}
 
