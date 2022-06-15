@@ -6,8 +6,6 @@ public class Enemy extends Character{
 
     private String branch;
 
-
-
     public Enemy(String name, int x, int y, String img, String map, int pv, String branch) {
         super(name, x, y, img, map);
         //generate his text
@@ -19,8 +17,6 @@ public class Enemy extends Character{
         this.branch = branch;
 
         this.pv = pv;
-
-
     }
 
     public void setPosition(int x, int y, String map){

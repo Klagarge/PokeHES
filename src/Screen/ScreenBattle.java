@@ -31,14 +31,12 @@ public class ScreenBattle extends RenderingScreen{
 	public void onInit() {
         //display the question
 		generateFont("resources/font/Ubuntu-Regular.ttf", 30, Color.BLACK);
-
 	}
 
 
 	@Override
 	public void onGraphicRender(GdxGraphics g) {
 		g.clear(Color.BLACK);
-
 		displayDialog(g);
 	}
 
