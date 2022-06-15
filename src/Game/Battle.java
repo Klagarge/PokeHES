@@ -1,7 +1,5 @@
 package Game;
 
-import java.util.Arrays;
-
 import Entity.Enemy;
 import Text.TextEnemy;
 
@@ -10,7 +8,7 @@ public class Battle {
     private Enemy e;
     public TextEnemy textEnemy;
     private int lineSpeech;
-	public int answer;
+
 
     public int newXp;
     public int pvEnemy;
@@ -31,10 +29,31 @@ public class Battle {
     public void readNextLine(){
     //change line
     System.out.println(textEnemy.lines.size());
-        if(lineSpeech < textEnemy.lines.size()-1){
+        if(lineSpeech < 5){
             lineSpeech++;
         }
+
 	}
+
+    public void action(int answer){
+        System.out.println("pv enemy : " +pvEnemy);
+        System.out.println("xp player : " + xpPlayer);
+        System.out.println("xp win " + newXp);
+        
+        if(getLineSpeech() == 4){
+            FinishSpeech();
+        }
+        else if( getLineSpeech() == 5  || getLineSpeech() == 6){
+            finish();
+        }
+        else if(0 < getLineSpeech() && getLineSpeech() < 4){
+            checkAnswer(answer);
+        }
+        else{
+        readNextLine();
+        }
+        
+    }
 
     //check the choice answer
     public void checkAnswer(int answer){
@@ -61,14 +80,7 @@ public class Battle {
         else{
             System.out.println("it's false !!!!");
         }
-        System.out.println("pv enemy : " +pvEnemy);
-        System.out.println("xp player : " + xpPlayer);
-        System.out.println("xp win " + newXp);
-
-
-        if(lineSpeech < 4) readNextLine();
-        
-
+        readNextLine();
     }
 
     public void updatePlayerEnemy(int xp){
@@ -82,18 +94,19 @@ public class Battle {
     public void FinishSpeech(){
         if(pvEnemy>0){
             //alive (speechline = 6)
-            for(int i=0;i<2;i++)readNextLine();;
+            lineSpeech += 2;
+            System.out.println("enemy alive");
         }
         else{
             //dead (speechline = 5)
-            readNextLine();
+            lineSpeech += 1;
+            System.out.println("enemy dead");
         }
     }
     
-    public boolean finish(){
-        return false;
+    public void finish(){
+        screenBattleOn = false;
     }
-
 
     public boolean getAttackOn(){
         return textEnemy.lines.get(lineSpeech).attackOn;
