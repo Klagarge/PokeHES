@@ -43,7 +43,7 @@ public class Enemy extends Character{
     }
 
     @Override
-    public int getPv() {
+    public int getPv(){
         //the pv can go under 0, but his real pv is 0 (for the player)
         return (pv<0) ? 0 : pv;
     }
