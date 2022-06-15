@@ -104,14 +104,6 @@
     <property name="nextY" type="int" value="16"/>
    </properties>
   </object>
-  <object id="11" name="out" x="144" y="750.667"/>
-  <object id="12" name="out" x="176" y="750.667"/>
-  <object id="13" name="out" x="110.667" y="750.667"/>
-  <object id="14" name="out" x="369" y="751"/>
-  <object id="15" name="out" x="562" y="750"/>
-  <object id="16" name="out" x="751" y="751"/>
-  <object id="17" name="out" x="943" y="753"/>
-  <object id="18" name="out" x="1136" y="751"/>
   <object id="19" name="stair" x="1232" y="590">
    <properties>
     <property name="nextDirection" value="UP"/>

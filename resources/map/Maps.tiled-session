@@ -3,11 +3,11 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "23N1.tmx",
+    "activeFile": "",
     "expandedProjectPaths": [
+        "assets",
         "png",
-        ".",
-        "assets"
+        "."
     ],
     "file.lastUsedOpenFilter": "Tous les Fichiers (*)",
     "fileStates": {
@@ -19,11 +19,11 @@
             "expandedObjectLayers": [
                 6
             ],
-            "scale": 2,
-            "selectedLayer": 3,
+            "scale": 0.75,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 1015.75,
-                "y": 481.25
+                "x": 552.6666666666666,
+                "y": 527.3333333333333
             }
         },
         "21N205.tmx": {
@@ -44,8 +44,8 @@
             "scale": 2,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 530.25,
-                "y": 223.25
+                "x": 1057.75,
+                "y": 361.75
             }
         },
         "21N304.tmx": {
@@ -96,52 +96,96 @@
             "scale": 0.75,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 527.3333333333333,
-                "y": 732.6666666666666
+                "x": 711.3333333333333,
+                "y": 527.3333333333333
             }
         },
         "21RS.tmx": {
             "expandedObjectLayers": [
                 6
             ],
-            "scale": 1,
-            "selectedLayer": 0,
+            "scale": 0.5,
+            "selectedLayer": 3,
             "viewCenter": {
-                "x": 874.5,
-                "y": 286.5
+                "x": 457,
+                "y": 33
             }
         },
         "23N1.tmx": {
             "expandedObjectLayers": [
                 5
             ],
-            "scale": 1.5,
+            "scale": 0.75,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 2608.333333333333,
-                "y": 700.3333333333333
+                "x": 2450,
+                "y": 692.6666666666666
             }
         },
-        "23RI.tmx": {
-            "expandedObjectLayers": [
-                5
-            ],
-            "scale": 1.5,
-            "selectedLayer": 0,
-            "viewCenter": {
-                "x": 969.6666666666666,
-                "y": 727
-            }
-        },
-        "23RS.tmx": {
+        "23N2.tmx": {
             "expandedObjectLayers": [
                 5
             ],
             "scale": 2,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 762.75,
-                "y": 562.25
+                "x": 2822.75,
+                "y": 538.25
+            }
+        },
+        "23N215.tmx": {
+            "expandedObjectLayers": [
+                7
+            ],
+            "scale": 2.0908482142857143,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 198.72317711113482,
+                "y": 164.7656667022526
+            }
+        },
+        "23N3.tmx": {
+            "expandedObjectLayers": [
+                5
+            ],
+            "scale": 1,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 2175.5,
+                "y": 582.5
+            }
+        },
+        "23N308.tmx": {
+            "expandedObjectLayers": [
+                5
+            ],
+            "scale": 1.5,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 197.66666666666666,
+                "y": 255.66666666666666
+            }
+        },
+        "23RI.tmx": {
+            "expandedObjectLayers": [
+                5
+            ],
+            "scale": 0.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 939,
+                "y": 983
+            }
+        },
+        "23RS.tmx": {
+            "expandedObjectLayers": [
+                5
+            ],
+            "scale": 0.75,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 582,
+                "y": 336.66666666666663
             }
         },
         "C:/Users/remi/AppData/Roaming/Tiled/#Tests": {
@@ -327,7 +371,7 @@
             "scaleInEditor": 2
         },
         "assets/Slates_v2.tsx": {
-            "scaleInDock": 1,
+            "scaleInDock": 3,
             "scaleInEditor": 3
         },
         "assets/TileSet_V2.tsx": {
@@ -450,25 +494,22 @@
     "map.tileWidth": 32,
     "map.width": 20,
     "openFiles": [
-        "SS.tmx",
-        "23N1.tmx",
-        "21RI.tmx"
     ],
     "project": "Maps.tiled-project",
     "property.type": "string",
     "recentFiles": [
-        "SS.tmx",
-        "23RS.tmx",
-        "23RI.tmx",
         "21RS.tmx",
         "21RI.tmx",
-        "21N2.tmx",
+        "23RI.tmx",
+        "23RS.tmx",
+        "23N2.tmx",
+        "23N215.tmx",
+        "23N308.tmx",
+        "23N3.tmx",
+        "23N1.tmx",
         "21N3.tmx",
-        "assets/Dungeon_v2.tsx",
-        "21N307.tmx",
-        "21N304.tmx",
-        "21N308.tmx",
-        "21N205.tmx"
+        "21N2.tmx",
+        "SS.tmx"
     ],
     "resizeMap.removeObjects": true,
     "tileset.lastUsedFilter": "Fichiers de jeu de tuiles Tiled (*.tsx *.xml)",
