@@ -68,8 +68,9 @@ public class PokeMudry extends PortableApplication {
         boolean onBattleScreen = sp.screenManager.getActiveScreen().getClass().equals(ScreenBattle.class);
 
         long timeNow = System.currentTimeMillis();
-        if((timeNow-lastMesure) >= 1000){
+        if((timeNow-lastMesure) >= 1000){ // one second
             lastMesure = timeNow;
+            sp.p.removedPv(1);
             for (Enemy enemy : enemies) { enemy.recoveredTime++; }
         }
         if((timeNow-beginTime)/1000 >= 60 * Settings.TIME) System.out.println("Game finished");
