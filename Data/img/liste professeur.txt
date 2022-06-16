@@ -1,25 +1,25 @@
 Informatique :
 
-Mudry Pierre-André
+Mudry Pierre-André  <--
 
 Mathématique :
-
+ 
 Epiney Jacques
 Evéquoz Gilles
-Nicollier Grégoire
+Nicollier Grégoire  <--
 Savioz Christian
 
 Physique :
-Ellert Christoph
+Ellert Christoph    <--
 
 Electricité :
-Bianchi Christophe
+Bianchi Christophe  <--
 Davide Pavanello
 
 
 Mécanique :
 Samuel Rey-Mermet
-Paciotti Gabriel
+Paciotti Gabriel    <--
 Haifa Sallem
 Wittmann Christian
 Bezençon Cyrille
@@ -27,5 +27,5 @@ Rapillard Laurent
 
 
 Langue :
-Gloeckner Caroline
+Gloeckner Caroline <--
 Laffargue-Rieder Laurence
