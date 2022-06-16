@@ -77,7 +77,7 @@ public class PokeMudry extends PortableApplication {
         }
 
         //end of the game
-        if(sp.p.getPv() <= 0 && !onEndScreen) {
+        if((sp.p.getPv() <= 0 || sp.p.getXp() >= sp.p.getXpMax() ) && !onEndScreen  ) {
             g.zoom(1);
             g.resetCamera();
             sp.se = sp.screenManager.getScreenEnd();
