@@ -46,6 +46,7 @@ public class ScreenBattle extends RenderingScreen{
 		g.clear(Color.BLACK);
 		displayDialog(g);
 		displayEnemy(g);
+		displayPlayer(g);
 	}
 
 	@Override
@@ -56,7 +57,7 @@ public class ScreenBattle extends RenderingScreen{
 
 	public void setImg(){
 		enemyImg = new BitmapImage(b.e.getImgBattle()); //width : 192, height : 240
-		enemyImg = new BitmapImage(b);
+		playerImg = new BitmapImage(b.player.getImgBattle());
 	}
 
 	
@@ -94,16 +95,17 @@ public class ScreenBattle extends RenderingScreen{
 		//draw image
 		g.drawPicture(Settings.SIDE - (192/2), Settings.SIDE-240/2, enemyImg);
 		//draw pv
-		g.drawString(250, Settings.SIDE - 15 , "PV : " + b.pvEnemy , unbuntuRegularWhite);
+		g.drawString(350, Settings.SIDE - 15 , "PV : " + b.pvEnemy + " / " + b.e.getPvInit(), unbuntuRegularWhite);
 
 
   	}
 
 	public void displayPlayer(GdxGraphics g){
 		//draw image
-		g.drawPicture(Settings.SIDE - (192/2), Settings.SIDE-240/2, playerImg);
+
+		g.drawPicture((192/2), HEIGHT_DIALOG + 10 + 240/2, playerImg);
 		//draw pv
-		g.drawString(250, Settings.SIDE - 15 , "PV : " + b.pvEnemy , unbuntuRegularWhite);              
+		g.drawString(255, HEIGHT_DIALOG + 100 , "XP : " + b.xpPlayer + " / " + b.player.getXpMax() + "\nPV : " + b.player.getPv() + " / " + Settings.TIME*60, unbuntuRegularWhite);              
 	}
 
 

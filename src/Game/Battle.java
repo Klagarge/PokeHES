@@ -1,11 +1,14 @@
 package Game;
 
 import Entity.Enemy;
+import Entity.Player;
 import Text.TextEnemy;
 
 public class Battle {
 
-    private Enemy e;
+    public Enemy e;
+    public Player player;
+    
     public TextEnemy textEnemy;
     private int lineSpeech;
 
@@ -139,5 +142,8 @@ public class Battle {
     //set enemy
     public void setEnemy(Enemy e){
         this.e = e;
+    }
+    public void setPlayer(Player p){
+        this.player = p;
     }
 }

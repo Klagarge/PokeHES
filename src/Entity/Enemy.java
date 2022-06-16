@@ -6,8 +6,7 @@ public class Enemy extends Character{
 
     private String branch;
 
-
-
+    private int pvInit;
 
     public Enemy(String name, int x, int y, String img, String map, int pv, String branch, Character.Direction dir) {
 
@@ -21,6 +20,9 @@ public class Enemy extends Character{
         this.branch = branch;
 
         this.pv = pv;
+
+        pvInit = pv;
+        
     }
 
     public void setPosition(int x, int y, String map){
@@ -47,5 +49,10 @@ public class Enemy extends Character{
         //the pv can go under 0, but his real pv is 0 (for the player)
         return (pv<0) ? 0 : pv;
     }
+
+    public int getPvInit(){
+        return pvInit;
+    }
+
     
 }
