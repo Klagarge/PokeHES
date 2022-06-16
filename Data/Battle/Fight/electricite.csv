@@ -1,5 +1,5 @@
-﻿Quelle est la différence entre la machine d'état de Moore et de Mealy;Moore : synchrone / Mealy : asynchrone;aucune;Moore : asynchrone / Mealy : synchrone;les entrée et les sorties;25
-Inverser le nombre 0b1100110001010 cp1 :;0b0011001110101 cp1;0b0011011110101 cp1;0b001100000101 cp1;0b0011001110110 cp1;25
-0b100100 * 0b101010 = ;0b10111101000;0b1023110001;0b1001000111;0b10011010111111001;25
-A quoi ressemble une F5 ?;ax^2 + bx + c;1/(ax^2 + bx + c);ax + b;c*b-2a;25
-Passer d'une tension de phase à une tension de ligne : ;*sqrt(3) (+30deg);*sqrt(3) (-30deg);/sqrt(3) (-30deg);/sqrt(3) (+30deg);25
+﻿Quelle est la différence entre la machine d'etat de Moore et de Mealy;Moore : synchrone / Mealy : asynchrone;aucune;Moore : asynchrone / Mealy : synchrone;les entrees et les sorties;200
+Inverser le nombre 0b1100110001010 cp1 :;0b0011001110101 cp1;0b0011011110101 cp1;0b001100000101 cp1;0b0011001110110 cp1;250
+0b100100 * 0b101010 = ;0b10111101000;0b1023110001;0b1001000111;0b10011010111111001;250
+A quoi ressemble une F5 ?;ax^2 + bx + c;1/(ax^2 + bx + c);ax + b;c*b-2a;250
+Passer d'une tension de phase à une tension de ligne : ;*sqrt(3) (+30deg);*sqrt(3) (-30deg);/sqrt(3) (-30deg);/sqrt(3) (+30deg);250
