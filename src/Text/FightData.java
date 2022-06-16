@@ -31,10 +31,8 @@ public class FightData {
 
             //add the line in the vector attacks of attack
             line = bf.readLine(); 
-            System.out.println(line);
             while(line != null){
                 String[] a = line.split(regex);//change the regex if it is another
-                System.out.println(a.length);
                 attack = new Attack(a[0], a[1], a[2], a[3], a[4], Integer.valueOf(a[5]));
                 attacks.add(attack);
                 line = bf.readLine();

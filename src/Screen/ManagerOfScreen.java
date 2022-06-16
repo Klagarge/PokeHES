@@ -15,4 +15,9 @@ public class ManagerOfScreen extends ScreenManager{
         this.activateScreen(1);
         return (ScreenBattle)this.getActiveScreen();
     }
+
+    public ScreenEnd getScreenEnd(){
+        this.activateScreen(2);
+        return (ScreenEnd) this.getActiveScreen();
+    }
 }

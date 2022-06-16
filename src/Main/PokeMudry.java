@@ -8,6 +8,7 @@ import Entity.Enemy;
 import Entity.Entity;
 import Game.Battle;
 import Screen.ScreenBattle;
+import Screen.ScreenEnd;
 import Screen.ScreenMap;
 import Screen.ScreenPlayer;
 import ch.hevs.gdx2d.desktop.PortableApplication;
@@ -66,15 +67,22 @@ public class PokeMudry extends PortableApplication {
         g.clear();
         boolean onMapScreen = sp.screenManager.getActiveScreen().getClass().equals(ScreenMap.class);
         boolean onBattleScreen = sp.screenManager.getActiveScreen().getClass().equals(ScreenBattle.class);
+        boolean onEndScreen = sp.screenManager.getActiveScreen().getClass().equals(ScreenEnd.class);
 
         long timeNow = System.currentTimeMillis();
-        if((timeNow-lastMesure) >= 1000){ // one second
+        if((timeNow-lastMesure) >= 1000 && !onEndScreen){ // one second
             lastMesure = timeNow;
             sp.p.removedPv(1);
             for (Enemy enemy : enemies) { enemy.recoveredTime++; }
         }
-        if((timeNow-beginTime)/1000 >= 60 * Settings.TIME) System.out.println("Game finished");
 
+        //end of the game
+        if(sp.p.getPv() <= 0 && !onEndScreen) {
+            g.zoom(1);
+            g.resetCamera();
+            sp.se = sp.screenManager.getScreenEnd();
+            System.out.println("Game finished");
+        }
 		
         if(onMapScreen) sp.p.manageEntity(sp.sm, controller);
         
@@ -89,8 +97,6 @@ public class PokeMudry extends PortableApplication {
 
 
             if (pv>0 && recovered) {
-                sp.sb = sp.screenManager.getScreenBattle();            
-
                 sp.b = new Battle(sp.e);
                 sp.sb = sp.screenManager.getScreenBattle();
                 
