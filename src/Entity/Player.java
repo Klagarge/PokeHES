@@ -20,6 +20,7 @@ public class Player extends Character{
 
     public Player(int x, int y, String map) {
         super("Player", x, y, "Character_flipped", map);
+		this.pv = Settings.TIME*60;
     }
 
     public void addXp(int xp){
@@ -119,9 +120,8 @@ public class Player extends Character{
 	}
 
     @Override
-    protected void removedPv(int pv) {
-        // TODO Auto-generated method stub
-        
+    public void removedPv(int pv) {
+        this.pv -= pv;
     }
 
 	public int getXpMax(){
