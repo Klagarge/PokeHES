@@ -30,7 +30,7 @@ public class ScreenBattle extends RenderingScreen{
     @Override
 	public void onInit() {
         //display the question
-		generateFont("resources/font/Ubuntu-Regular.ttf", 30, Color.BLACK);
+		generateFont("./font/Ubuntu-Regular.ttf", 30, Color.BLACK);
 	}
 
 
