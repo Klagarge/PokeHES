@@ -1,6 +1,5 @@
 package Main;
 
-
 import java.util.Vector;
 import com.badlogic.gdx.Input;
 
@@ -70,6 +69,17 @@ public class PokeMudry extends PortableApplication {
         // Switch screen
         if (sp.p.onEnemy && onMapScreen){
             sp.e = sp.p.lastEnemy;
+
+            sp.sb = sp.screenManager.getScreenBattle();
+            if(sp.e == null) System.out.println("sdfsdfsdfsdf");
+
+            sp.b = new Battle(sp.e);
+
+            //set pv and xp to display
+            sp.b.setXpPlayer(sp.p.getXp());
+
+            g.resetCamera();
+
             int pv = sp.e.getPv();
 
             if (pv>0) {
@@ -79,16 +89,20 @@ public class PokeMudry extends PortableApplication {
             } else {
                 sp.p.onEnemy = false;
             }
+
         }
         
         if(onBattleScreen) sp.sb.manage(controller, sp.b);
 
 
         if(!sp.b.getScreenBattleOn() && onBattleScreen){
+            //addXp for the player
+            sp.p.addXp(sp.b.getNewXp());
+            //remove pv of the enemy 
+            sp.e.removedPv(sp.b.getNewXp());
+
             sp.p.onEnemy = false;
             sp.sm = sp.screenManager.getScreenMap();
-            sp.p.addXp(sp.b.getNewXp());
-            sp.e.removedPv(sp.b.getNewXp());
         }
 
         // Graphics render

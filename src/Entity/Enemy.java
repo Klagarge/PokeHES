@@ -8,7 +8,9 @@ public class Enemy extends Character{
 
 
 
+
     public Enemy(String name, int x, int y, String img, String map, int pv, String branch, Character.Direction dir) {
+
         super(name, x, y, img, map);
         //generate his text
 
@@ -19,8 +21,6 @@ public class Enemy extends Character{
         this.branch = branch;
 
         this.pv = pv;
-
-
     }
 
     public void setPosition(int x, int y, String map){
@@ -40,6 +40,12 @@ public class Enemy extends Character{
 
     public String getBranch(){
         return branch;
+    }
+
+    @Override
+    public int getPv(){
+        //the pv can go under 0, but his real pv is 0 (for the player)
+        return (pv<0) ? 0 : pv;
     }
     
 }

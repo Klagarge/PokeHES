@@ -27,24 +27,17 @@ public class ScreenBattle extends RenderingScreen{
 
 	private Battle b = null;
 
-
-
-
     @Override
 	public void onInit() {
         //display the question
-		generateFont("resources/font/OptimusPrinceps.ttf", 40, Color.BLACK);
-
+		generateFont("resources/font/Ubuntu-Regular.ttf", 30, Color.BLACK);
 	}
 
 
 	@Override
 	public void onGraphicRender(GdxGraphics g) {
 		g.clear(Color.BLACK);
-
 		displayDialog(g);
-
-		//System.out.println("render: " + battle.getLineSpeech());
 	}
 
 	@Override
@@ -77,13 +70,9 @@ public class ScreenBattle extends RenderingScreen{
 		//dialog
 		if(b == null) return;
 		if(b.getLine() == null) return;
-		g.drawString(15, 245 ,b.getLine() , optimus40);
-
-
+		g.drawString(15, 260 ,b.getLine() , optimus40);
 
 	}
-
-
 
 	public void displayEnemy(Enemy e){
 		// TODO affficher l'enemi
@@ -97,34 +86,28 @@ public class ScreenBattle extends RenderingScreen{
 
 	public void manage(Controller c, Battle battle){
 		if(PokeMudry.front_montant){
- 	     	System.out.println("manage: " + battle.getLineSpeech());
 
 			if( battle.getAttackOn() == false){
 				if (c.keyStatus.get(Input.Keys.SPACE)){
-					System.out.println("in");
-					battle.readNextLine();
+					battle.action(-1);
 				}
 				if (c.keyStatus.get(Input.Keys.ENTER)){
-					battle.screenBattleOn = battle.finish();
+					battle.screenBattleOn = battle.screenBattleOn;
 				}
 			}
 
 			if(battle.getAttackOn() == true){
 				if (c.keyStatus.get(Input.Keys.NUM_1)){
-					
-					battle.checkAnswer(1);
+					battle.action(1);
 				}
 				else if (c.keyStatus.get(Input.Keys.NUM_2)){
-
-					battle.checkAnswer(2);
+					battle.action(2);
 				}
 				else if (c.keyStatus.get(Input.Keys.NUM_3)){
-	
-					battle.checkAnswer(3);
+					battle.action(3);
 				}
 				else if (c.keyStatus.get(Input.Keys.NUM_4)){
-
-					battle.checkAnswer(4);
+					battle.action(4);
 					
 				}
 			}
