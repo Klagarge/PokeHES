@@ -70,7 +70,7 @@ public class Player extends Character{
 					turn(goalDirection);
 					System.out.println("It's a enemy !!");
 				} else {
-					setSpeed(sm.getSpeed(nextCell)*3); //TODO remove x3
+					setSpeed(sm.getSpeed(nextCell)); //TODO remove x3
 					go(goalDirection);
 				}
 			} else {

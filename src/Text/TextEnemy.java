@@ -1,11 +1,9 @@
 package Text;
 
-import java.util.Vector;
-
 import Entity.Enemy;
 import Entity.Character.Direction;
 
-import java.text.Normalizer;
+import java.util.Vector;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -59,13 +57,13 @@ public class TextEnemy {
 
         // Creating object for Random class
         Random rd = new Random();
-         
+        
         // Starting from the last element and swapping one by one.
         for (int i = a.length-1; i > 0; i--) {
-             
+            
             // Pick a random index from 0 to i
             int j = rd.nextInt(i+1);
-             
+            
             // Swap array[i] with the element at random index
             int temp = a[i];
             a[i] = a[j];
