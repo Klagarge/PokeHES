@@ -48,7 +48,7 @@ public abstract class Character extends Entity{
     @Override
     public void init() {
         super.init();
-        ss = new Spritesheet("./" + img + ".png", SPRITE_WIDTH, SPRITE_HEIGHT);
+        ss = new Spritesheet("./Data/img/" + img + ".png", SPRITE_WIDTH, SPRITE_HEIGHT);
     }
 
     @Override

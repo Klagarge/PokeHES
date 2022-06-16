@@ -12,7 +12,7 @@ public class SpeechData {
     
 
     public SpeechData(String name){
-        file = new File("./Battle/Speech/" + name + ".txt");
+        file = new File("./Data/Battle/Speech/" + name + ".txt");
     }
     
     public void readFile() {
