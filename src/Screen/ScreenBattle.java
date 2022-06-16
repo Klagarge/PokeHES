@@ -33,7 +33,7 @@ public class ScreenBattle extends RenderingScreen{
 
     @Override
 	public void onInit() {
-        //display the question
+        //generate the fonts
 		unbuntuRegularBlack = generateFont("./Data/font/Ubuntu-Regular.ttf", 30, Color.BLACK);
 		unbuntuRegularWhite = generateFont("./Data/font/Ubuntu-Regular.ttf", 45, Color.WHITE);
 	}
@@ -41,7 +41,9 @@ public class ScreenBattle extends RenderingScreen{
 
 	@Override
 	public void onGraphicRender(GdxGraphics g) {
+		//color the background in black
 		g.clear(Color.BLACK);
+		//display the dialog, theenemy and the player
 		displayDialog(g);
 		displayEnemy(g);
 		displayPlayer(g);
@@ -53,16 +55,18 @@ public class ScreenBattle extends RenderingScreen{
 		unbuntuRegularWhite.dispose();
 	}
 
+	//set the images for the player and the enemy
 	public void setImg(){
 		enemyImg = new BitmapImage(b.e.getImgBattle()); //width : 192, height : 240
-		playerImg = new BitmapImage(b.player.getImgBattle());
+		playerImg = new BitmapImage(b.player.getImgBattle()); //width : 192, height : 240
 	}
 
-	
+	//set the battle
 	public void setBattle(Battle battle) {
 		this.b = battle;
 	}
 
+	//create a font with a file .ttf ,  a height and a color
 	public BitmapFont generateFont(String file, int height, Color c ){
 		//Generate font with the file .ttf
 		BitmapFont font;
@@ -78,48 +82,38 @@ public class ScreenBattle extends RenderingScreen{
 	}
 
 	public void displayDialog(GdxGraphics g){
-		//dialog background
+		//draw the background
 		g.drawFilledRectangle(Settings.SIDE/2, HEIGHT_DIALOG/2 + EDGE, WIDTH_DIALOG, HEIGHT_DIALOG, 0);
-
-		//dialog
+		//draw the dialog
 		if(b == null) return;
 		if(b.getLine() == null) return;
 		g.drawString(15, 260, b.getLine(), unbuntuRegularBlack);
-
 	}
 
-	
 	public void displayEnemy(GdxGraphics g){
 		//draw image
 		g.drawPicture(Settings.SIDE - (192/2), Settings.SIDE-240/2, enemyImg);
 		//draw pv
 		g.drawString(300, Settings.SIDE - 15 , "PV : " + b.pvEnemy + " / " + b.e.getPvInit(), unbuntuRegularWhite);
-
-
   	}
 
 	public void displayPlayer(GdxGraphics g){
 		//draw image
-
 		g.drawPicture((192/2), HEIGHT_DIALOG + 10 + 240/2, playerImg);
-		//draw pv
+		//draw pv and xp
 		g.drawString(255, HEIGHT_DIALOG + 100 , "XP : " + b.xpPlayer + " / " + b.player.getXpMax() + "\nPV : " + b.player.getPv() + " / " + Settings.TIME*60, unbuntuRegularWhite);              
 	}
 
-
-
 	public void manage(Controller c, Battle battle){
-		if(PokeMudry.front_montant){
-
+		//add a rising front to have one impulsion
+		if(PokeMudry.risingFront){
+			//the enemi is attacking
 			if( battle.getAttackOn() == false){
 				if (c.keyStatus.get(Input.Keys.SPACE)){
 					battle.action(-1);
 				}
-				if (c.keyStatus.get(Input.Keys.ENTER)){
-					battle.screenBattleOn = battle.screenBattleOn;
-				}
 			}
-
+			//the enemi is speaking
 			if(battle.getAttackOn() == true){
 				if (c.keyStatus.get(Input.Keys.NUM_1)){
 					battle.action(1);
@@ -132,17 +126,10 @@ public class ScreenBattle extends RenderingScreen{
 				}
 				else if (c.keyStatus.get(Input.Keys.NUM_4)){
 					battle.action(4);
-					
 				}
 			}
-
 			//mettre le front à false jusqu'à ce que le bouton soit relâché
-			PokeMudry.front_montant = false;
+			PokeMudry.risingFront = false;
 		}
-	
-
-
-	
-
 	}
 }

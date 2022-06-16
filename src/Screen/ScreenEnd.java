@@ -18,16 +18,19 @@ public class ScreenEnd extends RenderingScreen{
     private String textEnd = null;
     private BitmapFont unbuntuRegularWhite;
 
-
     @Override
     public void onInit() {
+        //generate a new font
         unbuntuRegularWhite = generateFont("./Data/font/Ubuntu-Regular.ttf", 30, Color.WHITE);
         
     }
 
     @Override
     protected void onGraphicRender(GdxGraphics g) {
+        //color the background in black
         g.clear(Color.BLACK);
+
+        //display the text
         if(textEnd != null) g.drawStringCentered(Settings.SIDE/2, textEnd, unbuntuRegularWhite);
         
     }
@@ -37,6 +40,7 @@ public class ScreenEnd extends RenderingScreen{
 		unbuntuRegularWhite.dispose();
 	}
 
+    //set a different text if the player win or loose
     public void setText(Player p){
         if(p.getXp() >= p.getXpMax()){
             textEnd = "Bravo, tu as réussi ton année avec " + p.getXp()/100.0 + " crédits en " + (Settings.TIME*60-p.getPv()) + " secondes.\n\nMais, seras-tu près pour le prochain....";
@@ -46,7 +50,7 @@ public class ScreenEnd extends RenderingScreen{
         }
     }
 
-
+    //create a font with a file .ttf ,  a height and a color
     public BitmapFont generateFont(String file, int height, Color c ){
 		//Generate font with the file .ttf
 		BitmapFont font;
