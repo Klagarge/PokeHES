@@ -3,6 +3,7 @@ package Text;
 import java.util.Vector;
 
 import Entity.Enemy;
+import Entity.Character.Direction;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -21,7 +22,7 @@ public class TextEnemy {
 
     public static void main(String[] args) {
         
-        TextEnemy t  = new TextEnemy(new Enemy("Mudry", 10, 15, "lumberjack_sheet32", "desert", 25, "informatique"));
+        TextEnemy t  = new TextEnemy(new Enemy("Mudry", 10, 15, "lumberjack_sheet32", "desert", 25, "informatique",Direction.NULL));
 
         t.generateText();
 

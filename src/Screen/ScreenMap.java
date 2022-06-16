@@ -17,6 +17,7 @@ import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.math.Vector2;
 
 import Entity.Character.Direction;
+import Entity.Character;
 import Entity.Player;
 import ch.hevs.gdx2d.components.screen_management.RenderingScreen;
 import ch.hevs.gdx2d.lib.GdxGraphics;
@@ -53,16 +54,28 @@ public class ScreenMap extends RenderingScreen{
 		createMap("test");
 		createMap("test_couloir");
 		createMap("desert");
+
         createMap("SS");
+        //createMap("RI");
+        //createMap("RS");
+        
         createMap("21RI");
         createMap("21RS");
+        createMap("21N1");
         createMap("21N2");
-        createMap("21N3");
         createMap("21N205");
+        createMap("21N3");
         createMap("21N304");
         createMap("21N307");
         createMap("21N308");
         
+        createMap("23RI");
+        createMap("23RS");
+        createMap("23N1");
+        createMap("23N2");
+        createMap("23N215");
+        createMap("23N3");
+        createMap("23N308");
 	}
 
     @Override
@@ -70,11 +83,15 @@ public class ScreenMap extends RenderingScreen{
         
         tiledLayer.clear();
         
+        // Get actual map of the player
         try { map = player.getMap(); } catch (Exception e) {}
 
-		for (int i = 0; i < 50; i++) {
+		// Get all layers on the current map
+        for (int i = 0; i < 50; i++) {
             try { tiledLayer.add((TiledMapTileLayer) tMap.get(map).getLayers().get(i)); } catch (Exception e) { }
         }
+
+        // Get heigh and width of tiles and the size of the tiles
         TiledMapTileLayer tl = tiledLayer.get(0);
         width = tl.getWidth();
         tileWidth = (int) tl.getTileWidth();
@@ -83,14 +100,15 @@ public class ScreenMap extends RenderingScreen{
         
         //System.out.println(width + " x " + height + " - " + tileWidth + " x " + tileHeight);
         
-		try {
+		// Get all doors on the current map
+        try {
             doors = tMap.get(map).getLayers().get("door").getObjects();
 		} catch (Exception e) {	doors = null; }
         
 		
 		// Render the tileMap
-        //g.zoom(zoom);
-        g.moveCamera(player.getPosition().x, player.getPosition().y, width * tileWidth, height * tileHeight);
+        g.zoom(zoom);
+        g.moveCamera((int)player.getPosition().x, (int)player.getPosition().y, width * tileWidth, height * tileHeight);
 
 		tMapRenderer.get(map).setView(g.getCamera());
 		tMapRenderer.get(map).render();
@@ -117,10 +135,11 @@ public class ScreenMap extends RenderingScreen{
 
     public boolean isWalkable(Vector<TiledMapTile> tile) {
 		if (tile == null) return false;
-        boolean walkable = false;
+		if (tile.size() == 0) return false;
+        boolean walkable = true;
         for (TiledMapTile tiledMapTile : tile) {
             Object test = tiledMapTile.getProperties().get("walkable");
-            walkable = Boolean.parseBoolean(test.toString()) ? true:walkable;
+            walkable = Boolean.parseBoolean(test.toString()) ? walkable:false;
         }
         return walkable;
 	}
@@ -161,7 +180,9 @@ public class ScreenMap extends RenderingScreen{
 				try { Door.nextMap = mapProperties.get("nextMap").toString(); } catch (Exception e) { }
 				try { Door.nextX = Integer.parseInt(mapProperties.get("nextX").toString()); } catch (Exception e) { }
 				try { Door.nextY = Integer.parseInt(mapProperties.get("nextY").toString()); } catch (Exception e) { }
-				try { Door.nextDirection = Direction.valueOf(mapProperties.get("nextDirection").toString()); } catch (Exception e) { }
+
+                try { Door.nextDirection = Character.Direction.valueOf(mapProperties.get("nextDirection").toString()); } catch (Exception e) { }
+
 			}
         }
         
@@ -172,7 +193,7 @@ public class ScreenMap extends RenderingScreen{
 		public static String nextMap;
 		public static Integer nextX;
 		public static Integer nextY;
-        public static Player.Direction nextDirection;
+        public static Character.Direction nextDirection;
 
 		public static void reset(){
 			nextMap = null;

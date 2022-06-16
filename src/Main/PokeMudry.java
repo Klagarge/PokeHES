@@ -6,6 +6,7 @@ import com.badlogic.gdx.Input;
 import Control.Controller;
 import Entity.Enemy;
 import Entity.Entity;
+import Entity.Character.Direction;
 import Game.Battle;
 import Screen.ScreenBattle;
 import Screen.ScreenMap;
@@ -44,8 +45,13 @@ public class PokeMudry extends PortableApplication {
 
         // add player, create and add all enemies in entities
 		entities.add((Entity) sp.p);
-		enemies.add(new Enemy("Mudry", 10, 15, "lumberjack_sheet32", "desert", 25, "informatique"));
-		//enemies.add(new Enemy("Pignat", 5, 1, "lumberjack_sheet32", "test", 150));
+		enemies.add(new Enemy("Mudry", 5, 11, "lumberjack_sheet32", "21N304", 25, "informatique", Direction.DOWN));
+		enemies.add(new Enemy("Paciotti", 5, 11, "lumberjack_sheet32", "21N205", 0, "mecanique", Direction.DOWN));
+		enemies.add(new Enemy("Gloeckner", 1, 7, "lumberjack_sheet32", "21N307", 0, "allemand", Direction.RIGHT));
+		enemies.add(new Enemy("Bianchi", 1, 3, "lumberjack_sheet32", "23N308", 0, "electricite", Direction.RIGHT));
+		enemies.add(new Enemy("Nicollier", 4, 2, "lumberjack_sheet32", "21N308", 0, "mathematique", Direction.LEFT));
+		enemies.add(new Enemy("Ellert", 1, 4, "lumberjack_sheet32", "23N215", 0, "physique", Direction.RIGHT));
+		
         for (Enemy enemy : enemies) { entities.add(enemy); }
 
 		//Init all entities
@@ -63,6 +69,7 @@ public class PokeMudry extends PortableApplication {
         // Switch screen
         if (sp.p.onEnemy && onMapScreen){
             sp.e = sp.p.lastEnemy;
+
             sp.sb = sp.screenManager.getScreenBattle();
             if(sp.e == null) System.out.println("sdfsdfsdfsdf");
 
@@ -72,6 +79,17 @@ public class PokeMudry extends PortableApplication {
             sp.b.setXpPlayer(sp.p.getXp());
 
             g.resetCamera();
+
+            int pv = sp.e.getPv();
+
+            if (pv>0) {
+                sp.sb = sp.screenManager.getScreenBattle();            
+                sp.b = new Battle(sp.e);
+                g.resetCamera();
+            } else {
+                sp.p.onEnemy = false;
+            }
+
         }
         
         if(onBattleScreen) sp.sb.manage(controller, sp.b);
