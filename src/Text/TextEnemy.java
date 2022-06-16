@@ -3,12 +3,13 @@ package Text;
 import java.util.Vector;
 
 import Entity.Enemy;
+import Entity.Character.Direction;
 
 import java.util.Arrays;
 import java.util.Random;
 
 public class TextEnemy {
-    private static final int CUT = 40;
+    private static final int CUT = 60;
     public FightData fightData;
     public SpeechData speechData;
 
@@ -20,8 +21,7 @@ public class TextEnemy {
     private Vector<int[]> currentData;
 
     public static void main(String[] args) {
-        
-        TextEnemy t  = new TextEnemy(new Enemy("Mudry", 10, 15, "lumberjack_sheet32", "desert", 25, "informatique"));
+        TextEnemy t  = new TextEnemy(new Enemy("Mudry", 10, 15, "lumberjack_sheet32", "desert", 25, "informatique", Direction.NULL));
 
         t.generateText();
 
@@ -83,7 +83,10 @@ public class TextEnemy {
         
 
         //introduction line
-        lines.add(new Line(speechData.getSpeechs(0), false));
+        String introduction = formatLine(speechData.getSpeechs(0), CUT);
+        lines.add(new Line(introduction, false));
+
+
         orderAttack = randomGenerate(0, fightData.nbre_line-1, 4);
         for(int j=0; j<4;j++){
             int[] currentRandom = new int[5];
@@ -91,22 +94,21 @@ public class TextEnemy {
 
             //generate the order of the answer
             orderAnswer = randomGenerate(0, 3, 4);
-            System.out.println("\n attaque " + j + " : " + Arrays.toString(orderAnswer) + "\n");
 
             //save the order of answer and attack
             for(int k=1;k<5;k++){
                 currentRandom[k] = orderAnswer[k-1];
             }
 
-            String attack = formatLine( speechData.getSpeechs(i++) + fightData.getAttack(orderAttack[j]).attack + " ?  ("+fightData.getAttack(orderAttack[j]).getXp()+ ") ", cut)
+            //Format the line
+            String attack = formatLine(speechData.getSpeechs(i++) + fightData.getAttack(orderAttack[j]).attack + " ?  ("+fightData.getAttack(orderAttack[j]).getXp()+ ") ", CUT);
+            String answer1 = formatLine("1. " + fightData.getAttack(orderAttack[j]).getAnswer(orderAnswer[0]) , CUT);
+            String answer2 = formatLine("2. " + fightData.getAttack(orderAttack[j]).getAnswer(orderAnswer[1]) , CUT);
+            String answer3 = formatLine("3. " + fightData.getAttack(orderAttack[j]).getAnswer(orderAnswer[2]) , CUT);
+            String answer4 = formatLine("4. " + fightData.getAttack(orderAttack[j]).getAnswer(orderAnswer[3]) , CUT);
 
             //attack and answer (number on vector : 1-4) 
-            lines.add(new Line(
-                speechData.getSpeechs(i++) + fightData.getAttack(orderAttack[j]).attack + " ?  ("+fightData.getAttack(orderAttack[j]).getXp()+ ") " + "\n" +
-                "1. " + fightData.getAttack(orderAttack[j]).getAnswer(orderAnswer[0]) + "\n" +
-                "2. " + fightData.getAttack(orderAttack[j]).getAnswer(orderAnswer[1]) + "\n" + 
-                "3. " + fightData.getAttack(orderAttack[j]).getAnswer(orderAnswer[2]) + "\n" + 
-                "4. " + fightData.getAttack(orderAttack[j]).getAnswer(orderAnswer[3]), true));
+            lines.add(new Line(attack + "\n" +answer1 + "\n" + answer2 + "\n" + answer3 + "\n" + answer4, true));
 
             
             currentData.add(currentRandom);
@@ -117,8 +119,10 @@ public class TextEnemy {
         }
 
         //finish (win and death)
-        lines.add(new Line(speechData.getSpeechs(5), false));
-        lines.add(new Line(speechData.getSpeechs(6), false));
+        String dead = formatLine(speechData.getSpeechs(5),CUT);
+        String alive = formatLine(speechData.getSpeechs(6), CUT);
+        lines.add(new Line(dead, false));
+        lines.add(new Line(alive, false));
     }
 
     public Vector<int[]> getCurrentData() {
@@ -134,45 +138,50 @@ public class TextEnemy {
         int startC = 0;
         int stoppC = cut;
         
-
-        char[] c = new char[line.length()];
-
-        for(int i=0; i<c.length;i++){
-            c[i] = line.charAt(i);
+        if(cut>line.length()-1){
+            newLine  =line;
         }
-        System.out.println("start\n");
+        else{
+            
+            char[] c = new char[line.length()];
 
-        while(true){
+            for(int i=0; i<c.length;i++){
+                c[i] = line.charAt(i);
+            }
 
-            for(int i =stoppC; i>=startC; i--){
-                if(c[i] == ' '){
-                    stoppC = i;
+
+
+            while(true){
+                for(int i =stoppC; i>=startC; i--){
+                    if(c[i] == ' '){
+                        stoppC = i;
+                        break;
+                    }
+                    else if(stoppC == c.length-1){
+                        break;
+                    }
+                }
+
+                //découper le mot 
+                for(int i=startC;i<=stoppC;i++){
+                    cutLine += c[i];
+                }
+
+                newLine +=  cutLine+"\n";
+                cutLine = "";
+
+                startC = stoppC + 1;
+
+                
+                if(c.length-1-stoppC <=0){
                     break;
                 }
-                else if(stoppC == c.length-1){
-                    break;
+                else if(c.length-1-stoppC <= cut){
+                    stoppC = c.length-1;
                 }
-            }
-
-            //découper le mot 
-            for(int i=startC;i<=stoppC;i++){
-                cutLine += c[i];
-            }
-
-            newLine += "\n" + cutLine;
-            cutLine = "";
-
-            startC = stoppC + 1;
-
-           
-            if(c.length-1-stoppC <=0){
-                break;
-            }
-            else if(c.length-1-stoppC <= 10){
-                stoppC = c.length-1;
-            }
-            else{
-                stoppC += cut;
+                else{
+                    stoppC += cut;
+                }
             }
         }
         return newLine;
