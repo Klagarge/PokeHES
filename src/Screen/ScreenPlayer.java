@@ -20,7 +20,8 @@ public class ScreenPlayer {
         //p = new Player(8, 15, "desert");
         p = new Player(4, 2, "21RI");
 
-        b = new Battle(new Enemy("enemy", 0, 0, "lumberjack_sheet32", "desert", 50, "enemy",Direction.NULL));
+        e = new Enemy("enemy", 0, 0, "lumberjack_sheet32", "desert", 50, "enemy",Direction.NULL);
+        b = new Battle(e);
 
         // Create both type of screen and record for reuse
         screenManager.registerScreen(ScreenMap.class);
@@ -38,6 +39,8 @@ public class ScreenPlayer {
         if(sb != null){
             sb.setBattle(b);
             b.setEnemy(e);
+            b.setPlayer(p);
+            sb.setImg();
         }
         
         screenManager.render(g);

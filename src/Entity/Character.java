@@ -29,6 +29,7 @@ public abstract class Character extends Entity{
     int nFrames = 4;
     final float FRAME_TIME = 0.1f; // Duration of each frime
     private String img;
+    private String imgBattle;
 
     protected int pv;
 
@@ -43,6 +44,8 @@ public abstract class Character extends Entity{
     public Character(String name, int x, int y, String img, String map){
         super(name, x, y, map);
         this.img = img;
+
+        imgBattle = "./Data/img/" + name + ".png";
     }
 
     @Override
@@ -163,4 +166,8 @@ public abstract class Character extends Entity{
     }
 
     abstract protected void removedPv(int pv);
+
+    public String getImgBattle(){
+        return imgBattle;
+    }
 }

@@ -16,6 +16,7 @@ public class Player extends Character{
     private int xp = 0;
 	public Enemy lastEnemy = null;
 	public boolean onEnemy = false;
+	private static final int XP_MAX = 6000;
 
     public Player(int x, int y, String map) {
         super("Player", x, y, "Character_flipped", map);
@@ -122,4 +123,8 @@ public class Player extends Character{
         // TODO Auto-generated method stub
         
     }
+
+	public int getXpMax(){
+		return XP_MAX;
+	}
 }

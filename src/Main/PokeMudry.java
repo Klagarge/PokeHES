@@ -77,6 +77,8 @@ public class PokeMudry extends PortableApplication {
 		
         if(onMapScreen) sp.p.manageEntity(sp.sm, controller);
         
+
+
         // Switch screen
         if (sp.p.onEnemy && onMapScreen){
             sp.e = sp.p.lastEnemy;
@@ -84,9 +86,12 @@ public class PokeMudry extends PortableApplication {
             int pv = sp.e.getPv();
             boolean recovered = sp.e.recoveredTime>=Settings.RECOVERED;
 
+
             if (pv>0 && recovered) {
                 sp.sb = sp.screenManager.getScreenBattle();            
+
                 sp.b = new Battle(sp.e);
+                sp.sb = sp.screenManager.getScreenBattle();
                 
                 //set pv and xp to display
                 sp.b.setXpPlayer(sp.p.getXp());
