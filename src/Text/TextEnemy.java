@@ -1,12 +1,8 @@
 package Text;
 
-import java.util.Vector;
-
 import Entity.Enemy;
-import Entity.Character.Direction;
 
-import java.text.Normalizer;
-import java.util.Arrays;
+import java.util.Vector;
 import java.util.Random;
 
 public class TextEnemy {
@@ -20,16 +16,6 @@ public class TextEnemy {
     private int[] orderAnswer;
 
     private Vector<int[]> currentData;
-
-    public static void main(String[] args) {
-        TextEnemy t  = new TextEnemy(new Enemy("Mudry", 10, 15, "lumberjack_sheet32", "desert", 25, "informatique", Direction.NULL));
-
-        t.generateText();
-
-        for(Line l : t.lines) {
-            System.out.println(l.line);
-        }
-    }
     
     public TextEnemy(Enemy e){
         //generate the vector of fight
@@ -45,6 +31,7 @@ public class TextEnemy {
 
     }
 
+    //generate a random array width different number
     public static int[] randomGenerate( int min, int max, int nbreRandom){
         //create an array with all the number I need
         int[] a = new int[max-min+1];
@@ -79,21 +66,23 @@ public class TextEnemy {
     }
 
 
+    //generate the text who is displays in battle screen
     public void generateText(){
         int i =1;
         
-
         //introduction line
         String introduction = formatLine(speechData.getSpeechs(0), CUT);
         lines.add(new Line(introduction, false));
 
-
+        //generate a random array for determin the order of the attack
         orderAttack = randomGenerate(0, fightData.nbre_line-1, 4);
+
+        //go trough which attack 
         for(int j=0; j<4;j++){
             int[] currentRandom = new int[5];
             currentRandom[0] = orderAttack[j];
 
-            //generate the order of the answer
+            //generate a random array to determin the order of the answer
             orderAnswer = randomGenerate(0, 3, 4);
 
             //save the order of answer and attack
@@ -111,13 +100,15 @@ public class TextEnemy {
             //attack and answer (number on vector : 1-4) 
             lines.add(new Line(attack + "\n" +answer1 + "\n" + answer2 + "\n" + answer3 + "\n" + answer4, true));
 
-            
+            //save the order of the answer
             currentData.add(currentRandom);
         }
         
+        /* 
         for(int[] a : currentData){
             System.out.println(Arrays.toString(a));
         }
+        */
 
         //finish (win and death)
         String dead = formatLine(speechData.getSpeechs(5),CUT);
@@ -126,11 +117,12 @@ public class TextEnemy {
         lines.add(new Line(alive, false));
     }
 
+    //get the saved order of the attacks and answer
     public Vector<int[]> getCurrentData() {
         return currentData;
     }
 
-    
+    //format a String with a specific length of char
     public String formatLine(String line, int cut){
 
         String cutLine = "";
@@ -139,20 +131,20 @@ public class TextEnemy {
         int startC = 0;
         int stoppC = cut;
         
+        //check if the line is shorter than the character limit 
         if(cut>line.length()-1){
             newLine  =line;
         }
         else{
             
+            //create a array with the line
             char[] c = new char[line.length()];
-
             for(int i=0; i<c.length;i++){
                 c[i] = line.charAt(i);
             }
 
-
-
             while(true){
+                //cut the line only if there is a space
                 for(int i =stoppC; i>=startC; i--){
                     if(c[i] == ' '){
                         stoppC = i;
@@ -163,17 +155,19 @@ public class TextEnemy {
                     }
                 }
 
-                //découper le mot 
+                //cut the line
                 for(int i=startC;i<=stoppC;i++){
                     cutLine += c[i];
                 }
 
+                //rebuild the line with the line breaks
                 newLine +=  cutLine+"\n";
                 cutLine = "";
 
+                //increase the start of the cut
                 startC = stoppC + 1;
 
-                
+                //check if we can cut with the number specific or if it is shorter or it is finished
                 if(c.length-1-stoppC <=0){
                     break;
                 }
