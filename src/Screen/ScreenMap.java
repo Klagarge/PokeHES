@@ -68,6 +68,7 @@ public class ScreenMap extends RenderingScreen{
         
         createMap("23RI");
         createMap("23RS");
+        createMap("FabLab");
         createMap("23N1");
         createMap("23N2");
         createMap("23N215");

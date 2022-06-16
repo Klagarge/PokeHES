@@ -94,6 +94,7 @@ public class Player extends Character{
 				ScreenMap.Door.reset();
 				if (nMap == null || x == null || y == null) return;
 				map = nMap;
+				if(map.equals("FabLab")) addXp(400); // * Like an easter egg, but necessary for win the game
 				setPosition(x*sm.tileWidth, y*sm.tileHeight);
 				turn(goalDirection);
 				System.out.println("Go to: " + map + " in " + x + " x " + y);
