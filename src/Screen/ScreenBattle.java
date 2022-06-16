@@ -14,6 +14,7 @@ import Entity.Player;
 import Game.Battle;
 import Main.PokeMudry;
 import Main.Settings;
+import ch.hevs.gdx2d.components.bitmaps.BitmapImage;
 import ch.hevs.gdx2d.components.screen_management.RenderingScreen;
 import ch.hevs.gdx2d.lib.GdxGraphics;
 
@@ -23,14 +24,20 @@ public class ScreenBattle extends RenderingScreen{
 	private static int HEIGHT_DIALOG = Settings.SIDE / 3;
 	private static int WIDTH_DIALOG = Settings.SIDE - 2*EDGE;
 
-	private BitmapFont optimus40;
+	private BitmapFont unbuntuRegularBlack;
+	private BitmapFont unbuntuRegularWhite;
+	private BitmapImage enemyImg;
+	private BitmapImage playerImg;
 
 	private Battle b = null;
+
+	private Enemy enemy;
 
     @Override
 	public void onInit() {
         //display the question
-		generateFont("./Data/font/Ubuntu-Regular.ttf", 30, Color.BLACK);
+		unbuntuRegularBlack = generateFont("./Data/font/Ubuntu-Regular.ttf", 30, Color.BLACK);
+		unbuntuRegularWhite = generateFont("./Data/font/Ubuntu-Regular.ttf", 45, Color.WHITE);
 	}
 
 
@@ -38,11 +45,18 @@ public class ScreenBattle extends RenderingScreen{
 	public void onGraphicRender(GdxGraphics g) {
 		g.clear(Color.BLACK);
 		displayDialog(g);
+		displayEnemy(g);
 	}
 
 	@Override
 	public void dispose() {
-		optimus40.dispose();
+		unbuntuRegularBlack.dispose();
+		unbuntuRegularWhite.dispose();
+	}
+
+	public void setImg(){
+		enemyImg = new BitmapImage(b.e.getImgBattle()); //width : 192, height : 240
+		enemyImg = new BitmapImage(b);
 	}
 
 	
@@ -50,16 +64,17 @@ public class ScreenBattle extends RenderingScreen{
 		this.b = battle;
 	}
 
-	public void generateFont(String file, int height, Color c ){
-
+	public BitmapFont generateFont(String file, int height, Color c ){
 		//Generate font with the file .ttf
+		BitmapFont font;
 		FileHandle fileHandle = Gdx.files.internal(file);
 		FreeTypeFontParameter parameter = new FreeTypeFontParameter();
         FreeTypeFontGenerator generator = new FreeTypeFontGenerator(fileHandle);
 		parameter.size = generator.scaleForPixelHeight(height);
 		parameter.color = c;
-		optimus40 = generator.generateFont(parameter);
+		font = generator.generateFont(parameter);
 		generator.dispose();
+		return font;
 
 	}
 
@@ -70,16 +85,25 @@ public class ScreenBattle extends RenderingScreen{
 		//dialog
 		if(b == null) return;
 		if(b.getLine() == null) return;
-		g.drawString(15, 260 ,b.getLine() , optimus40);
+		g.drawString(15, 260 ,b.getLine() , unbuntuRegularBlack);
 
 	}
 
-	public void displayEnemy(Enemy e){
-		// TODO affficher l'enemi
+	
+	public void displayEnemy(GdxGraphics g){
+		//draw image
+		g.drawPicture(Settings.SIDE - (192/2), Settings.SIDE-240/2, enemyImg);
+		//draw pv
+		g.drawString(250, Settings.SIDE - 15 , "PV : " + b.pvEnemy , unbuntuRegularWhite);
+
+
   	}
 
-	public void displayPlayer(Player p){
-		//TODO afficher le joueur                 
+	public void displayPlayer(GdxGraphics g){
+		//draw image
+		g.drawPicture(Settings.SIDE - (192/2), Settings.SIDE-240/2, playerImg);
+		//draw pv
+		g.drawString(250, Settings.SIDE - 15 , "PV : " + b.pvEnemy , unbuntuRegularWhite);              
 	}
 
 
