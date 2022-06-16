@@ -12,13 +12,10 @@ public class FightData {
     private  File file;
     private static String regex = ";";
 
-    
-
     public int nbre_line =0;
 
     public FightData(String branch) {
         file = new File("./Data/Battle/Fight/" + branch + ".csv");
-        
     }
 
     public void readFile() {
@@ -54,7 +51,7 @@ public class FightData {
         return attacks;
     }
 
-    //return the vector with one attak
+    //return the vector with one attack
     public Attack getAttack(int a){
         return attacks.get(a);
     }
