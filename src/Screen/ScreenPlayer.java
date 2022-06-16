@@ -13,6 +13,7 @@ public class ScreenPlayer {
     public Battle b = null;
     public ScreenMap sm = null;
     public ScreenBattle sb = null;
+    public ScreenEnd se = null;
 
     public void init(){
 
@@ -26,8 +27,11 @@ public class ScreenPlayer {
         // Create both type of screen and record for reuse
         screenManager.registerScreen(ScreenMap.class);
         screenManager.registerScreen(ScreenBattle.class);
+        screenManager.registerScreen(ScreenEnd.class);
         sb = screenManager.getScreenBattle();
+        se = screenManager.getScreenEnd();
         sm = screenManager.getScreenMap();
+        
 
     }
 
@@ -41,6 +45,10 @@ public class ScreenPlayer {
             b.setEnemy(e);
             b.setPlayer(p);
             sb.setImg();
+        }
+
+        if(se != null){
+            se.setText(p);
         }
         
         screenManager.render(g);
