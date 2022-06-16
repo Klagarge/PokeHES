@@ -67,7 +67,7 @@ public class PokeMudry extends PortableApplication {
         boolean onMapScreen = sp.screenManager.getActiveScreen().getClass().equals(ScreenMap.class);
         boolean onBattleScreen = sp.screenManager.getActiveScreen().getClass().equals(ScreenBattle.class);
 
-        long timeNow = System.currentTimeMillis();a
+        long timeNow = System.currentTimeMillis();
         if((timeNow-lastMesure) >= 1000){
             lastMesure = timeNow;
             for (Enemy enemy : enemies) { enemy.recoveredTime++; }
