@@ -84,7 +84,7 @@ public class ScreenBattle extends RenderingScreen{
 		//dialog
 		if(b == null) return;
 		if(b.getLine() == null) return;
-		g.drawString(15, 260 ,b.getLine() , unbuntuRegularBlack);
+		g.drawString(15, 260, b.getLine(), unbuntuRegularBlack);
 
 	}
 
@@ -93,7 +93,7 @@ public class ScreenBattle extends RenderingScreen{
 		//draw image
 		g.drawPicture(Settings.SIDE - (192/2), Settings.SIDE-240/2, enemyImg);
 		//draw pv
-		g.drawString(350, Settings.SIDE - 15 , "PV : " + b.pvEnemy + " / " + b.e.getPvInit(), unbuntuRegularWhite);
+		g.drawString(300, Settings.SIDE - 15 , "PV : " + b.pvEnemy + " / " + b.e.getPvInit(), unbuntuRegularWhite);
 
 
   	}

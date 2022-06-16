@@ -96,6 +96,7 @@ public class Battle {
         xpPlayer += xp;
         //remove pv enemy
         pvEnemy -= xp;
+        if(pvEnemy<0) pvEnemy =0;
         
     }
 
