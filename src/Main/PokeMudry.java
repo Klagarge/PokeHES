@@ -48,7 +48,7 @@ public class PokeMudry extends PortableApplication {
         // add player, create and add all enemies in entities
 		entities.add((Entity) sp.p);
 		enemies.add(new Enemy("Gloeckner", 1, 7, "lumberjack_sheet32", "21N307", 600, "allemand", Direction.RIGHT));
-		enemies.add(new Enemy("Nicollier", 4, 2, "lumberjack_sheet32", "21N308", 20, "mathematique", Direction.LEFT));
+		enemies.add(new Enemy("Nicollier", 4, 2, "lumberjack_sheet32", "21N308", 1600, "mathematique", Direction.LEFT));
 		enemies.add(new Enemy("Mudry", 5, 11, "lumberjack_sheet32", "21N304", 700, "informatique", Direction.DOWN));
 		enemies.add(new Enemy("Ellert", 1, 4, "lumberjack_sheet32", "23N215", 300, "physique", Direction.RIGHT));
 		enemies.add(new Enemy("Bianchi", 1, 3, "lumberjack_sheet32", "23N308", 1200, "electricite", Direction.RIGHT));
