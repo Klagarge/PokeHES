@@ -48,6 +48,7 @@ public class Battle {
         }
         else if( getLineSpeech() == 5  || getLineSpeech() == 6){
             finish();
+            e.recoveredTime = 0;
         }
         else if(0 < getLineSpeech() && getLineSpeech() < 4){
             checkAnswer(answer);

@@ -8,6 +8,7 @@ import com.badlogic.gdx.math.Vector2;
 
 import Control.Controller;
 import Main.PokeMudry;
+import Main.Settings;
 import Screen.ScreenMap;
 
 public class Player extends Character{
@@ -78,6 +79,8 @@ public class Player extends Character{
 
 			
 			if(onDoor){
+				long time = System.currentTimeMillis();
+				while (System.currentTimeMillis()-time < Settings.SWITCHMAPTIME) { }
 				String nMap = null;
 				Integer x = null;
 				Integer y = null;

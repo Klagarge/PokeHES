@@ -16,7 +16,6 @@ import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.math.Vector2;
 
-import Entity.Character.Direction;
 import Entity.Character;
 import Entity.Player;
 import ch.hevs.gdx2d.components.screen_management.RenderingScreen;
@@ -30,7 +29,6 @@ public class ScreenMap extends RenderingScreen{
 	Map<String,TiledMap> tMap = new TreeMap<String,TiledMap>();
 	Map<String,TiledMapRenderer> tMapRenderer = new TreeMap<String,TiledMapRenderer>();
 	public String map;
-	public float zoom;
     private int width;
     public int tileWidth;
     private int height;
@@ -46,7 +44,6 @@ public class ScreenMap extends RenderingScreen{
     @Override
     public void onInit() {
 		// Set initial zoom
-		zoom = 1;
 
         try { map = player.getMap(); } catch (Exception e) {}
 
@@ -107,13 +104,11 @@ public class ScreenMap extends RenderingScreen{
         
 		
 		// Render the tileMap
-        g.zoom(zoom);
+        g.zoom(0.5f);
         g.moveCamera((int)player.getPosition().x, (int)player.getPosition().y, width * tileWidth, height * tileHeight);
 
 		tMapRenderer.get(map).setView(g.getCamera());
 		tMapRenderer.get(map).render();
-        
-		g.drawFPS();
 	}
 
 

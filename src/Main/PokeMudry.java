@@ -1,12 +1,11 @@
 package Main;
 
 import java.util.Vector;
-import com.badlogic.gdx.Input;
 
 import Control.Controller;
+import Entity.Character.Direction;
 import Entity.Enemy;
 import Entity.Entity;
-import Entity.Character.Direction;
 import Game.Battle;
 import Screen.ScreenBattle;
 import Screen.ScreenMap;
@@ -20,6 +19,8 @@ public class PokeMudry extends PortableApplication {
     private Controller controller;
     private static Vector<Enemy> enemies = new Vector<>();
 	private static Vector<Entity> entities = new Vector<>();
+    private long beginTime;
+    private long lastMesure;
 
     public static boolean front_montant = false;
 
@@ -42,7 +43,7 @@ public class PokeMudry extends PortableApplication {
     public void onInit() {
         sp.init();
         controller.init();
-
+        
         // add player, create and add all enemies in entities
 		entities.add((Entity) sp.p);
 		enemies.add(new Enemy("Mudry", 5, 11, "lumberjack_sheet32", "21N304", 25, "informatique", Direction.DOWN));
@@ -51,11 +52,13 @@ public class PokeMudry extends PortableApplication {
 		enemies.add(new Enemy("Bianchi", 1, 3, "lumberjack_sheet32", "23N308", 0, "electricite", Direction.RIGHT));
 		enemies.add(new Enemy("Nicollier", 4, 2, "lumberjack_sheet32", "21N308", 0, "mathematique", Direction.LEFT));
 		enemies.add(new Enemy("Ellert", 1, 4, "lumberjack_sheet32", "23N215", 0, "physique", Direction.RIGHT));
-		
         for (Enemy enemy : enemies) { entities.add(enemy); }
-
+        
 		//Init all entities
         for (Entity entity : entities) { entity.init(); }
+
+        beginTime = System.currentTimeMillis();
+        lastMesure = beginTime;
     }
 
     @Override
@@ -63,6 +66,14 @@ public class PokeMudry extends PortableApplication {
         g.clear();
         boolean onMapScreen = sp.screenManager.getActiveScreen().getClass().equals(ScreenMap.class);
         boolean onBattleScreen = sp.screenManager.getActiveScreen().getClass().equals(ScreenBattle.class);
+
+        long timeNow = System.currentTimeMillis();
+        if((timeNow-lastMesure) >= 1000){
+            lastMesure = timeNow;
+            for (Enemy enemy : enemies) { enemy.recoveredTime++; }
+        }
+        if((timeNow-beginTime)/1000 >= 60 * Settings.TIME) System.out.println("Game finished");
+
 		
         if(onMapScreen) sp.p.manageEntity(sp.sm, controller);
         
@@ -73,15 +84,19 @@ public class PokeMudry extends PortableApplication {
             sp.e = sp.p.lastEnemy;
 
             int pv = sp.e.getPv();
+            boolean recovered = sp.e.recoveredTime>=Settings.RECOVERED;
 
-            if (pv>0) {
-                            
+
+            if (pv>0 && recovered) {
+                sp.sb = sp.screenManager.getScreenBattle();            
+
                 sp.b = new Battle(sp.e);
                 sp.sb = sp.screenManager.getScreenBattle();
                 
                 //set pv and xp to display
                 sp.b.setXpPlayer(sp.p.getXp());
 
+                g.zoom(1);
                 g.resetCamera();
             } else {
                 sp.p.onEnemy = false;
@@ -117,17 +132,6 @@ public class PokeMudry extends PortableApplication {
     public void onKeyDown(int keycode) {
         super.onKeyDown(keycode);
         front_montant = true;
-        switch (keycode) {
-            case Input.Keys.Z:
-                if (sp.sm.zoom == 1.0) {
-                    sp.sm.zoom = 0.5f;
-                } else {
-                    sp.sm.zoom = 1;
-                }
-                return;
-            default:
-                break;
-        }
         controller.keyStatus.put(keycode, true);
         sp.screenManager.getActiveScreen().onKeyUp(keycode);
     }
