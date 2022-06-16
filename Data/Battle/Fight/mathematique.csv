@@ -1,8 +1,8 @@
-﻿Qui est p'tit Gauss ?;prince des mathematiciens;ecrivain;mathematicien;naturiste;200
-Comment est compose un nombre complexe ?;partie reelle + partie imaginaire;x + ky;i;ça n'existe pas;200
-Que vaut ln(0) ?;pas defini;1;0;-10;100
-Laquelle est l'equation d'une sphere ?;x^2 + y^2 + z^2 = r;x = sqrt(1-(y^2 + z^2));x^2 + y^2 = 1;d^2 + r^2 -3 = -52;100
-Quelle est la derivee de sin(x) ?;cos(x);sin(x);1/x;dx;200
+﻿Qui est p'tit Gauss ?;prince des mathématiciens;écrivain;mathématicien;naturiste;200
+Comment est composé un nombre complexe ?;partie réelle + partie imaginaire;x + ky;i;ça n'existe pas;200
+Que vaut ln(0) ?;pas défini;1;0;-10;100
+Laquelle est l'équation d'une sphère ?;x^2 + y^2 + z^2 = r;x = sqrt(1-(y^2 + z^2));x^2 + y^2 = 1;d^2 + r^2 -3 = -52;100
+Quelle est la derivée de sin(x) ?;cos(x);sin(x);1/x;dx;200
 {(x − 1) − (1 − x)[1 − x(1 − x)]}{−(x − 1) − (1 − x)[x − (x + 1)]} = ;xa^2 − 2yb^2 + 2ya^2 − xb^2;xa^2 − yb^2 + 2ya^2 − xb^2;x − 2yb^2 + 2ya^2 − xb^2;ax^2 - by^2;300
 e =;2.71828…;2.71828557…;2.71928…;2.71828123…;250
 pi = ;3.14159265…;3.14157265…;3.14157285…;3.14157281…;250

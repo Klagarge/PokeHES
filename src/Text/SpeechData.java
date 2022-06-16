@@ -4,6 +4,7 @@ import java.util.Vector;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.nio.charset.StandardCharsets;
 
 public class SpeechData {
 
@@ -18,7 +19,7 @@ public class SpeechData {
     public void readFile() {
         String line = "";
         try {
-            FileReader f = new FileReader(file);
+            FileReader f = new FileReader(file, StandardCharsets.UTF_8);
             BufferedReader bf = new BufferedReader(f); 
 
             line = bf.readLine(); 

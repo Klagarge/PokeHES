@@ -5,6 +5,7 @@ import java.util.Vector;
 import Entity.Enemy;
 import Entity.Character.Direction;
 
+import java.text.Normalizer;
 import java.util.Arrays;
 import java.util.Random;
 

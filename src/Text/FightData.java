@@ -3,6 +3,7 @@ package Text;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.nio.charset.StandardCharsets;
 import java.util.Vector;
 
 public class FightData {
@@ -25,7 +26,7 @@ public class FightData {
         String line = "";
 
         try {
-            FileReader f = new FileReader(file);
+            FileReader f = new FileReader(file, StandardCharsets.UTF_8);
             BufferedReader bf = new BufferedReader(f); 
 
             //add the line in the vector attacks of attack
