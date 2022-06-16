@@ -1,10 +1,13 @@
 package Entity;
 
-import com.badlogic.gdx.math.Vector2; 
+import com.badlogic.gdx.math.Vector2;
+
+import Main.Settings; 
 
 public class Enemy extends Character{
 
     private String branch;
+    public int recoveredTime = Settings.RECOVERED;
 
 
 
