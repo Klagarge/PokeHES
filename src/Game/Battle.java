@@ -42,7 +42,8 @@ public class Battle {
         System.out.println("pv enemy : " +pvEnemy);
         System.out.println("xp player : " + xpPlayer);
         System.out.println("xp win " + newXp);
-        
+
+       
         if(getLineSpeech() == 4){
             FinishSpeech();
         }
@@ -52,11 +53,14 @@ public class Battle {
         }
         else if(0 < getLineSpeech() && getLineSpeech() < 4){
             checkAnswer(answer);
+
+            if(pvEnemy <= 0){
+                FinishSpeech();
+            }
         }
         else{
         readNextLine();
         }
-        
     }
 
     //check the choice answer
@@ -98,15 +102,16 @@ public class Battle {
     public void FinishSpeech(){
         if(pvEnemy>0){
             //alive (speechline = 6)
-            lineSpeech += 2;
+            lineSpeech = 6;
             System.out.println("enemy alive");
         }
         else{
             //dead (speechline = 5)
-            lineSpeech += 1;
+            lineSpeech = 5;
             System.out.println("enemy dead");
         }
     }
+
     
     public void finish(){
         screenBattleOn = false;
