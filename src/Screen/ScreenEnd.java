@@ -42,7 +42,7 @@ public class ScreenEnd extends RenderingScreen{
     //set a different text if the player win or loose
     public void setText(Player p){
         if(p.getXp() >= p.getXpMax()){
-            textEnd = "Bravo, tu as réussi ton année avec " + p.getXp()/100.0 + " crédits en " + (Settings.TIME*60-p.getPv()) + " secondes.\n\nMais, seras-tu près pour le prochain....";
+            textEnd = "Bravo, tu as réussi ton année avec " + p.getXp()/100.0 + " crédits en " + (Settings.TIME*60-p.getPv()) + " secondes.\n\nMais, seras-tu près pour la prochaine....";
         }
         else{
             textEnd = "L'année est terminée et tu as obtenu " + p.getXp()/100.0 + " crédits.\n\nA l'année prochaine...";

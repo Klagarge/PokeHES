@@ -41,6 +41,8 @@ public class PokeHES extends PortableApplication {
 
     @Override
     public void onInit() {
+        setTitle("PokeHES");
+        
         sp.init();
         controller.init();
         
@@ -64,6 +66,7 @@ public class PokeHES extends PortableApplication {
     @Override
     public void onGraphicRender(GdxGraphics g) {
         g.clear();
+        
         boolean onMapScreen = sp.screenManager.getActiveScreen().getClass().equals(ScreenMap.class);
         boolean onBattleScreen = sp.screenManager.getActiveScreen().getClass().equals(ScreenBattle.class);
         boolean onEndScreen = sp.screenManager.getActiveScreen().getClass().equals(ScreenEnd.class);
@@ -74,34 +77,24 @@ public class PokeHES extends PortableApplication {
             sp.p.removedPv(1);
             for (Enemy enemy : enemies) { enemy.recoveredTime++; }
         }
-
-        //end of the game
-        if((sp.p.getPv() <= 0 || sp.p.getXp() >= sp.p.getXpMax() ) && !onEndScreen  ) {
-            g.zoom(1);
-            g.resetCamera();
-            sp.se = sp.screenManager.getScreenEnd();
-            System.out.println("Game finished");
-        }
 		
         if(onMapScreen) sp.p.manageEntity(sp.sm, controller);
         
-
-
-        // Switch screen
-        if (sp.p.onEnemy && onMapScreen){
-            sp.e = sp.p.lastEnemy;
-
-            int pv = sp.e.getPv();
+        // Switch to battle
+        if (sp.p.onEnemy && onMapScreen){ // if player is onEnemy and on map screen
+            sp.e = sp.p.lastEnemy; // Get this enemy
+            
+            int pv = sp.e.getPv(); // get how many pv have the enemy
             boolean recovered = sp.e.recoveredTime>=Settings.RECOVERED;
-
-
+            
+            // if the enemy is alive and have recovered, switch to Battle
             if (pv>0 && recovered) {
                 sp.b = new Battle(sp.e);
                 sp.sb = sp.screenManager.getScreenBattle();
                 
                 //set pv and xp to display
                 sp.b.setXpPlayer(sp.p.getXp());
-
+                
                 g.zoom(1);
                 g.resetCamera();
             } else {
@@ -110,9 +103,10 @@ public class PokeHES extends PortableApplication {
             
         }
         
+
         if(onBattleScreen) sp.sb.manage(controller, sp.b);
 
-
+        // switch to Map
         if(!sp.b.getScreenBattleOn() && onBattleScreen){
             //addXp for the player
             sp.p.addXp(sp.b.getNewXp());
@@ -121,6 +115,14 @@ public class PokeHES extends PortableApplication {
 
             sp.p.onEnemy = false;
             sp.sm = sp.screenManager.getScreenMap();
+        }
+
+        // End of the game
+        if((sp.p.getPv() <= 0 || sp.p.getXp() >= sp.p.getXpMax() ) && !onEndScreen  ) {
+            g.zoom(1);
+            g.resetCamera();
+            sp.se = sp.screenManager.getScreenEnd();
+            System.out.println("Game finished");
         }
 
         // Graphics render
