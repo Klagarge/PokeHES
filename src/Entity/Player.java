@@ -7,7 +7,7 @@ import com.badlogic.gdx.maps.tiled.TiledMapTile;
 import com.badlogic.gdx.math.Vector2;
 
 import Control.Controller;
-import Main.PokeMudry;
+import Main.PokeHES;
 import Main.Settings;
 import Screen.ScreenMap;
 
@@ -120,7 +120,7 @@ public class Player extends Character{
 	 * @return true if an enemy is on next position
 	 */
 	private boolean enemy(ScreenMap sm, Vector2 nextPos) {
-		Vector<Enemy> enemies = PokeMudry.getEnemies();
+		Vector<Enemy> enemies = PokeHES.getEnemies();
 		for (Enemy enemy : enemies) {
 			boolean bMap = sm.map.equals(enemy.getMap());
 			int pX = (int) nextPos.x/sm.tileWidth;

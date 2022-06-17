@@ -13,7 +13,7 @@ import Screen.ScreenPlayer;
 import ch.hevs.gdx2d.desktop.PortableApplication;
 import ch.hevs.gdx2d.lib.GdxGraphics;
 
-public class PokeMudry extends PortableApplication {
+public class PokeHES extends PortableApplication {
 
     private ScreenPlayer sp;
     private Controller controller;
@@ -26,10 +26,10 @@ public class PokeMudry extends PortableApplication {
 
 
     public static void main(String[] args) {
-        new PokeMudry();
+        new PokeHES();
     }
 
-    PokeMudry(){
+    PokeHES(){
         super(Settings.SIDE, Settings.SIDE);
         controller = new Controller();
         sp = new ScreenPlayer();

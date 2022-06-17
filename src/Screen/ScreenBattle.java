@@ -10,7 +10,7 @@ import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator.FreeTypeFont
 
 import Control.Controller;
 import Game.Battle;
-import Main.PokeMudry;
+import Main.PokeHES;
 import Main.Settings;
 
 import ch.hevs.gdx2d.components.bitmaps.BitmapImage;
@@ -108,7 +108,7 @@ public class ScreenBattle extends RenderingScreen{
 
 	public void manage(Controller c, Battle battle){
 		//add a rising front to have one impulsion
-		if(PokeMudry.risingFront){
+		if(PokeHES.risingFront){
 			//the enemi is attacking
 			if( battle.getAttackOn() == false){
 				if (c.keyStatus.get(Input.Keys.SPACE)){
@@ -131,7 +131,7 @@ public class ScreenBattle extends RenderingScreen{
 				}
 			}
 			//mettre le front à false jusqu'à ce que le bouton soit relâché
-			PokeMudry.risingFront = false;
+			PokeHES.risingFront = false;
 		}
 	}
 }
