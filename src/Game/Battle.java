@@ -76,10 +76,10 @@ public class Battle {
         String answerPlayer = textEnemy.fightData.getAttack(currentAttack).getAnswer(currentAnswer);
 
         //get true answer
-        String trueAsnwer = textEnemy.fightData.getAttack(currentAttack).getTrueAnswer();
+        String trueAnswer = textEnemy.fightData.getAttack(currentAttack).getTrueAnswer();
 
         //check the choice of the player
-        if(answerPlayer == trueAsnwer){
+        if(answerPlayer == trueAnswer){
             newXp += textEnemy.fightData.getAttack(currentAttack).getXp();
             updatePlayerEnemy(textEnemy.fightData.getAttack(currentAttack).getXp());
             System.out.println("it's true !!!!");
@@ -102,12 +102,12 @@ public class Battle {
 
     public void FinishSpeech(){
         if(pvEnemy>0){
-            //alive (speechline = 6)
+            //alive (speechLine = 6)
             lineSpeech = 6;
             System.out.println("enemy alive");
         }
         else{
-            //dead (speechline = 5)
+            //dead (speechLine = 5)
             lineSpeech = 5;
             System.out.println("enemy dead");
         }

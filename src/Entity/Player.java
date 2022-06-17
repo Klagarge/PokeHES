@@ -18,8 +18,14 @@ public class Player extends Character{
 	public boolean onEnemy = false;
 	private static final int XP_MAX = 6000;
 
-    public Player(int x, int y, String map) {
-        super("Player", x, y, "Character_flipped", map);
+    /**
+	 * Create a player
+	 * @param x initial x position
+	 * @param y initial y position
+	 * @param map initial map
+	 */
+	public Player(int x, int y, String map) {
+        super("Player", x, y, "sprite_sacha", map);
 		this.pv = Settings.TIME*60;
     }
 
@@ -31,7 +37,12 @@ public class Player extends Character{
 		return xp;
 	}
 
-    public void manageEntity(ScreenMap sm, Controller c) {
+    /**
+	 * All action for manage the Player
+	 * @param sm the screenMap where is the player
+	 * @param c the controller of this player
+	 */
+	public void manageEntity(ScreenMap sm, Controller c) {
 
 		boolean onDoor = sm.isDoor(getPosition());
 
@@ -70,7 +81,7 @@ public class Player extends Character{
 					turn(goalDirection);
 					System.out.println("It's a enemy !!");
 				} else {
-					setSpeed(sm.getSpeed(nextCell)*3); //TODO remove x3
+					setSpeed(sm.getSpeed(nextCell)*1.5f);
 					go(goalDirection);
 				}
 			} else {
@@ -81,7 +92,7 @@ public class Player extends Character{
 			
 			if(onDoor){
 				long time = System.currentTimeMillis();
-				while (System.currentTimeMillis()-time < Settings.SWITCHMAPTIME) { }
+				while (System.currentTimeMillis()-time < Settings.SWITCH_MAP_TIME) { }
 				String nMap = null;
 				Integer x = null;
 				Integer y = null;
@@ -94,6 +105,7 @@ public class Player extends Character{
 				ScreenMap.Door.reset();
 				if (nMap == null || x == null || y == null) return;
 				map = nMap;
+				if(map.equals("FabLab")) addXp(400); // * Like an Easter egg, but necessary for win the game
 				setPosition(x*sm.tileWidth, y*sm.tileHeight);
 				turn(goalDirection);
 				System.out.println("Go to: " + map + " in " + x + " x " + y);
@@ -101,7 +113,13 @@ public class Player extends Character{
 		}
 	}
 
-    private boolean enemy(ScreenMap sm, Vector2 nextPos) {
+    /**
+	 * Return true if an enemy is on next position
+	 * @param sm Screen map where is the player
+	 * @param nextPos Vector of next position
+	 * @return true if an enemy is on next position
+	 */
+	private boolean enemy(ScreenMap sm, Vector2 nextPos) {
 		Vector<Enemy> enemies = PokeMudry.getEnemies();
 		for (Enemy enemy : enemies) {
 			boolean bMap = sm.map.equals(enemy.getMap());

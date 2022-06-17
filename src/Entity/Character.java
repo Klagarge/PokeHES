@@ -7,8 +7,15 @@ import com.badlogic.gdx.math.Vector2;
 import ch.hevs.gdx2d.components.bitmaps.Spritesheet;
 import ch.hevs.gdx2d.lib.GdxGraphics;
 
+/**
+ * Class for manage all type of character. Player, enemy and why not some npc
+ * @author Rémi Heredero
+ * @author Yann Sierro
+ * @version 1.0.0
+ */
 public abstract class Character extends Entity{
 
+    // Each character have a direction for orientation and where it will go
     public enum Direction{
         UP,
         DOWN,
@@ -21,13 +28,13 @@ public abstract class Character extends Entity{
      * The currently selected sprite for animation
      */
     int textureX = 0;
-    int textureY = 1;
+    int textureY = 0;
     float speed = 1;
 
     float dt = 0;
     int currentFrame = 0;
     int nFrames = 4;
-    final float FRAME_TIME = 0.1f; // Duration of each frime
+    final float FRAME_TIME = 0.1f; // Duration of each frame
     private String img;
     private String imgBattle;
 
@@ -45,13 +52,13 @@ public abstract class Character extends Entity{
         super(name, x, y, map);
         this.img = img;
 
-        imgBattle = "./Data/img/" + name + ".png";
+        imgBattle = "./Data/img/person/" + name + ".png";
     }
 
     @Override
     public void init() {
         super.init();
-        ss = new Spritesheet("./Data/img/" + img + ".png", SPRITE_WIDTH, SPRITE_HEIGHT);
+        ss = new Spritesheet("./Data/img/sprite/" + img + ".png", SPRITE_WIDTH, SPRITE_HEIGHT);
     }
 
     @Override
@@ -140,10 +147,10 @@ public abstract class Character extends Entity{
                 textureY = 2;
                 break;
             case LEFT:
-                textureY = 3;
+                textureY = 1;
                 break;
             case UP:
-                textureY = 1;
+                textureY = 3;
                 break;
             case DOWN:
                 textureY = 0;

@@ -34,7 +34,7 @@ public class FightData {
                 attacks.add(attack);
                 line = bf.readLine();
                 //add line
-                nbre_line++;
+                nbr_line++;
             }
 
             bf.close();

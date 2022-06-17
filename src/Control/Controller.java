@@ -5,6 +5,12 @@ import java.util.TreeMap;
 
 import com.badlogic.gdx.Input;
 
+/**
+ * Store key status for control the game
+ * @author Rémi Heredero
+ * @author Yann Sierro
+ * @version 1.0.0
+ */
 public class Controller {
     public Map<Integer, Boolean> keyStatus = new TreeMap<Integer, Boolean>();
 

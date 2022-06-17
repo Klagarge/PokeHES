@@ -6,21 +6,28 @@ import Main.Settings;
 
 public class Enemy extends Character{
 
-    private String branch;
+    private String subject;
     public int recoveredTime = Settings.RECOVERED;
 
     private int pvInit;
 
-    public Enemy(String name, int x, int y, String img, String map, int pv, String branch, Character.Direction dir) {
+    /**
+     * Create an enemy
+     * @param name The name of this enemy
+     * @param x Initial x position
+     * @param y Initial y position
+     * @param map Initial map for this enemy
+     * @param pv Maximum pv of this enemy (it's also the maximum of XP the player can win)
+     * @param subject The subject taught by the enemy
+     */
+    public Enemy(String name, int x, int y, String map, int pv, String subject) {
 
-        super(name, x, y, img, map);
+        super(name, x, y, subject, map);
         //generate his text
 
         this.map = map;
 
-        turn(dir);
-
-        this.branch = branch;
+        this.subject = subject;
 
         this.pv = pv;
 
@@ -44,7 +51,7 @@ public class Enemy extends Character{
     }
 
     public String getBranch(){
-        return branch;
+        return subject;
     }
 
     @Override

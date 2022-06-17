@@ -1,12 +1,12 @@
 package Text;
 
 import Entity.Enemy;
-
 import java.util.Vector;
+import java.util.Arrays;
 import java.util.Random;
 
 public class TextEnemy {
-    private static final int CUT = 60;
+    private static final int CUT = 55;
     public FightData fightData;
     public SpeechData speechData;
 
@@ -26,13 +26,12 @@ public class TextEnemy {
         speechData = new SpeechData(e.getName());
         speechData.readFile();
 
-        //save random data (attack and ansver) : attack, answer 1, answer 2 answer 3, answer 4
+        //save random data (attack and answer) : attack, answer 1, answer 2 answer 3, answer 4
         currentData = new Vector<int[]>();
 
     }
 
-    //generate a random array width different number
-    public static int[] randomGenerate( int min, int max, int nbreRandom){
+    public static int[] randomGenerate( int min, int max, int nbrRandom){
         //create an array with all the number I need
         int[] a = new int[max-min+1];
         int k = min;
@@ -42,24 +41,24 @@ public class TextEnemy {
         }
 
         //create a new array with the numbers I want
-        int[] b = new int[nbreRandom];
+        int[] b = new int[nbrRandom];
 
         // Creating object for Random class
         Random rd = new Random();
-         
+        
         // Starting from the last element and swapping one by one.
         for (int i = a.length-1; i > 0; i--) {
-             
+            
             // Pick a random index from 0 to i
             int j = rd.nextInt(i+1);
-             
+            
             // Swap array[i] with the element at random index
             int temp = a[i];
             a[i] = a[j];
             a[j] = temp;
         }
         //add the numbers I want
-        for(int i=0;i<nbreRandom;i++){
+        for(int i=0;i<nbrRandom;i++){
             b[i] = a[i];
         }
         return b;
@@ -74,10 +73,8 @@ public class TextEnemy {
         String introduction = formatLine(speechData.getSpeechs(0), CUT);
         lines.add(new Line(introduction, false));
 
-        //generate a random array for determin the order of the attack
-        orderAttack = randomGenerate(0, fightData.nbre_line-1, 4);
+        orderAttack = randomGenerate(0, fightData.nbr_line-1, 4);
 
-        //go trough which attack 
         for(int j=0; j<4;j++){
             int[] currentRandom = new int[5];
             currentRandom[0] = orderAttack[j];
@@ -129,7 +126,7 @@ public class TextEnemy {
         String newLine = "";
 
         int startC = 0;
-        int stoppC = cut;
+        int stopC = cut;
         
         //check if the line is shorter than the character limit 
         if(cut>line.length()-1){
@@ -144,19 +141,20 @@ public class TextEnemy {
             }
 
             while(true){
-                //cut the line only if there is a space
-                for(int i =stoppC; i>=startC; i--){
+                for(int i =stopC; i>=startC; i--){
+
                     if(c[i] == ' '){
-                        stoppC = i;
+                        stopC = i;
                         break;
                     }
-                    else if(stoppC == c.length-1){
+                    else if(stopC == c.length-1){
                         break;
                     }
                 }
 
-                //cut the line
-                for(int i=startC;i<=stoppC;i++){
+                //découper le mot 
+                for(int i=startC;i<=stopC;i++){
+
                     cutLine += c[i];
                 }
 
@@ -164,18 +162,18 @@ public class TextEnemy {
                 newLine +=  cutLine+"\n";
                 cutLine = "";
 
-                //increase the start of the cut
-                startC = stoppC + 1;
+                startC = stopC + 1;
 
-                //check if we can cut with the number specific or if it is shorter or it is finished
-                if(c.length-1-stoppC <=0){
+                
+                if(c.length-1-stopC <=0){
+
                     break;
                 }
-                else if(c.length-1-stoppC <= cut){
-                    stoppC = c.length-1;
+                else if(c.length-1-stopC <= cut){
+                    stopC = c.length-1;
                 }
                 else{
-                    stoppC += cut;
+                    stopC += cut;
                 }
             }
         }
