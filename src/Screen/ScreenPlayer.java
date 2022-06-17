@@ -17,10 +17,9 @@ public class ScreenPlayer {
     public void init(){
 
         // One player by ScreenPlayer
-        //p = new Player(8, 15, "desert");
         p = new Player(4, 2, "21RI");
 
-        e = new Enemy("enemy", 0, 0, "desert", 50, "enemy");
+        e = new Enemy("enemy", 0, 0, "21RI", 50, "enemy");
         b = new Battle(e);
 
         // Create both type of screen and record for reuse
@@ -31,7 +30,6 @@ public class ScreenPlayer {
         se = screenManager.getScreenEnd();
         sm = screenManager.getScreenMap();
         
-
     }
 
     public void render(GdxGraphics g){
