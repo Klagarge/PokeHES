@@ -12,7 +12,7 @@ public class FightData {
     private  File file;
     private static String regex = ";";
 
-    public int nbre_line =0;
+    public int nbr_line =0;
 
     public FightData(String branch) {
         file = new File("./Data/Battle/Fight/" + branch + ".csv");
@@ -46,7 +46,7 @@ public class FightData {
         
     }
 
-    //return the vector with all attaks of one enemi
+    //return the vector with all attacks of one enemy
     public Vector<Attack> getAllAttacks(){
         return attacks;
     }

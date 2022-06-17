@@ -2,7 +2,6 @@ package Text;
 
 import Entity.Enemy;
 import java.util.Vector;
-import java.util.Arrays;
 import java.util.Random;
 
 public class TextEnemy {
@@ -79,7 +78,7 @@ public class TextEnemy {
             int[] currentRandom = new int[5];
             currentRandom[0] = orderAttack[j];
 
-            //generate a random array to determin the order of the answer
+            //generate a random array to determine the order of the answer
             orderAnswer = randomGenerate(0, 3, 4);
 
             //save the order of answer and attack
