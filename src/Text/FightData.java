@@ -14,7 +14,7 @@ public class FightData {
 
     
 
-    public int nbre_line =0;
+    public int nbr_line =0;
 
     public FightData(String branch) {
         file = new File("./Data/Battle/Fight/" + branch + ".csv");
@@ -37,7 +37,7 @@ public class FightData {
                 attacks.add(attack);
                 line = bf.readLine();
                 //add line
-                nbre_line++;
+                nbr_line++;
             }
 
             bf.close();

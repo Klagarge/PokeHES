@@ -11,14 +11,12 @@ public class Enemy extends Character{
 
     private int pvInit;
 
-    public Enemy(String name, int x, int y, String img, String map, int pv, String branch, Character.Direction dir) {
+    public Enemy(String name, int x, int y, String map, int pv, String branch) {
 
-        super(name, x, y, img, map);
+        super(name, x, y, branch, map);
         //generate his text
 
         this.map = map;
-
-        turn(dir);
 
         this.branch = branch;
 

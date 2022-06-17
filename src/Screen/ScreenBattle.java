@@ -23,8 +23,8 @@ public class ScreenBattle extends RenderingScreen{
 	private static int HEIGHT_DIALOG = Settings.SIDE / 3;
 	private static int WIDTH_DIALOG = Settings.SIDE - 2*EDGE;
 
-	private BitmapFont unbuntuRegularBlack;
-	private BitmapFont unbuntuRegularWhite;
+	private BitmapFont ubuntuRegularBlack;
+	private BitmapFont ubuntuRegularWhite;
 	private BitmapImage enemyImg;
 	private BitmapImage playerImg;
 
@@ -34,8 +34,8 @@ public class ScreenBattle extends RenderingScreen{
     @Override
 	public void onInit() {
         //display the question
-		unbuntuRegularBlack = generateFont("./Data/font/Ubuntu-Regular.ttf", 30, Color.BLACK);
-		unbuntuRegularWhite = generateFont("./Data/font/Ubuntu-Regular.ttf", 45, Color.WHITE);
+		ubuntuRegularBlack = generateFont("./Data/font/Ubuntu-Regular.ttf", 30, Color.BLACK);
+		ubuntuRegularWhite = generateFont("./Data/font/Ubuntu-Regular.ttf", 45, Color.WHITE);
 	}
 
 
@@ -49,8 +49,8 @@ public class ScreenBattle extends RenderingScreen{
 
 	@Override
 	public void dispose() {
-		unbuntuRegularBlack.dispose();
-		unbuntuRegularWhite.dispose();
+		ubuntuRegularBlack.dispose();
+		ubuntuRegularWhite.dispose();
 	}
 
 	public void setImg(){
@@ -84,7 +84,7 @@ public class ScreenBattle extends RenderingScreen{
 		//dialog
 		if(b == null) return;
 		if(b.getLine() == null) return;
-		g.drawString(15, 260, b.getLine(), unbuntuRegularBlack);
+		g.drawString(15, 260, b.getLine(), ubuntuRegularBlack);
 
 	}
 
@@ -93,7 +93,7 @@ public class ScreenBattle extends RenderingScreen{
 		//draw image
 		g.drawPicture(Settings.SIDE - (192/2), Settings.SIDE-240/2, enemyImg);
 		//draw pv
-		g.drawString(300, Settings.SIDE - 15 , "PV : " + b.pvEnemy + " / " + b.e.getPvInit(), unbuntuRegularWhite);
+		g.drawString(300, Settings.SIDE - 15 , "PV : " + b.pvEnemy + " / " + b.e.getPvInit(), ubuntuRegularWhite);
 
 
   	}
@@ -103,7 +103,7 @@ public class ScreenBattle extends RenderingScreen{
 
 		g.drawPicture((192/2), HEIGHT_DIALOG + 10 + 240/2, playerImg);
 		//draw pv
-		g.drawString(255, HEIGHT_DIALOG + 100 , "XP : " + b.xpPlayer + " / " + b.player.getXpMax() + "\nPV : " + b.player.getPv() + " / " + Settings.TIME*60, unbuntuRegularWhite);              
+		g.drawString(255, HEIGHT_DIALOG + 100 , "XP : " + b.xpPlayer + " / " + b.player.getXpMax() + "\nPV : " + b.player.getPv() + " / " + Settings.TIME*60, ubuntuRegularWhite);              
 	}
 
 

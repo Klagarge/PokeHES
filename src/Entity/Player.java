@@ -19,7 +19,7 @@ public class Player extends Character{
 	private static final int XP_MAX = 6000;
 
     public Player(int x, int y, String map) {
-        super("Player", x, y, "Character_flipped", map);
+        super("Player", x, y, "sprite_sacha", map); //Character_flipped
 		this.pv = Settings.TIME*60;
     }
 
@@ -70,7 +70,7 @@ public class Player extends Character{
 					turn(goalDirection);
 					System.out.println("It's a enemy !!");
 				} else {
-					setSpeed(sm.getSpeed(nextCell)); //TODO remove x3
+					setSpeed(sm.getSpeed(nextCell)*1.5f);
 					go(goalDirection);
 				}
 			} else {
@@ -81,7 +81,7 @@ public class Player extends Character{
 			
 			if(onDoor){
 				long time = System.currentTimeMillis();
-				while (System.currentTimeMillis()-time < Settings.SWITCHMAPTIME) { }
+				while (System.currentTimeMillis()-time < Settings.SWITCH_MAP_TIME) { }
 				String nMap = null;
 				Integer x = null;
 				Integer y = null;
@@ -94,7 +94,7 @@ public class Player extends Character{
 				ScreenMap.Door.reset();
 				if (nMap == null || x == null || y == null) return;
 				map = nMap;
-				if(map.equals("FabLab")) addXp(400); // * Like an easter egg, but necessary for win the game
+				if(map.equals("FabLab")) addXp(400); // * Like an Easter egg, but necessary for win the game
 				setPosition(x*sm.tileWidth, y*sm.tileHeight);
 				turn(goalDirection);
 				System.out.println("Go to: " + map + " in " + x + " x " + y);

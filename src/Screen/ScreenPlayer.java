@@ -2,7 +2,6 @@ package Screen;
 
 import Entity.Enemy;
 import Entity.Player;
-import Entity.Character.Direction;
 import Game.Battle;
 import ch.hevs.gdx2d.lib.GdxGraphics;
 
@@ -21,7 +20,7 @@ public class ScreenPlayer {
         //p = new Player(8, 15, "desert");
         p = new Player(4, 2, "21RI");
 
-        e = new Enemy("enemy", 0, 0, "lumberjack_sheet32", "desert", 50, "enemy",Direction.NULL);
+        e = new Enemy("enemy", 0, 0, "desert", 50, "enemy");
         b = new Battle(e);
 
         // Create both type of screen and record for reuse
