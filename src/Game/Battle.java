@@ -18,12 +18,14 @@ public class Battle {
     public int xpPlayer;
 
     public boolean screenBattleOn = true;
+    public int cursor = 0;
 
     public Battle(Enemy e){
         if(e != null){
             textEnemy = new TextEnemy(e);  
-            textEnemy.generateText();
+            textEnemy.generateText(cursor);
         }
+        
         pvEnemy = e.getPv();
         lineSpeech = 0;
         newXp = 0;

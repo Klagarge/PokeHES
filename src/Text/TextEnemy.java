@@ -2,6 +2,7 @@ package Text;
 
 import Entity.Enemy;
 import java.util.Vector;
+import java.text.Normalizer;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -66,7 +67,7 @@ public class TextEnemy {
 
 
     //generate the text who is displays in battle screen
-    public void generateText(){
+    public void generateText(int cursor){
         int i =1;
         
         //introduction line
@@ -88,13 +89,16 @@ public class TextEnemy {
             }
 
             //Format the line
+            String[] row = new String[4];
+            row[0] = row[1] = row[2] = row[3] = "";
+            row[cursor] = "->";
             String attack = formatLine(speechData.getSpeechs(i++) + fightData.getAttack(orderAttack[j]).attack + "  ("+fightData.getAttack(orderAttack[j]).getXp()+ ") ", CUT);
-            String answer1 = formatLine("1. " + fightData.getAttack(orderAttack[j]).getAnswer(orderAnswer[0]) , CUT);
-            String answer2 = formatLine("2. " + fightData.getAttack(orderAttack[j]).getAnswer(orderAnswer[1]) , CUT);
-            String answer3 = formatLine("3. " + fightData.getAttack(orderAttack[j]).getAnswer(orderAnswer[2]) , CUT);
-            String answer4 = formatLine("4. " + fightData.getAttack(orderAttack[j]).getAnswer(orderAnswer[3]) , CUT);
+            String answer1 = formatLine(row[0] + " " + fightData.getAttack(orderAttack[j]).getAnswer(orderAnswer[0]) , CUT);
+            String answer2 = formatLine(row[1] + " " + fightData.getAttack(orderAttack[j]).getAnswer(orderAnswer[1]) , CUT);
+            String answer3 = formatLine(row[2] + " " + fightData.getAttack(orderAttack[j]).getAnswer(orderAnswer[2]) , CUT);
+            String answer4 = formatLine(row[3] + " " + fightData.getAttack(orderAttack[j]).getAnswer(orderAnswer[3]) , CUT);
 
-            //attack and answer (number on vector : 1-4) 
+            //attack and answer (number on vector : 1-4)
             lines.add(new Line(attack + "\n" +answer1 + "\n" + answer2 + "\n" + answer3 + "\n" + answer4, true));
 
             //save the order of the answer

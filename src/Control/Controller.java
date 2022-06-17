@@ -25,6 +25,7 @@ public class Controller {
         keyStatus.put(Input.Keys.NUM_3, false);
         keyStatus.put(Input.Keys.NUM_4, false);
         keyStatus.put(Input.Keys.SPACE, false);
+        keyStatus.put(Input.Keys.A, false);
         keyStatus.put(Input.Keys.ENTER, false);
     }
 

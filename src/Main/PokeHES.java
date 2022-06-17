@@ -46,6 +46,7 @@ public class PokeHES extends PortableApplication {
         sp.init();
         controller.init();
         
+		enemies.add(new Enemy("Mudry", 5, 6,  "21RI", 700, "informatique"));
         // add player, create and add all enemies in entities
 		entities.add((Entity) sp.p);
 		enemies.add(new Enemy("Gloeckner", 1, 7, "21N307", 600, "allemand"));

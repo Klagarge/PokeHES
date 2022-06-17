@@ -109,24 +109,37 @@ public class ScreenBattle extends RenderingScreen{
 	public void manage(Controller c, Battle battle){
 		//add a rising front to have one impulsion
 		if(PokeHES.risingFront){
-			//the enemi is attacking
+			//the enemy is attacking
 			if( battle.getAttackOn() == false){
-				if (c.keyStatus.get(Input.Keys.SPACE)){
+				if (c.keyStatus.get(Input.Keys.SPACE) || c.keyStatus.get(Input.Keys.A)){
 					battle.action(-1);
 				}
 			}
-			//the enemi is speaking
+
+			if (c.keyStatus.get(Input.Keys.DOWN)){
+				b.cursor++;
+			}
+			else if (c.keyStatus.get(Input.Keys.UP)){
+				b.cursor--;
+			}
+
+			if (b.cursor>3)b.cursor =0;
+			if (b.cursor<0)b.cursor =3;
+
+			System.out.println("" + b.cursor);
+
+			//the enemy is speaking
 			if(battle.getAttackOn() == true){
-				if (c.keyStatus.get(Input.Keys.NUM_1)){
+				if (c.keyStatus.get(Input.Keys.NUM_1) || c.keyStatus.get(Input.Keys.A) && b.cursor == 0){
 					battle.action(1);
 				}
-				else if (c.keyStatus.get(Input.Keys.NUM_2)){
+				else if (c.keyStatus.get(Input.Keys.NUM_2) || c.keyStatus.get(Input.Keys.A) && b.cursor == 1){
 					battle.action(2);
 				}
-				else if (c.keyStatus.get(Input.Keys.NUM_3)){
+				else if (c.keyStatus.get(Input.Keys.NUM_3) || c.keyStatus.get(Input.Keys.A) && b.cursor == 2){
 					battle.action(3);
 				}
-				else if (c.keyStatus.get(Input.Keys.NUM_4)){
+				else if (c.keyStatus.get(Input.Keys.NUM_4) || c.keyStatus.get(Input.Keys.A) && b.cursor == 3){
 					battle.action(4);
 				}
 			}
