@@ -47,7 +47,7 @@ public class ScreenMap extends RenderingScreen{
 
         try { map = player.getMap(); } catch (Exception e) {}
 
-		// create map
+		// create all map
 		createMap("test");
 		createMap("test_couloir");
 		createMap("desert");
@@ -150,6 +150,11 @@ public class ScreenMap extends RenderingScreen{
         return speed;
 	}
 
+    /**
+     * Check if the position is a door and if yes, get and save all settings for change map
+     * @param position The position to be tested
+     * @return true if it's a door
+     */
     public boolean isDoor(Vector2 position) {
 		if (doors == null) return false;
         boolean onDoor = false;
