@@ -2,6 +2,7 @@ package Text;
 
 import Entity.Enemy;
 import java.util.Vector;
+import java.util.Arrays;
 import java.util.Random;
 
 public class TextEnemy {
@@ -87,7 +88,7 @@ public class TextEnemy {
             }
 
             //Format the line
-            String attack = formatLine(speechData.getSpeechs(i++) + fightData.getAttack(orderAttack[j]).attack + " ?  ("+fightData.getAttack(orderAttack[j]).getXp()+ ") ", CUT);
+            String attack = formatLine(speechData.getSpeechs(i++) + fightData.getAttack(orderAttack[j]).attack + "  ("+fightData.getAttack(orderAttack[j]).getXp()+ ") ", CUT);
             String answer1 = formatLine("1. " + fightData.getAttack(orderAttack[j]).getAnswer(orderAnswer[0]) , CUT);
             String answer2 = formatLine("2. " + fightData.getAttack(orderAttack[j]).getAnswer(orderAnswer[1]) , CUT);
             String answer3 = formatLine("3. " + fightData.getAttack(orderAttack[j]).getAnswer(orderAnswer[2]) , CUT);
@@ -100,11 +101,11 @@ public class TextEnemy {
             currentData.add(currentRandom);
         }
         
-        /* 
+        //display answer
         for(int[] a : currentData){
             System.out.println(Arrays.toString(a));
         }
-        */
+        
 
         //finish (win and death)
         String dead = formatLine(speechData.getSpeechs(5),CUT);

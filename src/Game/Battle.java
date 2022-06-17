@@ -43,21 +43,23 @@ public class Battle {
         System.out.println("xp player : " + xpPlayer);
         System.out.println("xp win " + newXp);
 
-       
+       //the player is at the last question, the finish text must be displayed
         if(getLineSpeech() == 4){
-            FinishSpeech();
+            finishSpeech();
         }
+        //the player is at the finish text and he must quit the battle
         else if( getLineSpeech() == 5  || getLineSpeech() == 6){
             finish();
-            e.recoveredTime = 0;
         }
+        //the player answer the question and it is check and if the enemy is killed
         else if(0 < getLineSpeech() && getLineSpeech() < 4){
             checkAnswer(answer);
 
             if(pvEnemy <= 0){
-                FinishSpeech();
+                finishSpeech();
             }
         }
+        //default case : increase speech to display the new line
         else{
         readNextLine();
         }
@@ -100,7 +102,7 @@ public class Battle {
         
     }
 
-    public void FinishSpeech(){
+    public void finishSpeech(){
         if(pvEnemy>0){
             //alive (speechLine = 6)
             lineSpeech = 6;
@@ -116,6 +118,7 @@ public class Battle {
     
     public void finish(){
         screenBattleOn = false;
+        e.recoveredTime = 0;
     }
 
     public boolean getAttackOn(){
