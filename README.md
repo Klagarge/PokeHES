@@ -18,7 +18,7 @@ L’objectif de ce projet est de réaliser un jeu du style des premières versio
 
 ![Figure 2 Graphisme de référence](Data/img/screenshots/image2.png)
 
-![Figure 3 Graphisme de référence](Data/img/screenshots/image3.png)
+![Figure 3 Graphisme de référence](Data/img/screenshots/image3.jpeg)
 
 ### 2.3 Combat
 
