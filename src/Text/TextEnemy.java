@@ -65,21 +65,21 @@ public class TextEnemy {
     }
 
 
+    //generate the text who is displays in battle screen
     public void generateText(){
         int i =1;
         
-
         //introduction line
         String introduction = formatLine(speechData.getSpeechs(0), CUT);
         lines.add(new Line(introduction, false));
 
-
         orderAttack = randomGenerate(0, fightData.nbr_line-1, 4);
+
         for(int j=0; j<4;j++){
             int[] currentRandom = new int[5];
             currentRandom[0] = orderAttack[j];
 
-            //generate the order of the answer
+            //generate a random array to determin the order of the answer
             orderAnswer = randomGenerate(0, 3, 4);
 
             //save the order of answer and attack
@@ -97,13 +97,15 @@ public class TextEnemy {
             //attack and answer (number on vector : 1-4) 
             lines.add(new Line(attack + "\n" +answer1 + "\n" + answer2 + "\n" + answer3 + "\n" + answer4, true));
 
-            
+            //save the order of the answer
             currentData.add(currentRandom);
         }
         
+        /* 
         for(int[] a : currentData){
             System.out.println(Arrays.toString(a));
         }
+        */
 
         //finish (win and death)
         String dead = formatLine(speechData.getSpeechs(5),CUT);
@@ -112,11 +114,12 @@ public class TextEnemy {
         lines.add(new Line(alive, false));
     }
 
+    //get the saved order of the attacks and answer
     public Vector<int[]> getCurrentData() {
         return currentData;
     }
 
-    
+    //format a String with a specific length of char
     public String formatLine(String line, int cut){
 
         String cutLine = "";
@@ -125,21 +128,21 @@ public class TextEnemy {
         int startC = 0;
         int stopC = cut;
         
+        //check if the line is shorter than the character limit 
         if(cut>line.length()-1){
             newLine  =line;
         }
         else{
             
+            //create a array with the line
             char[] c = new char[line.length()];
-
             for(int i=0; i<c.length;i++){
                 c[i] = line.charAt(i);
             }
 
-
-
             while(true){
                 for(int i =stopC; i>=startC; i--){
+
                     if(c[i] == ' '){
                         stopC = i;
                         break;
@@ -151,9 +154,11 @@ public class TextEnemy {
 
                 //découper le mot 
                 for(int i=startC;i<=stopC;i++){
+
                     cutLine += c[i];
                 }
 
+                //rebuild the line with the line breaks
                 newLine +=  cutLine+"\n";
                 cutLine = "";
 
@@ -161,6 +166,7 @@ public class TextEnemy {
 
                 
                 if(c.length-1-stopC <=0){
+
                     break;
                 }
                 else if(c.length-1-stopC <= cut){

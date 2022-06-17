@@ -22,7 +22,7 @@ public class PokeMudry extends PortableApplication {
     private long beginTime;
     private long lastMesure;
 
-    public static boolean front_montant = false;
+    public static boolean risingFront = false;
 
 
     public static void main(String[] args) {
@@ -137,14 +137,14 @@ public class PokeMudry extends PortableApplication {
     @Override
     public void onKeyDown(int keycode) {
         super.onKeyDown(keycode);
-        front_montant = true;
+        risingFront = true;
         controller.keyStatus.put(keycode, true);
         sp.screenManager.getActiveScreen().onKeyUp(keycode);
     }
     @Override
     public void onKeyUp(int keycode) {
         super.onKeyUp(keycode);
-        front_montant = false;
+        risingFront = false;
         controller.keyStatus.put(keycode, false);
         sp.screenManager.getActiveScreen().onKeyDown(keycode);
     }

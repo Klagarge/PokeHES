@@ -30,10 +30,12 @@ public class Attack {
         return attack+ "  " + answer1+ "  " + answer2+ "  " + answer3+ "  " + answer4+ "  " + xp;
     }
 
+    //return the answer with teh number i in the array s
     public String getAnswer(int i){
         return s[i];
     }
 
+    //return the true answer to verify the answer of the player
     public String getTrueAnswer(){
         return answer1;
     }
