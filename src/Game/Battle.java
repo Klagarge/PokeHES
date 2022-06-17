@@ -18,7 +18,7 @@ public class Battle {
     public int xpPlayer;
 
     public boolean screenBattleOn = true;
-   
+
     public Battle(Enemy e){
         if(e != null){
             textEnemy = new TextEnemy(e);  
