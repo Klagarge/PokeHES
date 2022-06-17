@@ -18,8 +18,14 @@ public class Player extends Character{
 	public boolean onEnemy = false;
 	private static final int XP_MAX = 6000;
 
-    public Player(int x, int y, String map) {
-        super("Player", x, y, "sprite_sacha", map); //Character_flipped
+    /**
+	 * Create a player
+	 * @param x initial x position
+	 * @param y initial y position
+	 * @param map initial map
+	 */
+	public Player(int x, int y, String map) {
+        super("Player", x, y, "sprite_sacha", map);
 		this.pv = Settings.TIME*60;
     }
 
@@ -31,7 +37,12 @@ public class Player extends Character{
 		return xp;
 	}
 
-    public void manageEntity(ScreenMap sm, Controller c) {
+    /**
+	 * All action for manage the Player
+	 * @param sm the screenMap where is the player
+	 * @param c the controller of this player
+	 */
+	public void manageEntity(ScreenMap sm, Controller c) {
 
 		boolean onDoor = sm.isDoor(getPosition());
 
@@ -102,7 +113,13 @@ public class Player extends Character{
 		}
 	}
 
-    private boolean enemy(ScreenMap sm, Vector2 nextPos) {
+    /**
+	 * Return true if an enemy is on next position
+	 * @param sm Screen map where is the player
+	 * @param nextPos Vector of next position
+	 * @return true if an enemy is on next position
+	 */
+	private boolean enemy(ScreenMap sm, Vector2 nextPos) {
 		Vector<Enemy> enemies = PokeMudry.getEnemies();
 		for (Enemy enemy : enemies) {
 			boolean bMap = sm.map.equals(enemy.getMap());

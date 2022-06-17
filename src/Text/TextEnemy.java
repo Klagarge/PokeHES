@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class TextEnemy {
-    private static final int CUT = 60;
+    private static final int CUT = 55;
     public FightData fightData;
     public SpeechData speechData;
 

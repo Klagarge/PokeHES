@@ -6,6 +6,13 @@ import ch.hevs.gdx2d.components.bitmaps.Spritesheet;
 import ch.hevs.gdx2d.lib.GdxGraphics;
 import ch.hevs.gdx2d.lib.interfaces.DrawableObject;
 
+/**
+ * Main class for manage entity 
+ * Can create all type of entity character or just stuff.
+ * @author Rémi Heredero
+ * @author Yann Sierro
+ * @version 1.0.0
+ */
 public abstract class Entity implements DrawableObject {
     protected String name;
     protected String map;
@@ -51,7 +58,6 @@ public abstract class Entity implements DrawableObject {
     }
 
     public void graphicRender(GdxGraphics g){
-        
     }
 
     /**
