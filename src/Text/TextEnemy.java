@@ -2,6 +2,7 @@ package Text;
 
 import Entity.Enemy;
 import java.util.Vector;
+import java.util.Arrays;
 import java.util.Random;
 
 public class TextEnemy {
@@ -100,11 +101,11 @@ public class TextEnemy {
             currentData.add(currentRandom);
         }
         
-        /* 
+        //display answer
         for(int[] a : currentData){
             System.out.println(Arrays.toString(a));
         }
-        */
+        
 
         //finish (win and death)
         String dead = formatLine(speechData.getSpeechs(5),CUT);
