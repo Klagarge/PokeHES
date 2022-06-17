@@ -108,10 +108,9 @@ public class PokeHES extends PortableApplication {
 
         // switch to Map
         if(!sp.b.getScreenBattleOn() && onBattleScreen){
-            //addXp for the player
-            sp.p.addXp(sp.b.getNewXp());
-            //remove pv of the enemy 
-            sp.e.removedPv(sp.b.getNewXp());
+            
+            sp.p.addXp(sp.b.getNewXp()); //add Xp for the player
+            sp.e.removedPv(sp.b.getNewXp()); //remove pv of the enemy
 
             sp.p.onEnemy = false;
             sp.sm = sp.screenManager.getScreenMap();
