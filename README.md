@@ -96,9 +96,9 @@ Les cartes contiennent plusieurs calques (Figure 8) qui définissent la carte fi
 
 ![Figure 6 Map exemple 1](Data/img/screenshots/image6.png)
 
-![Figure 7 Map exemple 2]((Data/img/screenshots/image7.png)
+![Figure 7 Map exemple 2](Data/img/screenshots/image7.png)
 
-![Figure 8 Calques]((Data/img/screenshots/image8.png)
+![Figure 8 Calques](Data/img/screenshots/image8.png)
 
 ![Figure 9 Door](Data/img/screenshots/image9.png)
 
