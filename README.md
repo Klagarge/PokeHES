@@ -118,9 +118,11 @@ Un calque spécial contient les portes et la méthode « isDoor » analyse si un
 ### 3.5 Partie combat
 
 Durant la partie combat, le joueur se retrouve face à l’ennemi et dois répondre à son quiz jusqu’à ce que son adversaire n’ait plus de point de vie.
+
 ![Figure 9 Door](Data/img/screenshots/image10.png)
 ![Figure 9 Door](Data/img/screenshots/image11.png)
 ![Figure 9 Door](Data/img/screenshots/image12.png)
+
 Au début, la partie commence avec un mot d’introduction (gauche), puis, l’ennemi pose 4 questions aléatoires (centre) et le joueur peut gagner des points. A la fin du combat, l’adversaire, dit un texte pour terminer (droite).
 
 #### 3.5.1 La gestion de la base de données, du texte
@@ -133,13 +135,19 @@ Nous utilisons une class « SpeechData » qui va répertorier tous les textes de
 Le fichier comporte les paroles d’introduction du personnage, les introductions aux différentes attaques et un mot de fin différent, si le joueur l’a battu ou non.
 
 Nous exploitons aussi une deuxième class « FightData » qui va se charger de lister les réponses dans un vecteur de class « Attack » qui se présente de cette manière :
+
 ![Figure 9 Door](Data/img/screenshots/image10.png)
+
 Cette class va permettre de stocker les questions, les 4 réponses et le nombre de point de la question que l’on reçoit si on répond juste du fichier. Donc « FightData » va récupérer les données dans le .csv avec le nom de l’ennemi de cette forme :
+
 ![Figure 9 Door](Data/img/screenshots/image15.png)
+
 Ce fichier contient l’attaque, les 4 contre-attaques et les points d’expérience pour chaque question.
 
 Finalement, tout est amené dans la class « TextEnemy », où le texte est produit en entier. Elle va créer un vecteur de class « Line » pour stocker le texte de l’ennemi et s’il est en mode attaque :
+
 ![Figure 9 Door](Data/img/screenshots/image16.png)
+
 Le deuxième attribut « attackOn » sert à détecter si l’ennemi est en train de poser les questions pour que le joueur ne puisse qu’utiliser les touches 1, 2, 3, et 4 de son clavier pour répondre. Chaque partie du texte du professeur est stocker dans le premier attribut « line ». Il contient à chaque fois le mixe entre le « SpeechData » et le « FightData ». Cela se présente de la manière suivante dans le vecteur :
 
 - 0. Le texte d’introduction
@@ -155,7 +163,9 @@ Une fois tout cela terminer, le texte est affiché dans la boîte de dialogue en
 #### 3.5.2 L’aléatoire des questions
 
 Chaque question posée par l’ennemi est posée de façon aléatoire et chaque réponse que peut sélectionner le joueur est aussi mélangée de façon aléatoire. Pour faire cela, nous avons créé une méthode que retourne un tableau contenant le nombre de numéro aléatoire souhaité compris entre les bornes minimum et maximum. Le tout est gérer dans la class « TextEnemy » où on retrouve cette méthode :
+
 ![Figure 9 Door](Data/img/screenshots/image17.png)
+
 Pour commencer, on entre un minimum, un maximum et les nombres de chiffres aléatoires choisis. La méthode crée un premier tableau contenant tous les numéros entre les paramètres y compris. Elle génère un second tableau vide, mais pouvant contenir le nombre de nombres que l’on veut. Ensuite, elle crée une nouvelle instance de class « Random » pour générer un nombre aléatoire et passer à tous les éléments du premier tableau et les changer de place avec un autre de position aléatoire.
 Finalement, Nous prenons les 4 premiers éléments du tableau mélangé pour le mettre dans le deuxième tableau qui permet à la méthode de retourne celui-là.
 
@@ -165,7 +175,9 @@ Ainsi, nous utiliser cette méthode pour mélanger les questions de chaque ennem
 
 Dans l’affichage du combat, le texte de l’ennemi défile avec les touches. Cette partie est gérée dans les class « Battle » et « ScreenBattle ».
 Tout d’abords, il a fallu différencier les touches lorsque le joueur répond à une question ou lit du texte du professeur. Nous avons utilisé un attribut « attackOn » dans le vecteur de class « Line » comme expliqué plus haut. Ainsi, lorsque le joueur appuie sur les touches 1, 2, 3, 4 pour répondre à une question, ou lorsqu’il appuie sur la barre espace. Nous pouvons appeler la méthode « action » de la class « Battle ».
+
 ![Figure 9 Door](Data/img/screenshots/image18.png)
+
 C’est méthode nous permet de déterminer quelle action nous faisons en fonction d’une variable « LineSpeech » que nous obtenons à l’aide de « getLineSpeech ». Cet attribut de la class « Battle » détermine quel élément du vecteur de class « Line », nous affichons.
 Les différents cas étudiés :
 
@@ -179,9 +191,11 @@ Les différents cas étudiés :
 La fin de partie intervient dans deux cas différents :
 
 1. Le joueur a atteint le nombre de crédit maximum pour terminer le jeu et le message suivant affiche le nombre de crédit atteint et le temps que le joueur a pris.
+
 ![Figure 9 Door](Data/img/screenshots/image19.png)
 
 2. Le temps s’est écoulé et le joueur a perdu la partie et le message suivant affiche le nombre de crédit qu’il a obtenu.
+
 ![Figure 9 Door](Data/img/screenshots/image20.png)
 
 ## 4 Les améliorations
