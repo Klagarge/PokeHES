@@ -53,8 +53,7 @@ public class ScreenMap extends RenderingScreen{
 		createMap("desert");
 
         createMap("SS");
-        //createMap("RI");
-        //createMap("RS");
+        createMap("EXT");
         
         createMap("21RI");
         createMap("21RS");

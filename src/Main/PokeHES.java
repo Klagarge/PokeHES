@@ -21,6 +21,7 @@ public class PokeHES extends PortableApplication {
 	private static Vector<Entity> entities = new Vector<>();
     private long beginTime;
     private long lastMesure;
+    private long stairTime;
 
     public static boolean risingFront = false;
 
@@ -77,6 +78,11 @@ public class PokeHES extends PortableApplication {
             sp.p.removedPv(1);
             for (Enemy enemy : enemies) { enemy.recoveredTime++; }
         }
+
+        //if (sp.p.onDoor) {
+        //    while (System.currentTimeMillis()-timeNow < Settings.SWITCH_MAP_TIME) { g.clear(); }
+        //}
+        
 		
         if(onMapScreen) sp.p.manageEntity(sp.sm, controller);
         

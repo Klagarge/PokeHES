@@ -17,6 +17,7 @@ public class Player extends Character{
 	public Enemy lastEnemy = null;
 	public boolean onEnemy = false;
 	private static final int XP_MAX = 6000;
+	public boolean onDoor;
 
     /**
 	 * Create a player
@@ -44,7 +45,7 @@ public class Player extends Character{
 	 */
 	public void manageEntity(ScreenMap sm, Controller c) {
 
-		boolean onDoor = sm.isDoor(getPosition());
+		onDoor = sm.isDoor(getPosition());
 
 		// Do nothing if hero is already moving
 		if (!isMoving()) {
@@ -91,8 +92,8 @@ public class Player extends Character{
 
 			
 			if(onDoor){
-				long time = System.currentTimeMillis();
-				while (System.currentTimeMillis()-time < Settings.SWITCH_MAP_TIME) { }
+				//long time = System.currentTimeMillis();
+				//while (System.currentTimeMillis()-time < Settings.SWITCH_MAP_TIME) { }
 				String nMap = null;
 				Integer x = null;
 				Integer y = null;
