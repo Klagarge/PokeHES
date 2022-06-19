@@ -2,6 +2,8 @@ package Main;
 
 import java.util.Vector;
 
+import com.badlogic.gdx.Input;
+
 import Control.Controller;
 import Entity.Enemy;
 import Entity.Entity;
@@ -21,7 +23,6 @@ public class PokeHES extends PortableApplication {
 	private static Vector<Entity> entities = new Vector<>();
     private long beginTime;
     private long lastMesure;
-    private long stairTime;
 
     public static boolean risingFront = false;
 
@@ -146,14 +147,16 @@ public class PokeHES extends PortableApplication {
     public void onKeyDown(int keycode) {
         super.onKeyDown(keycode);
         risingFront = true;
+        if (keycode == Input.Keys.SPACE) controller.keyStatus.put(Input.Keys.A, true);
+        if (keycode == Input.Keys.ENTER) controller.keyStatus.put(Input.Keys.A, true);
         controller.keyStatus.put(keycode, true);
-        sp.screenManager.getActiveScreen().onKeyUp(keycode);
     }
     @Override
     public void onKeyUp(int keycode) {
         super.onKeyUp(keycode);
         risingFront = false;
+        if (keycode == Input.Keys.SPACE) controller.keyStatus.put(Input.Keys.A, false);
+        if (keycode == Input.Keys.ENTER) controller.keyStatus.put(Input.Keys.A, false);
         controller.keyStatus.put(keycode, false);
-        sp.screenManager.getActiveScreen().onKeyDown(keycode);
     }
 }

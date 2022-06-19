@@ -1,5 +1,7 @@
 package Control;
 
+import com.badlogic.gdx.Input;
+
 import Screen.ScreenPlayer;
 
 /**
@@ -10,9 +12,11 @@ import Screen.ScreenPlayer;
  */
 public class Keyboard {
     public void keyDown(int keycode, ScreenPlayer sp, Controller c) {
+        if (keycode == Input.Keys.SPACE) c.keyStatus.put(Input.Keys.A, true);
         c.keyStatus.put(keycode, true);
     }
     public void onKeyUp(int keycode, ScreenPlayer sp, Controller c) {
+        if (keycode == Input.Keys.SPACE) c.keyStatus.put(Input.Keys.A, false);
         c.keyStatus.put(keycode, false);
     }
 }

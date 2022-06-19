@@ -2,7 +2,6 @@ package Text;
 
 import Entity.Enemy;
 import java.util.Vector;
-import java.text.Normalizer;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -29,6 +28,11 @@ public class TextEnemy {
 
         //save random data (attack and answer) : attack, answer 1, answer 2 answer 3, answer 4
         currentData = new Vector<int[]>();
+
+        orderAttack = randomGenerate(0, fightData.nbr_line-1, 4);
+
+        //generate a random array to determine the order of the answer
+        orderAnswer = randomGenerate(0, 3, 4);
 
     }
 
@@ -68,20 +72,21 @@ public class TextEnemy {
 
     //generate the text who is displays in battle screen
     public void generateText(int cursor){
+        lines.clear();
         int i =1;
         
         //introduction line
         String introduction = formatLine(speechData.getSpeechs(0), CUT);
         lines.add(new Line(introduction, false));
 
-        orderAttack = randomGenerate(0, fightData.nbr_line-1, 4);
+        //orderAttack = randomGenerate(0, fightData.nbr_line-1, 4);
 
         for(int j=0; j<4;j++){
             int[] currentRandom = new int[5];
             currentRandom[0] = orderAttack[j];
 
             //generate a random array to determine the order of the answer
-            orderAnswer = randomGenerate(0, 3, 4);
+            //orderAnswer = randomGenerate(0, 3, 4);
 
             //save the order of answer and attack
             for(int k=1;k<5;k++){
@@ -90,7 +95,7 @@ public class TextEnemy {
 
             //Format the line
             String[] row = new String[4];
-            row[0] = row[1] = row[2] = row[3] = "";
+            row[0] = row[1] = row[2] = row[3] = "    ";
             row[cursor] = "->";
             String attack = formatLine(speechData.getSpeechs(i++) + fightData.getAttack(orderAttack[j]).attack + "  ("+fightData.getAttack(orderAttack[j]).getXp()+ ") ", CUT);
             String answer1 = formatLine(row[0] + " " + fightData.getAttack(orderAttack[j]).getAnswer(orderAnswer[0]) , CUT);
@@ -106,9 +111,11 @@ public class TextEnemy {
         }
         
         //display answer
+        /*
         for(int[] a : currentData){
             System.out.println(Arrays.toString(a));
         }
+        */
         
 
         //finish (win and death)
