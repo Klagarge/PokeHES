@@ -17,6 +17,9 @@ public class Player extends Character{
 	public Enemy lastEnemy = null;
 	public boolean onEnemy = false;
 	private static final int XP_MAX = 6000;
+	public boolean onDoor;
+	private boolean moveBlocked;
+	private long beginBlocked;
 
     /**
 	 * Create a player
@@ -25,7 +28,7 @@ public class Player extends Character{
 	 * @param map initial map
 	 */
 	public Player(int x, int y, String map) {
-        super("Player", x, y, "sprite_sacha", map);
+        super("player", x, y, "sprite_sacha", map);
 		this.pv = Settings.TIME*60;
     }
 
@@ -44,7 +47,12 @@ public class Player extends Character{
 	 */
 	public void manageEntity(ScreenMap sm, Controller c) {
 
-		boolean onDoor = sm.isDoor(getPosition());
+		onDoor = sm.isDoor(getPosition());
+		if(onDoor){
+			moveBlocked = true;
+			beginBlocked = System.currentTimeMillis();
+		}
+		if(System.currentTimeMillis() - beginBlocked >= Settings.SWITCH_MAP_TIME && !onDoor) { moveBlocked = false; }
 
 		// Do nothing if hero is already moving
 		if (!isMoving()) {
@@ -56,19 +64,19 @@ public class Player extends Character{
 
 
 
-			if (c.keyStatus.get(Input.Keys.RIGHT) && !onDoor) {
+			if (c.keyStatus.get(Input.Keys.RIGHT) && !moveBlocked) {
 				goalDirection = Player.Direction.RIGHT;
 				nextCell = sm.getTile(getPosition(), 1, 0);
 				nextPos.x+=sm.tileWidth;
-			} else if (c.keyStatus.get(Input.Keys.LEFT) && !onDoor) {
+			} else if (c.keyStatus.get(Input.Keys.LEFT) && !moveBlocked) {
 				goalDirection = Player.Direction.LEFT;
 				nextCell = sm.getTile(getPosition(), -1, 0);
 				nextPos.x-=sm.tileWidth;
-			} else if (c.keyStatus.get(Input.Keys.UP) && !onDoor) {
+			} else if (c.keyStatus.get(Input.Keys.UP) && !moveBlocked) {
 				goalDirection = Player.Direction.UP;
 				nextCell = sm.getTile(getPosition(), 0, 1);
 				nextPos.y+=sm.tileHeight;
-			} else if (c.keyStatus.get(Input.Keys.DOWN) && !onDoor) {
+			} else if (c.keyStatus.get(Input.Keys.DOWN) && !moveBlocked) {
 				goalDirection = Player.Direction.DOWN;
 				nextCell = sm.getTile(getPosition(), 0, -1);
 				nextPos.y-=sm.tileHeight;
@@ -91,8 +99,8 @@ public class Player extends Character{
 
 			
 			if(onDoor){
-				long time = System.currentTimeMillis();
-				while (System.currentTimeMillis()-time < Settings.SWITCH_MAP_TIME) { }
+				//long time = System.currentTimeMillis();
+				//while (System.currentTimeMillis()-time < Settings.SWITCH_MAP_TIME) { }
 				String nMap = null;
 				Integer x = null;
 				Integer y = null;

@@ -36,7 +36,7 @@ public class ScreenMap extends RenderingScreen{
     private Player player;
     
     private void createMap(String name){
-		TiledMap tm =new TmxMapLoader().load("./Data/map/"+ name + ".tmx");
+		TiledMap tm =new TmxMapLoader().load("map/"+ name + ".tmx");
 		tMap.put(name,tm);
 		tMapRenderer.put(name,new OrthogonalTiledMapRenderer(tm));
 	}
@@ -53,8 +53,7 @@ public class ScreenMap extends RenderingScreen{
 		createMap("desert");
 
         createMap("SS");
-        //createMap("RI");
-        //createMap("RS");
+        createMap("EXT");
         
         createMap("21RI");
         createMap("21RS");
@@ -181,7 +180,6 @@ public class ScreenMap extends RenderingScreen{
 				try { Door.nextMap = mapProperties.get("nextMap").toString(); } catch (Exception e) { }
 				try { Door.nextX = Integer.parseInt(mapProperties.get("nextX").toString()); } catch (Exception e) { }
 				try { Door.nextY = Integer.parseInt(mapProperties.get("nextY").toString()); } catch (Exception e) { }
-
                 try { Door.nextDirection = Character.Direction.valueOf(mapProperties.get("nextDirection").toString()); } catch (Exception e) { }
 
 			}

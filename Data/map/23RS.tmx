@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.5" orientation="orthogonal" renderorder="right-down" width="30" height="24" tilewidth="32" tileheight="32" infinite="0" nextlayerid="7" nextobjectid="6">
+<map version="1.8" tiledversion="1.8.5" orientation="orthogonal" renderorder="right-down" width="30" height="24" tilewidth="32" tileheight="32" infinite="0" nextlayerid="7" nextobjectid="10">
  <tileset firstgid="1" source="assets/Dungeon_v2.tsx"/>
  <tileset firstgid="229" source="assets/pokemon_v2.tsx"/>
  <layer id="1" name="floor" width="30" height="24">
@@ -109,6 +109,38 @@
     <property name="nextMap" value="FabLab"/>
     <property name="nextX" type="int" value="1"/>
     <property name="nextY" type="int" value="10"/>
+   </properties>
+  </object>
+  <object id="6" x="751.083" y="14.75">
+   <properties>
+    <property name="nextDirection" value="UP"/>
+    <property name="nextMap" value="EXT"/>
+    <property name="nextX" type="int" value="134"/>
+    <property name="nextY" type="int" value="35"/>
+   </properties>
+  </object>
+  <object id="7" x="784.25" y="15">
+   <properties>
+    <property name="nextDirection" value="UP"/>
+    <property name="nextMap" value="EXT"/>
+    <property name="nextX" type="int" value="135"/>
+    <property name="nextY" type="int" value="35"/>
+   </properties>
+  </object>
+  <object id="8" x="847.25" y="14.5">
+   <properties>
+    <property name="nextDirection" value="UP"/>
+    <property name="nextMap" value="EXT"/>
+    <property name="nextX" type="int" value="137"/>
+    <property name="nextY" type="int" value="35"/>
+   </properties>
+  </object>
+  <object id="9" x="879.25" y="14.75">
+   <properties>
+    <property name="nextDirection" value="UP"/>
+    <property name="nextMap" value="EXT"/>
+    <property name="nextX" type="int" value="138"/>
+    <property name="nextY" type="int" value="35"/>
    </properties>
   </object>
  </objectgroup>
