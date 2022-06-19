@@ -36,7 +36,7 @@ public class ScreenMap extends RenderingScreen{
     private Player player;
     
     private void createMap(String name){
-		TiledMap tm =new TmxMapLoader().load("./map/"+ name + ".tmx");
+		TiledMap tm =new TmxMapLoader().load("map/"+ name + ".tmx");
 		tMap.put(name,tm);
 		tMapRenderer.put(name,new OrthogonalTiledMapRenderer(tm));
 	}

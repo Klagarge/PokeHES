@@ -28,7 +28,7 @@ public class Player extends Character{
 	 * @param map initial map
 	 */
 	public Player(int x, int y, String map) {
-        super("Player", x, y, "sprite_sacha", map);
+        super("player", x, y, "sprite_sacha", map);
 		this.pv = Settings.TIME*60;
     }
 

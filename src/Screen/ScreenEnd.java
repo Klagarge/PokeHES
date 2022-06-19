@@ -20,7 +20,7 @@ public class ScreenEnd extends RenderingScreen{
     @Override
     public void onInit() {
         //generate a new font
-        unbuntuRegularWhite = generateFont("./Data/font/Ubuntu-Regular.ttf", 30, Color.WHITE);
+        unbuntuRegularWhite = generateFont("font/Ubuntu-Regular.ttf", 30, Color.WHITE);
         
     }
 

@@ -1,18 +1,18 @@
 package Text;
 
-import java.util.Vector;
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.Vector;
 
 public class SpeechData {
 
     Vector<String> speechs = new Vector<String>();
-    File file;
+    private  InputStream stream;
 
     public SpeechData(String name){
-        file = new File("./data/battle/speech/" + name + ".txt");
+        stream = FightData.class.getResourceAsStream("/battle/speech/" + name + ".txt");
     }
     
     public void readFile() {
@@ -20,8 +20,7 @@ public class SpeechData {
 
         // try to read the file of the speech of the enemy
         try {
-            FileReader f = new FileReader(file, StandardCharsets.UTF_8);
-            BufferedReader bf = new BufferedReader(f); 
+            BufferedReader bf = new BufferedReader(new InputStreamReader(stream, StandardCharsets.UTF_8));
             //read and add a new line in the vector speechs
             line = bf.readLine(); 
             while(line != null){
