@@ -34,8 +34,8 @@ public class ScreenBattle extends RenderingScreen{
     @Override
 	public void onInit() {
         //display the question
-		ubuntuRegularBlack = generateFont("./Data/font/Ubuntu-Regular.ttf", 30, Color.BLACK);
-		ubuntuRegularWhite = generateFont("./Data/font/Ubuntu-Regular.ttf", 45, Color.WHITE);
+		ubuntuRegularBlack = generateFont("font/Ubuntu-Regular.ttf", 30, Color.BLACK);
+		ubuntuRegularWhite = generateFont("font/Ubuntu-Regular.ttf", 45, Color.WHITE);
 	}
 
 
@@ -43,7 +43,7 @@ public class ScreenBattle extends RenderingScreen{
 	public void onGraphicRender(GdxGraphics g) {
 		//color the background in black
 		g.clear(Color.BLACK);
-		//display the dialog, theenemy and the player
+		//display the dialog, the enemy and the player
 		displayDialog(g);
 		displayEnemy(g);
 		displayPlayer(g);

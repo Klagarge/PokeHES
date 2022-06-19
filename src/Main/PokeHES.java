@@ -21,6 +21,7 @@ public class PokeHES extends PortableApplication {
 	private static Vector<Entity> entities = new Vector<>();
     private long beginTime;
     private long lastMesure;
+    private long stairTime;
 
     public static boolean risingFront = false;
 
@@ -49,12 +50,12 @@ public class PokeHES extends PortableApplication {
 		enemies.add(new Enemy("Mudry", 5, 6,  "21RI", 700, "informatique"));
         // add player, create and add all enemies in entities
 		entities.add((Entity) sp.p);
-		enemies.add(new Enemy("Gloeckner", 1, 7, "21N307", 600, "allemand"));
-		enemies.add(new Enemy("Nicollier", 4, 2,  "21N308", 1600, "mathematique"));
-		enemies.add(new Enemy("Mudry", 5, 11,  "21N304", 700, "informatique"));
-		enemies.add(new Enemy("Ellert", 1, 4, "23N215", 300, "physique"));
-		enemies.add(new Enemy("Bianchi", 1, 3, "23N308", 1200, "electricite"));
-		enemies.add(new Enemy("Paciotti", 5, 11, "21N205", 1200, "mecanique"));
+		enemies.add(new Enemy("gloeckner", 1, 7, "21N307", 600, "allemand"));
+		enemies.add(new Enemy("nicollier", 4, 2,  "21N308", 1600, "mathematique"));
+		enemies.add(new Enemy("mudry", 5, 11,  "21N304", 700, "informatique"));
+		enemies.add(new Enemy("ellert", 1, 4, "23N215", 300, "physique"));
+		enemies.add(new Enemy("bianchi", 1, 3, "23N308", 1200, "electricite"));
+		enemies.add(new Enemy("paciotti", 5, 11, "21N205", 1200, "mecanique"));
         for (Enemy enemy : enemies) { entities.add(enemy); }
         
 		//Init all entities
@@ -78,6 +79,11 @@ public class PokeHES extends PortableApplication {
             sp.p.removedPv(1);
             for (Enemy enemy : enemies) { enemy.recoveredTime++; }
         }
+
+        //if (sp.p.onDoor) {
+        //    while (System.currentTimeMillis()-timeNow < Settings.SWITCH_MAP_TIME) { g.clear(); }
+        //}
+        
 		
         if(onMapScreen) sp.p.manageEntity(sp.sm, controller);
         

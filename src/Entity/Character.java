@@ -52,13 +52,13 @@ public abstract class Character extends Entity{
         super(name, x, y, map);
         this.img = img;
 
-        imgBattle = "./Data/img/person/" + name + ".png";
+        imgBattle = "img/person/" + name + ".png";
     }
 
     @Override
     public void init() {
         super.init();
-        ss = new Spritesheet("./Data/img/sprite/" + img + ".png", SPRITE_WIDTH, SPRITE_HEIGHT);
+        ss = new Spritesheet("img/sprite/" + img + ".png", SPRITE_WIDTH, SPRITE_HEIGHT);
     }
 
     @Override
