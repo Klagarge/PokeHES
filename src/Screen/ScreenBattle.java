@@ -17,6 +17,11 @@ import ch.hevs.gdx2d.components.bitmaps.BitmapImage;
 import ch.hevs.gdx2d.components.screen_management.RenderingScreen;
 import ch.hevs.gdx2d.lib.GdxGraphics;
 
+/**
+ * @author Rémi Heredero
+ * @author Yann Sierro
+ * @version 1.0.2
+ */
 public class ScreenBattle extends RenderingScreen{
 
 	private static int EDGE = 10;

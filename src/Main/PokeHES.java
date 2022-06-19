@@ -15,6 +15,11 @@ import Screen.ScreenPlayer;
 import ch.hevs.gdx2d.desktop.PortableApplication;
 import ch.hevs.gdx2d.lib.GdxGraphics;
 
+/**
+ * @author Rémi Heredero
+ * @author Yann Sierro
+ * @version 1.0.2
+ */
 public class PokeHES extends PortableApplication {
 
     private ScreenPlayer sp;
@@ -48,7 +53,6 @@ public class PokeHES extends PortableApplication {
         sp.init();
         controller.init();
         
-		enemies.add(new Enemy("Mudry", 5, 6,  "21RI", 700, "informatique"));
         // add player, create and add all enemies in entities
 		entities.add((Entity) sp.p);
 		enemies.add(new Enemy("gloeckner", 1, 7, "21N307", 600, "allemand"));

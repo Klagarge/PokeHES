@@ -12,15 +12,20 @@ import Main.Settings;
 import ch.hevs.gdx2d.components.screen_management.RenderingScreen;
 import ch.hevs.gdx2d.lib.GdxGraphics;
 
+/**
+ * @author Rémi Heredero
+ * @author Yann Sierro
+ * @version 1.0.0
+ */
 public class ScreenEnd extends RenderingScreen{
 
     private String textEnd = null;
-    private BitmapFont unbuntuRegularWhite;
+    private BitmapFont ubuntuRegularWhite;
 
     @Override
     public void onInit() {
         //generate a new font
-        unbuntuRegularWhite = generateFont("font/Ubuntu-Regular.ttf", 30, Color.WHITE);
+        ubuntuRegularWhite = generateFont("font/Ubuntu-Regular.ttf", 30, Color.WHITE);
         
     }
 
@@ -30,13 +35,13 @@ public class ScreenEnd extends RenderingScreen{
         g.clear(Color.BLACK);
 
         //display the text
-        if(textEnd != null) g.drawStringCentered(Settings.SIDE/2, textEnd, unbuntuRegularWhite);
+        if(textEnd != null) g.drawStringCentered(Settings.SIDE/2, textEnd, ubuntuRegularWhite);
         
     }
 
     @Override
 	public void dispose() {
-		unbuntuRegularWhite.dispose();
+		ubuntuRegularWhite.dispose();
 	}
 
     //set a different text if the player win or loose

@@ -5,6 +5,11 @@ import java.util.Vector;
 import java.util.Arrays;
 import java.util.Random;
 
+/**
+ * @author Rémi Heredero
+ * @author Yann Sierro
+ * @version 1.0.2
+ */
 public class TextEnemy {
     private static final int CUT = 55;
     public FightData fightData;
@@ -73,6 +78,7 @@ public class TextEnemy {
     //generate the text who is displays in battle screen
     public void generateText(int cursor){
         lines.clear();
+        currentData.clear();
         int i =1;
         
         //introduction line
@@ -111,13 +117,11 @@ public class TextEnemy {
         }
         
         //display answer
-        /*
+        System.out.println("----------");
         for(int[] a : currentData){
             System.out.println(Arrays.toString(a));
         }
-        */
         
-
         //finish (win and death)
         String dead = formatLine(speechData.getSpeechs(5),CUT);
         String alive = formatLine(speechData.getSpeechs(6), CUT);

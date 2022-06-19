@@ -4,6 +4,11 @@ import Entity.Enemy;
 import Entity.Player;
 import Text.TextEnemy;
 
+/**
+ * @author Rémi Heredero
+ * @author Yann Sierro
+ * @version 1.0.2
+ */
 public class Battle {
 
     public Enemy e;

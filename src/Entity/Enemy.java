@@ -4,6 +4,11 @@ import com.badlogic.gdx.math.Vector2;
 
 import Main.Settings; 
 
+/**
+ * @author Rémi Heredero
+ * @author Yann Sierro
+ * @version 1.0.0
+ */
 public class Enemy extends Character{
 
     private String subject;
