@@ -18,6 +18,8 @@ public class Player extends Character{
 	public boolean onEnemy = false;
 	private static final int XP_MAX = 6000;
 	public boolean onDoor;
+	private boolean moveBlocked;
+	private long beginBlocked;
 
     /**
 	 * Create a player
@@ -46,6 +48,11 @@ public class Player extends Character{
 	public void manageEntity(ScreenMap sm, Controller c) {
 
 		onDoor = sm.isDoor(getPosition());
+		if(onDoor){
+			moveBlocked = true;
+			beginBlocked = System.currentTimeMillis();
+		}
+		if(System.currentTimeMillis() - beginBlocked >= Settings.SWITCH_MAP_TIME && !onDoor) { moveBlocked = false; }
 
 		// Do nothing if hero is already moving
 		if (!isMoving()) {
@@ -57,19 +64,19 @@ public class Player extends Character{
 
 
 
-			if (c.keyStatus.get(Input.Keys.RIGHT) && !onDoor) {
+			if (c.keyStatus.get(Input.Keys.RIGHT) && !moveBlocked) {
 				goalDirection = Player.Direction.RIGHT;
 				nextCell = sm.getTile(getPosition(), 1, 0);
 				nextPos.x+=sm.tileWidth;
-			} else if (c.keyStatus.get(Input.Keys.LEFT) && !onDoor) {
+			} else if (c.keyStatus.get(Input.Keys.LEFT) && !moveBlocked) {
 				goalDirection = Player.Direction.LEFT;
 				nextCell = sm.getTile(getPosition(), -1, 0);
 				nextPos.x-=sm.tileWidth;
-			} else if (c.keyStatus.get(Input.Keys.UP) && !onDoor) {
+			} else if (c.keyStatus.get(Input.Keys.UP) && !moveBlocked) {
 				goalDirection = Player.Direction.UP;
 				nextCell = sm.getTile(getPosition(), 0, 1);
 				nextPos.y+=sm.tileHeight;
-			} else if (c.keyStatus.get(Input.Keys.DOWN) && !onDoor) {
+			} else if (c.keyStatus.get(Input.Keys.DOWN) && !moveBlocked) {
 				goalDirection = Player.Direction.DOWN;
 				nextCell = sm.getTile(getPosition(), 0, -1);
 				nextPos.y-=sm.tileHeight;

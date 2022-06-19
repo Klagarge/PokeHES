@@ -15,7 +15,7 @@ public class FightData {
     public int nbr_line =0;
 
     public FightData(String branch) {
-        file = new File("./Data/Battle/Fight/" + branch + ".csv");
+        file = new File("./data/battle/fight/" + branch + ".csv");
     }
 
     public void readFile() {
