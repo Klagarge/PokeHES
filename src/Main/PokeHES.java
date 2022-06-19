@@ -21,7 +21,6 @@ public class PokeHES extends PortableApplication {
 	private static Vector<Entity> entities = new Vector<>();
     private long beginTime;
     private long lastMesure;
-    private long stairTime;
 
     public static boolean risingFront = false;
 
