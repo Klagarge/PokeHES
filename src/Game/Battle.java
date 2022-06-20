@@ -45,6 +45,7 @@ public class Battle {
 	}
 
     public void action(int answer){
+        textEnemy.randomAnswer();
 
        //the player is at the last question, the finish text must be displayed
         if(getLineSpeech() == 4){

@@ -22,6 +22,8 @@ public class TextEnemy {
 
     private Vector<int[]> currentData;
     
+    int[] currentRandom = new int[5];
+    
     public TextEnemy(Enemy e){
         //generate the vector of fight
         fightData = new FightData(e.getBranch());
@@ -36,9 +38,18 @@ public class TextEnemy {
 
         orderAttack = randomGenerate(0, fightData.nbr_line-1, 4);
 
+        randomAnswer();
+
+    }
+
+    public void randomAnswer(){
         //generate a random array to determine the order of the answer
         orderAnswer = randomGenerate(0, 3, 4);
 
+        //save the order of answer and attack
+        for(int k=1;k<5;k++){
+            currentRandom[k] = orderAnswer[k-1];
+        }
     }
 
     public static int[] randomGenerate( int min, int max, int nbrRandom){
@@ -88,16 +99,7 @@ public class TextEnemy {
         //orderAttack = randomGenerate(0, fightData.nbr_line-1, 4);
 
         for(int j=0; j<4;j++){
-            int[] currentRandom = new int[5];
             currentRandom[0] = orderAttack[j];
-
-            //generate a random array to determine the order of the answer
-            //orderAnswer = randomGenerate(0, 3, 4);
-
-            //save the order of answer and attack
-            for(int k=1;k<5;k++){
-                currentRandom[k] = orderAnswer[k-1];
-            }
 
             //Format the line
             String[] row = new String[4];
