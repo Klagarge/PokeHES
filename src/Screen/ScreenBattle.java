@@ -124,16 +124,13 @@ public class ScreenBattle extends RenderingScreen{
 
 			if (battle.cursor > 3) battle.cursor = 0;
 			if (battle.cursor < 0) battle.cursor = 3;
-
-			//the enemy is attacking
-			if( battle.getAttackOn() == false){
+			
+			if( battle.getAttackOn() == false){ //the enemy is attacking
 				if (c.keyStatus.get(Input.Keys.SPACE) || c.keyStatus.get(Input.Keys.A)){
 					battle.action(-1);
+					battle.cursor = 0;
 				}
-			}
-			
-			//the enemy is speaking
-			if(battle.getAttackOn() == true){
+			} else if(battle.getAttackOn() == true){ //the enemy is speaking
 				if (c.keyStatus.get(Input.Keys.NUM_1) || c.keyStatus.get(Input.Keys.A) && b.cursor == 0){
 					battle.action(1);
 					battle.cursor = 0;
@@ -151,7 +148,7 @@ public class ScreenBattle extends RenderingScreen{
 					battle.cursor = 0;
 				}
 			}
-			
+
 			b.updateText();
 			
 			//mettre le front à false jusqu'à ce que le bouton soit relâché
