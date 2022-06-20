@@ -45,10 +45,9 @@ public class Battle {
 	}
 
     public void action(int answer){
-        textEnemy.randomAnswer();
-
        //the player is at the last question, the finish text must be displayed
         if(getLineSpeech() == 4){
+            checkAnswer(answer);
             finishSpeech();
         }
         //the player is at the finish text and he must quit the battle
@@ -67,6 +66,8 @@ public class Battle {
         else{
         readNextLine();
         }
+        
+        textEnemy.randomAnswer();
     }
 
     //check the choice answer

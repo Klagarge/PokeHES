@@ -115,20 +115,16 @@ public class ScreenBattle extends RenderingScreen{
 		//add a rising front to have one impulsion
 		if(PokeHES.risingFront){
 			
-			if (c.keyStatus.get(Input.Keys.DOWN)){
-				battle.cursor++;
-			}
-			else if (c.keyStatus.get(Input.Keys.UP)){
-				battle.cursor--;
-			}
-
+			if (c.keyStatus.get(Input.Keys.DOWN)){ battle.cursor++; }
+			else if (c.keyStatus.get(Input.Keys.UP)){ battle.cursor--; }
+			
 			if (battle.cursor > 3) battle.cursor = 0;
 			if (battle.cursor < 0) battle.cursor = 3;
 			
 			if( battle.getAttackOn() == false){ //the enemy is attacking
 				if (c.keyStatus.get(Input.Keys.SPACE) || c.keyStatus.get(Input.Keys.A)){
 					battle.action(-1);
-					battle.cursor = 0;
+					//battle.cursor = 0;
 				}
 			} else if(battle.getAttackOn() == true){ //the enemy is speaking
 				if (c.keyStatus.get(Input.Keys.NUM_1) || c.keyStatus.get(Input.Keys.A) && b.cursor == 0){
