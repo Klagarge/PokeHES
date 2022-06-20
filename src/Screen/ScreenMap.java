@@ -21,6 +21,11 @@ import Entity.Player;
 import ch.hevs.gdx2d.components.screen_management.RenderingScreen;
 import ch.hevs.gdx2d.lib.GdxGraphics;
 
+/**
+ * @author Rémi Heredero
+ * @author Yann Sierro
+ * @version 1.0.1
+ */
 public class ScreenMap extends RenderingScreen{
 
 	// tiles management

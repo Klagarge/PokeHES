@@ -5,6 +5,11 @@ import java.util.Vector;
 import java.util.Arrays;
 import java.util.Random;
 
+/**
+ * @author Rémi Heredero
+ * @author Yann Sierro
+ * @version 1.0.2
+ */
 public class TextEnemy {
     private static final int CUT = 55;
     public FightData fightData;
@@ -16,6 +21,8 @@ public class TextEnemy {
     private int[] orderAnswer;
 
     private Vector<int[]> currentData;
+    
+    int[] currentRandom = new int[5];
     
     public TextEnemy(Enemy e){
         //generate the vector of fight
@@ -29,6 +36,20 @@ public class TextEnemy {
         //save random data (attack and answer) : attack, answer 1, answer 2 answer 3, answer 4
         currentData = new Vector<int[]>();
 
+        orderAttack = randomGenerate(0, fightData.nbr_line-1, 4);
+
+        randomAnswer();
+
+    }
+
+    public void randomAnswer(){
+        //generate a random array to determine the order of the answer
+        orderAnswer = randomGenerate(0, 3, 4);
+
+        //save the order of answer and attack
+        for(int k=1;k<5;k++){
+            currentRandom[k] = orderAnswer[k-1];
+        }
     }
 
     public static int[] randomGenerate( int min, int max, int nbrRandom){
@@ -66,35 +87,31 @@ public class TextEnemy {
 
 
     //generate the text who is displays in battle screen
-    public void generateText(){
+    public void generateText(int cursor){
+        lines.clear();
+        currentData.clear();
         int i =1;
         
         //introduction line
         String introduction = formatLine(speechData.getSpeechs(0), CUT);
         lines.add(new Line(introduction, false));
 
-        orderAttack = randomGenerate(0, fightData.nbr_line-1, 4);
+        //orderAttack = randomGenerate(0, fightData.nbr_line-1, 4);
 
         for(int j=0; j<4;j++){
-            int[] currentRandom = new int[5];
             currentRandom[0] = orderAttack[j];
 
-            //generate a random array to determine the order of the answer
-            orderAnswer = randomGenerate(0, 3, 4);
-
-            //save the order of answer and attack
-            for(int k=1;k<5;k++){
-                currentRandom[k] = orderAnswer[k-1];
-            }
-
             //Format the line
+            String[] row = new String[4];
+            row[0] = row[1] = row[2] = row[3] = "    ";
+            row[cursor] = "->";
             String attack = formatLine(speechData.getSpeechs(i++) + fightData.getAttack(orderAttack[j]).attack + "  ("+fightData.getAttack(orderAttack[j]).getXp()+ ") ", CUT);
-            String answer1 = formatLine("1. " + fightData.getAttack(orderAttack[j]).getAnswer(orderAnswer[0]) , CUT);
-            String answer2 = formatLine("2. " + fightData.getAttack(orderAttack[j]).getAnswer(orderAnswer[1]) , CUT);
-            String answer3 = formatLine("3. " + fightData.getAttack(orderAttack[j]).getAnswer(orderAnswer[2]) , CUT);
-            String answer4 = formatLine("4. " + fightData.getAttack(orderAttack[j]).getAnswer(orderAnswer[3]) , CUT);
+            String answer1 = formatLine(row[0] + " " + fightData.getAttack(orderAttack[j]).getAnswer(orderAnswer[0]) , CUT);
+            String answer2 = formatLine(row[1] + " " + fightData.getAttack(orderAttack[j]).getAnswer(orderAnswer[1]) , CUT);
+            String answer3 = formatLine(row[2] + " " + fightData.getAttack(orderAttack[j]).getAnswer(orderAnswer[2]) , CUT);
+            String answer4 = formatLine(row[3] + " " + fightData.getAttack(orderAttack[j]).getAnswer(orderAnswer[3]) , CUT);
 
-            //attack and answer (number on vector : 1-4) 
+            //attack and answer (number on vector : 1-4)
             lines.add(new Line(attack + "\n" +answer1 + "\n" + answer2 + "\n" + answer3 + "\n" + answer4, true));
 
             //save the order of the answer
@@ -102,11 +119,11 @@ public class TextEnemy {
         }
         
         //display answer
+        System.out.println("----------");
         for(int[] a : currentData){
             System.out.println(Arrays.toString(a));
         }
         
-
         //finish (win and death)
         String dead = formatLine(speechData.getSpeechs(5),CUT);
         String alive = formatLine(speechData.getSpeechs(6), CUT);

@@ -1,5 +1,10 @@
 package Main;
 
+/**
+ * @author Rémi Heredero
+ * @author Yann Sierro
+ * @version 1.0.0
+ */
 public class Settings {
 
     public static final boolean ANDROID = false; 

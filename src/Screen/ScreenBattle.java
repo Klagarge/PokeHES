@@ -17,6 +17,11 @@ import ch.hevs.gdx2d.components.bitmaps.BitmapImage;
 import ch.hevs.gdx2d.components.screen_management.RenderingScreen;
 import ch.hevs.gdx2d.lib.GdxGraphics;
 
+/**
+ * @author Rémi Heredero
+ * @author Yann Sierro
+ * @version 1.0.2
+ */
 public class ScreenBattle extends RenderingScreen{
 
 	private static int EDGE = 10;
@@ -28,7 +33,7 @@ public class ScreenBattle extends RenderingScreen{
 	private BitmapImage enemyImg;
 	private BitmapImage playerImg;
 
-	private Battle b = null;
+	public Battle b = null;
 
 
     @Override
@@ -109,27 +114,43 @@ public class ScreenBattle extends RenderingScreen{
 	public void manage(Controller c, Battle battle){
 		//add a rising front to have one impulsion
 		if(PokeHES.risingFront){
-			//the enemi is attacking
-			if( battle.getAttackOn() == false){
-				if (c.keyStatus.get(Input.Keys.SPACE)){
+			
+			if (c.keyStatus.get(Input.Keys.DOWN)){
+				battle.cursor++;
+			}
+			else if (c.keyStatus.get(Input.Keys.UP)){
+				battle.cursor--;
+			}
+
+			if (battle.cursor > 3) battle.cursor = 0;
+			if (battle.cursor < 0) battle.cursor = 3;
+			
+			if( battle.getAttackOn() == false){ //the enemy is attacking
+				if (c.keyStatus.get(Input.Keys.SPACE) || c.keyStatus.get(Input.Keys.A)){
 					battle.action(-1);
+					battle.cursor = 0;
 				}
-			}
-			//the enemi is speaking
-			if(battle.getAttackOn() == true){
-				if (c.keyStatus.get(Input.Keys.NUM_1)){
+			} else if(battle.getAttackOn() == true){ //the enemy is speaking
+				if (c.keyStatus.get(Input.Keys.NUM_1) || c.keyStatus.get(Input.Keys.A) && b.cursor == 0){
 					battle.action(1);
+					battle.cursor = 0;
 				}
-				else if (c.keyStatus.get(Input.Keys.NUM_2)){
+				else if (c.keyStatus.get(Input.Keys.NUM_2) || c.keyStatus.get(Input.Keys.A) && b.cursor == 1){
 					battle.action(2);
+					battle.cursor = 0;
 				}
-				else if (c.keyStatus.get(Input.Keys.NUM_3)){
+				else if (c.keyStatus.get(Input.Keys.NUM_3) || c.keyStatus.get(Input.Keys.A) && b.cursor == 2){
 					battle.action(3);
+					battle.cursor = 0;
 				}
-				else if (c.keyStatus.get(Input.Keys.NUM_4)){
+				else if (c.keyStatus.get(Input.Keys.NUM_4) || c.keyStatus.get(Input.Keys.A) && b.cursor == 3){
 					battle.action(4);
+					battle.cursor = 0;
 				}
 			}
+
+			b.updateText();
+			
 			//mettre le front à false jusqu'à ce que le bouton soit relâché
 			PokeHES.risingFront = false;
 		}

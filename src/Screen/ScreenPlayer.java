@@ -5,6 +5,11 @@ import Entity.Player;
 import Game.Battle;
 import ch.hevs.gdx2d.lib.GdxGraphics;
 
+/**
+ * @author Rémi Heredero
+ * @author Yann Sierro
+ * @version 1.0.0
+ */
 public class ScreenPlayer {
     public ManagerOfScreen screenManager = new ManagerOfScreen();
     public Player p = null;

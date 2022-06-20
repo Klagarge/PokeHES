@@ -2,6 +2,11 @@ package Entity;
 
 import ch.hevs.gdx2d.lib.GdxGraphics;
 
+/**
+ * @author Rémi Heredero
+ * @author Yann Sierro
+ * @version 1.0.0
+ */
 public class Stuff extends Entity{
 
     public Stuff(String name, int x, int y, String map) {

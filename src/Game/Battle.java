@@ -4,6 +4,11 @@ import Entity.Enemy;
 import Entity.Player;
 import Text.TextEnemy;
 
+/**
+ * @author Rémi Heredero
+ * @author Yann Sierro
+ * @version 1.0.2
+ */
 public class Battle {
 
     public Enemy e;
@@ -18,12 +23,14 @@ public class Battle {
     public int xpPlayer;
 
     public boolean screenBattleOn = true;
+    public int cursor = 0;
 
     public Battle(Enemy e){
         if(e != null){
             textEnemy = new TextEnemy(e);  
-            textEnemy.generateText();
+            textEnemy.generateText(cursor);
         }
+        
         pvEnemy = e.getPv();
         lineSpeech = 0;
         newXp = 0;
@@ -31,17 +38,14 @@ public class Battle {
 
     public void readNextLine(){
     //change line
-    System.out.println(textEnemy.lines.size());
+    //System.out.println(textEnemy.lines.size());
         if(lineSpeech < 5){
             lineSpeech++;
         }
-
 	}
 
     public void action(int answer){
-        System.out.println("pv enemy : " +pvEnemy);
-        System.out.println("xp player : " + xpPlayer);
-        System.out.println("xp win " + newXp);
+        textEnemy.randomAnswer();
 
        //the player is at the last question, the finish text must be displayed
         if(getLineSpeech() == 4){
@@ -96,10 +100,10 @@ public class Battle {
     public void updatePlayerEnemy(int xp){
         //add xp for the player
         xpPlayer += xp;
+        if(xpPlayer>6000) xpPlayer = 6000;
         //remove pv enemy
         pvEnemy -= xp;
         if(pvEnemy<0) pvEnemy =0;
-        
     }
 
     public void finishSpeech(){
@@ -155,5 +159,9 @@ public class Battle {
     }
     public void setPlayer(Player p){
         this.player = p;
+    }
+
+    public void updateText(){
+        if(e != null) textEnemy.generateText(cursor);
     }
 }

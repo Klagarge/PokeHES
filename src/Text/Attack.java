@@ -1,5 +1,10 @@
 package Text;
 
+/**
+ * @author Rémi Heredero
+ * @author Yann Sierro
+ * @version 1.0.0
+ */
 public class Attack {
     String attack;
     int currentAttack;

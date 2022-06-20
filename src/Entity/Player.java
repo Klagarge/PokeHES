@@ -11,6 +11,11 @@ import Main.PokeHES;
 import Main.Settings;
 import Screen.ScreenMap;
 
+/**
+ * @author Rémi Heredero
+ * @author Yann Sierro
+ * @version 1.0.0
+ */
 public class Player extends Character{
 
     private int xp = 0;
